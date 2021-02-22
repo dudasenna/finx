@@ -28,7 +28,7 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>O nosso jogo usa Realidade Aumentada, por isso gostaríamos de ter acesso à sua câmera, nenhum dado será coletado.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
