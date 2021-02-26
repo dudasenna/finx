@@ -20,15 +20,15 @@ class InitialViewController: UIViewController {
         super.viewDidLoad()
         test.loadFactWithNumber(number: 18)
         //let logo = UIImageView(image: UIImage(named: "Rectangle"))
-        for family in UIFont.familyNames {
-
-            let sName: String = family as String
-            print("family: \(sName)")
-                    
-            for name in UIFont.fontNames(forFamilyName: sName) {
-                print("name: \(name as String)")
-            }
-        }
+//        for family in UIFont.familyNames {
+//
+//            let sName: String = family as String
+//            print("family: \(sName)")
+//                    
+//            for name in UIFont.fontNames(forFamilyName: sName) {
+//                print("name: \(name as String)")
+//            }
+//        }
         
         var rectangle = UIImageView(image: UIImage(named: "WhiteRectangle"))
         var factOfSeries = UILabel()
@@ -40,17 +40,21 @@ class InitialViewController: UIViewController {
         let command = UILabel()
         command.numberOfLines = 0
         command.text = " Procure os cubos na cena para formar uma combinação algébrica que resulte em 18."
+        command.textColor = .black
         command.font = UIFont(name: "Superfruit", size: 25)
         command.textAlignment = .center
-        camButton.setImage(UIImage(named: "Cam"), for: .normal)
         
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: 60)
+        camButton.setImage(UIImage(systemName: "play.fill", withConfiguration: imageConfig), for: .normal)
+        camButton.tintColor = .black
         
         rectangle.addSubview(command)
         rectangle.addSubview(factOfSeries)
-        rectangle.addSubview(camButton)
+        //rectangle.addSubview(camButton)
         
-        //self.view.addSubview(logo)
+        
         self.view.addSubview(rectangle)
+        self.view.addSubview(camButton)
         
         //logo.translatesAutoresizingMaskIntoConstraints = false
         factOfSeries.translatesAutoresizingMaskIntoConstraints = false
@@ -84,7 +88,7 @@ class InitialViewController: UIViewController {
 
         camButton.centerXAnchor.constraint(equalTo: rectangle.centerXAnchor).isActive = true
         self.view.addConstraint(NSLayoutConstraint(item: camButton!, attribute: .top, relatedBy: .equal, toItem: command, attribute: .bottom, multiplier: 1.0, constant: 30))
-        camButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        camButton.widthAnchor.constraint(equalToConstant: 69).isActive = true
         camButton.heightAnchor.constraint(equalToConstant: 69).isActive = true
         
     }

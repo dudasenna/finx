@@ -13,7 +13,7 @@ class APIHandler{
     var fact:RandomFact = RandomFact()
     
     func loadFactWithNumber(number:Int) {
-        let urlStrin = "http://numbersapi.com/" + String(number)
+        let urlStrin = "http://numbersapi.com/" + String(number) 
         let url = URL(string: urlStrin)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"

@@ -376,12 +376,14 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         if (correct) {
             popImageview.image = UIImage(named: "RectangleCorrect")
             popLabel.text = "Parabéns"
+            popLabel.textColor = .black
             popBtm.titleLabel?.text = "Revelar números"
             
             
         } else {
             popImageview.image = UIImage(named: "RectangleWrong")
             popLabel.text = "Tente novamente"
+            popLabel.textColor = .black
             popBtm.titleLabel?.text = "OK"
         }
         
