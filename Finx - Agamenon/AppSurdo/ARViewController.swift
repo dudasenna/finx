@@ -14,8 +14,7 @@ import ARKit
 //@property (nonatomic, assign) BOOL isSomethingEnabled;
 //#import "EquationViewController.swift"
 var facts: [String]! = []
-
-
+var numbers: [String] = []
 
 class ARViewController: UIViewController, ARSCNViewDelegate {
     
@@ -27,7 +26,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var card3: UIButton!
     
     @IBOutlet weak var popView: UIView!
-    var numbers = [10,15,7]
     @IBOutlet weak var popLabel: UILabel!
     
     var cubes: [SCNNode]!
@@ -70,7 +68,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         }else{
             print("Scenario loaded")
             
-            
             //Checking if cube was found
             let touch = touches.first!
 
@@ -81,7 +78,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                     return
                 }
                 if result.node.name == "cube" {
-                    loadFactWithNumber(number: numbers[currentCard])
+                    loadFactWithNumber()
                     popView.isHidden = false
                     cardButtons[currentCard].setImage(UIImage(named: "CardActive"), for: .normal)
                     currentCard+=1
@@ -91,6 +88,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                         nextButton.isHidden = false
                     }
                 }
+                print(numbers)
             }
         }
         
@@ -203,19 +201,24 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     }
     
     
-    func loadFactWithNumber(number:Int) {
-        let urlStrin = "http://numbersapi.com/" + String(number)
+    func loadFactWithNumber() {
+//        como tava antes
+//        let urlStrin = "http://numbersapi.com/" + String(number)
+        let urlStrin = "http://numbersapi.com/random?min=1&max=50/trivia"
         let url = URL(string: urlStrin)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in do {
-            
             //let decoder = JSONDecoder()
             let jsonData = String(data: data!, encoding: .utf8) as String?
             //self.fact = jsonData
             print(jsonData!)
             facts.append(jsonData!)
             let encoded = self.hideNumbers(fact: jsonData!)
+            let numberString = self.takeNumber(fact: jsonData!)
+//            let numberInt = Int(numberString) ?? 0
+            numbers.append(numberString)
+            print (numberString)
             DispatchQueue.main.async {
                 self.popLabel.text = encoded
             }
@@ -244,6 +247,21 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                 newString.append("?")
             }else{
                 newString.append(hidedString[index])
+            }
+        
+        }
+        return newString
+    }
+    
+    func takeNumber(fact:String)->String{
+        let numberString = Array(fact)
+        var newString = String()
+        for index in numberString.indices{
+            
+            if numberString[index].isNumber{
+                newString.append(numberString[index])
+            } else {
+                return newString
             }
         
         }

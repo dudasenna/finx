@@ -37,111 +37,111 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     
     override func viewDidLoad() {
         
-            super.viewDidLoad()
-            // Do any additional setup after loading the view.
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    
+        pickerView1 = createPickerView1()
+        dismissPickerView1()
+        pickerView2 = createPickerView2()
+        dismissPickerView2()
+        pickerView3 = createPickerView3()
+        dismissPickerView3()
         
-            pickerView1 = createPickerView1()
-            dismissPickerView1()
-            pickerView2 = createPickerView2()
-            dismissPickerView2()
-            pickerView3 = createPickerView3()
-            dismissPickerView3()
-            
-            cardSpace1.text = "A \n" + hideNumbers(fact: factsOfNumbers[0])
-            cardSpace1.textColor = .black
-            cardSpace1.textAlignment = .center
-            cardSpace1.backgroundColor = color1
-            cardSpace1.layer.cornerRadius = 20
-            cardSpace1.layer.masksToBounds = true
-            cardSpace1.numberOfLines = 0
-            cardSpace1.font = UIFont(name: "Superfruit", size:20 )
+        cardSpace1.text = "A \n" + hideNumbers(fact: factsOfNumbers[0])
+        cardSpace1.textColor = .black
+        cardSpace1.textAlignment = .center
+        cardSpace1.backgroundColor = color1
+        cardSpace1.layer.cornerRadius = 20
+        cardSpace1.layer.masksToBounds = true
+        cardSpace1.numberOfLines = 0
+        cardSpace1.font = UIFont(name: "Superfruit", size:20 )
+    
+        cardSpace2.text = "B \n" + hideNumbers(fact: factsOfNumbers[1])
+        cardSpace2.textColor = .black
+        cardSpace2.textAlignment = .center
+        cardSpace2.backgroundColor = color1
+        cardSpace2.layer.cornerRadius = 20
+        cardSpace2.layer.masksToBounds = true
+        cardSpace2.numberOfLines = 0
+        cardSpace2.font = UIFont(name: "Superfruit", size:20 )
+
         
-            cardSpace2.text = "B \n" + hideNumbers(fact: factsOfNumbers[1])
-            cardSpace2.textColor = .black
-            cardSpace2.textAlignment = .center
-            cardSpace2.backgroundColor = color1
-            cardSpace2.layer.cornerRadius = 20
-            cardSpace2.layer.masksToBounds = true
-            cardSpace2.numberOfLines = 0
-            cardSpace2.font = UIFont(name: "Superfruit", size:20 )
+        cardSpace3.text = "C \n" + hideNumbers(fact: factsOfNumbers[2])
+        cardSpace3.textColor = .black
+        cardSpace3.textAlignment = .center
+        cardSpace3.backgroundColor = color1
+        cardSpace3.layer.cornerRadius = 20
+        cardSpace3.layer.masksToBounds = true
+        cardSpace3.numberOfLines = 0
+        cardSpace3.font = UIFont(name: "Superfruit", size:20 )
 
-            
-            cardSpace3.text = "C \n" + hideNumbers(fact: factsOfNumbers[2])
-            cardSpace3.textColor = .black
-            cardSpace3.textAlignment = .center
-            cardSpace3.backgroundColor = color1
-            cardSpace3.layer.cornerRadius = 20
-            cardSpace3.layer.masksToBounds = true
-            cardSpace3.numberOfLines = 0
-            cardSpace3.font = UIFont(name: "Superfruit", size:20 )
-
-            
+        
 //            answerSpace1.text = "1"
-            answerSpace1.textColor = .black
-            answerSpace1.textAlignment = .center
-            answerSpace1.layer.borderColor = CGColor(srgbRed: 100/255, green: 100/255, blue: 100/255, alpha: 1)
-            answerSpace1.layer.borderWidth = 2
-            answerSpace1.layer.cornerRadius = 10
-            answerSpace1.layer.masksToBounds = true
-            answerSpace1.font = UIFont(name: "Superfruit", size:20 )
+        answerSpace1.textColor = .black
+        answerSpace1.textAlignment = .center
+        answerSpace1.layer.borderColor = CGColor(srgbRed: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+        answerSpace1.layer.borderWidth = 2
+        answerSpace1.layer.cornerRadius = 10
+        answerSpace1.layer.masksToBounds = true
+        answerSpace1.font = UIFont(name: "Superfruit", size:20 )
+    
+        equationSignal1.text = "+"
+        equationSignal1.textColor = .black
+        equationSignal1.textAlignment = .center
+//        equationSignal1.layer.cornerRadius = 10
+//        equationSignal1.layer.masksToBounds = true
         
-            equationSignal1.text = "+"
-            equationSignal1.textColor = .black
-            equationSignal1.textAlignment = .center
-    //        equationSignal1.layer.cornerRadius = 10
-    //        equationSignal1.layer.masksToBounds = true
-            
 //            answerSpace2.text = "2"
-            answerSpace2.textColor = .black
-            answerSpace2.textAlignment = .center
-            answerSpace2.layer.borderColor = CGColor(srgbRed: 100/255, green: 100/255, blue: 100/255, alpha: 1)
-            answerSpace2.layer.borderWidth = 2
-            answerSpace2.layer.cornerRadius = 10
-            answerSpace2.layer.masksToBounds = true
-            answerSpace2.font = UIFont(name: "Superfruit", size:20 )
-            
-            equationSignal2.text = "-"
-            equationSignal2.textColor = .black
-            equationSignal2.textAlignment = .center
-    //        answerSpace1.layer.cornerRadius = 10
-    //        equationSignal2.layer.masksToBounds = true
-            
+        answerSpace2.textColor = .black
+        answerSpace2.textAlignment = .center
+        answerSpace2.layer.borderColor = CGColor(srgbRed: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+        answerSpace2.layer.borderWidth = 2
+        answerSpace2.layer.cornerRadius = 10
+        answerSpace2.layer.masksToBounds = true
+        answerSpace2.font = UIFont(name: "Superfruit", size:20 )
+        
+        equationSignal2.text = "-"
+        equationSignal2.textColor = .black
+        equationSignal2.textAlignment = .center
+//        answerSpace1.layer.cornerRadius = 10
+//        equationSignal2.layer.masksToBounds = true
+        
 //            answerSpace3.text = "3"
-            answerSpace3.textColor = .black
-            answerSpace3.textAlignment = .center
-            answerSpace3.layer.borderColor = CGColor(srgbRed: 100/255, green: 100/255, blue: 100/255, alpha: 1)
-            answerSpace3.layer.borderWidth = 2
-            answerSpace3.layer.cornerRadius = 10
-            answerSpace3.layer.masksToBounds = true
-            answerSpace3.font = UIFont(name: "Superfruit", size:20 )
-            
-    //        let equationSignal3 = UILabel(frame: CGRect(x: 30, y: 650, width: 50, height: 50))
-    //        equationSignal3.text = "="
-    //        equationSignal3.textAlignment = .center
-    //        equationSignal3.layer.cornerRadius = 10
-    //        equationSignal3.layer.masksToBounds = true
-            
-            answer.text = "18"
-            answer.textColor = .black
-            answer.textAlignment = .center
-            answer.layer.borderColor = CGColor(srgbRed: 100/255, green: 100/255, blue: 100/255, alpha: 1)
-            answer.layer.borderWidth = 2
-            answer.layer.cornerRadius = 10
-            answer.layer.masksToBounds = true
-            
-            self.view.addSubview(cardSpace1)
-            self.view.addSubview(cardSpace2)
-            self.view.addSubview(cardSpace3)
-            self.view.addSubview(answerSpace1)
-            self.view.addSubview(equationSignal1)
-            self.view.addSubview(answerSpace2)
-            self.view.addSubview(equationSignal2)
-            self.view.addSubview(answerSpace3)
-    //        self.view.addSubview(equationSignal3)
-            self.view.addSubview(answer)
-            self.view.addSubview(popImageview)
-            self.view.addSubview(popLabel)
-            self.view.addSubview(popBtm)
+        answerSpace3.textColor = .black
+        answerSpace3.textAlignment = .center
+        answerSpace3.layer.borderColor = CGColor(srgbRed: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+        answerSpace3.layer.borderWidth = 2
+        answerSpace3.layer.cornerRadius = 10
+        answerSpace3.layer.masksToBounds = true
+        answerSpace3.font = UIFont(name: "Superfruit", size:20 )
+        
+//        let equationSignal3 = UILabel(frame: CGRect(x: 30, y: 650, width: 50, height: 50))
+//        equationSignal3.text = "="
+//        equationSignal3.textAlignment = .center
+//        equationSignal3.layer.cornerRadius = 10
+//        equationSignal3.layer.masksToBounds = true
+        
+        answer.text = "18"
+        answer.textColor = .black
+        answer.textAlignment = .center
+        answer.layer.borderColor = CGColor(srgbRed: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+        answer.layer.borderWidth = 2
+        answer.layer.cornerRadius = 10
+        answer.layer.masksToBounds = true
+        
+        self.view.addSubview(cardSpace1)
+        self.view.addSubview(cardSpace2)
+        self.view.addSubview(cardSpace3)
+        self.view.addSubview(answerSpace1)
+        self.view.addSubview(equationSignal1)
+        self.view.addSubview(answerSpace2)
+        self.view.addSubview(equationSignal2)
+        self.view.addSubview(answerSpace3)
+//        self.view.addSubview(equationSignal3)
+        self.view.addSubview(answer)
+        self.view.addSubview(popImageview)
+        self.view.addSubview(popLabel)
+        self.view.addSubview(popBtm)
             
     }
     
@@ -155,19 +155,19 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         
         if pickerView.tag == 1 {
             
-            return countryList.count
+            return numbers.count
             
         }
             
         else if pickerView.tag == 2 {
             
-            return countryList.count
+            return numbers.count
             
         }
             
         else if pickerView.tag == 3 {
             
-            return countryList.count
+            return numbers.count
             
         }
             
@@ -183,19 +183,19 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         
         if pickerView.tag == 1 {
             
-            return countryList[row]
+            return numbers[row]
             
         }
             
         else if pickerView.tag == 2 {
             
-            return countryList[row]
+            return numbers[row]
             
         }
             
         else if pickerView.tag == 3 {
             
-            return countryList[row]
+            return numbers[row]
             
         }
             
@@ -211,21 +211,21 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         
         if pickerView.tag == 1 {
             
-            selectedCard1 = countryList[row]
+            selectedCard1 = numbers[row]
             answerSpace1.text = selectedCard1
             
         }
             
         else if pickerView.tag == 2 {
             
-            selectedCard2 = countryList[row]
+            selectedCard2 = numbers[row]
             answerSpace2.text = selectedCard2
             
         }
             
         else if pickerView.tag == 3 {
             
-            selectedCard3 = countryList[row]
+            selectedCard3 = numbers[row]
             answerSpace3.text = selectedCard3
             
         }
