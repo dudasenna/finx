@@ -17,12 +17,12 @@
         <!--Initial View Controller-->
         <scene sceneID="JFJ-gr-8UU">
             <objects>
-                <viewController id="slH-Ed-jST" customClass="InitialViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="slH-Ed-jST" customClass="InitialViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e5W-ug-wWJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="3ir-zE-Ii8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="3ir-zE-Ii8">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMP-Yp-VLW">
@@ -43,6 +43,7 @@
                             <constraint firstItem="3ir-zE-Ii8" firstAttribute="trailing" secondItem="Jhi-WN-82V" secondAttribute="trailing" id="yDl-Dd-rWm"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="DvW-SB-qp1"/>
                     <connections>
                         <outlet property="camButton" destination="HMP-Yp-VLW" id="WZt-Ww-b66"/>
                     </connections>
@@ -56,13 +57,13 @@
         <!--AR View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" userLabel="AR View Controller" customClass="ARViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BV1-FR-VrT" userLabel="AR View Controller" customClass="ARViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clu-cm-a6e">
                                 <rect key="frame" x="48" y="663" width="84" height="86"/>
@@ -179,6 +180,14 @@
                                     <action selector="revealNumbers:" destination="dkw-ts-Veh" eventType="touchUpInside" id="v0M-98-yYv"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Om-IZ-eRo">
+                                <rect key="frame" x="136" y="722" width="143" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="PinkRectangle"/>
+                                <connections>
+                                    <segue destination="slH-Ed-jST" kind="presentation" id="yFM-Lz-a0H"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QBh-Yo-Mck"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -197,6 +206,7 @@
                         <outlet property="popBtm" destination="cwE-IE-Vhx" id="fdZ-qR-r6n"/>
                         <outlet property="popImageview" destination="7lq-eq-ej4" id="AR8-QN-b3j"/>
                         <outlet property="popLabel" destination="JPU-3n-mqS" id="Mai-WY-a2f"/>
+                        <outlet property="restartButton" destination="2Om-IZ-eRo" id="ULQ-hA-LuH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zua-yw-jfc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
