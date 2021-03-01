@@ -48,6 +48,16 @@ class InitialViewController: UIViewController {
         camButton.setImage(UIImage(systemName: "play.fill", withConfiguration: imageConfig), for: .normal)
         camButton.tintColor = .black
         
+        let instructionsButton = UIButton(frame: CGRect(x: 350, y: 80, width: 30, height: 30))
+        instructionsButton.backgroundColor = .white
+//        instructionsButton.setTitle("Instruções", for: .normal)
+        instructionsButton.setImage(UIImage(systemName: "questionmark.circle"), for: .normal)
+        instructionsButton.tintColor = .black
+//        instructionsButton.setTitleColor(.black, for: .normal)
+//        instructionsButton.titleLabel?.font = .systemFont(ofSize: 13)
+        instructionsButton.layer.cornerRadius = 10
+        instructionsButton.addTarget(self, action: #selector(instructionsButtonAction), for: .touchUpInside)
+        
         rectangle.addSubview(command)
         rectangle.addSubview(factOfSeries)
         //rectangle.addSubview(camButton)
@@ -55,6 +65,7 @@ class InitialViewController: UIViewController {
         
         self.view.addSubview(rectangle)
         self.view.addSubview(camButton)
+        self.view.addSubview(instructionsButton)
         
         //logo.translatesAutoresizingMaskIntoConstraints = false
         factOfSeries.translatesAutoresizingMaskIntoConstraints = false
@@ -91,5 +102,12 @@ class InitialViewController: UIViewController {
         camButton.widthAnchor.constraint(equalToConstant: 69).isActive = true
         camButton.heightAnchor.constraint(equalToConstant: 69).isActive = true
         
+    }
+    
+    @objc func instructionsButtonAction(sender: UIButton!) {
+        
+        print("Button tapped")
+        performSegue(withIdentifier: "instructionsSegue", sender: self)
+
     }
 }
