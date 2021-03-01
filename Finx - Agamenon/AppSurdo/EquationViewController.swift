@@ -46,6 +46,8 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     let answerSpace3 = UITextField()
     //let answer = UILabel(frame: CGRect(x: 165, y: 740, width: 80, height: 60))
     
+    let scrollView = UIScrollView()
+    let contentView = UIView()
     
     @IBOutlet weak var restartButton: UIButton!
     
@@ -55,13 +57,16 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        scrollView.isScrollEnabled = true
+       // scrollView.alwaysBounceVertical = true
+        
+        setupScrollView()
+        
         let imageConfig = UIImage.SymbolConfiguration(pointSize: 20)
         restartButton.setImage(UIImage(systemName: "arrow.counterclockwise", withConfiguration: imageConfig), for: .normal)
         restartButton.tintColor = .black
         restartButton.isHidden = true
-//        let scrollView = UIScrollView()
-//        let contentView = UIView()
         
         pickerView1 = createPickerView1()
         dismissPickerView1()
@@ -70,7 +75,6 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         pickerView3 = createPickerView3()
         dismissPickerView3()
         
-        //titleSpace.frame = CGRect(x: 0, y: 60, width: self.view.frame.width, height: 130)
         titleSpace.text = "Associe os números às frases corretas!"
         titleSpace.textColor = .black
         titleSpace.textAlignment = .center
@@ -94,8 +98,6 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         cardSpace1.text = hideNumbers(fact: factsOfNumbers[0])
         cardSpace1.textColor = .black
         cardSpace1.textAlignment = .center
-//        cardSpace1.backgroundColor = colorCard1
-//        cardSpace1.layer.cornerRadius = 20
         cardSpace1.layer.masksToBounds = true
         cardSpace1.numberOfLines = 0
         cardSpace1.font = UIFont(name: "Superfruit", size:23)
@@ -103,8 +105,6 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         cardSpace2.text = hideNumbers(fact: factsOfNumbers[1])
         cardSpace2.textColor = .black
         cardSpace2.textAlignment = .center
-//        cardSpace2.backgroundColor = colorCard2
-//        cardSpace2.layer.cornerRadius = 20
         cardSpace2.layer.masksToBounds = true
         cardSpace2.numberOfLines = 0
         cardSpace2.font = UIFont(name: "Superfruit", size:23)
@@ -113,8 +113,6 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         cardSpace3.text = hideNumbers(fact: factsOfNumbers[2])
         cardSpace3.textColor = .black
         cardSpace3.textAlignment = .center
-//        cardSpace3.backgroundColor = colorCard3
-//        cardSpace3.layer.cornerRadius = 20
         cardSpace3.layer.masksToBounds = true
         cardSpace3.numberOfLines = 0
         cardSpace3.font = UIFont(name: "Superfruit", size:23)
@@ -130,7 +128,6 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         doneButton.setTitle("Done", for: .normal)
         doneButton.setTitleColor(.black, for: .normal)
         
-        //            answerSpace1.text = "1"
         answerSpace1.textColor = .black
         answerSpace1.textAlignment = .center
         answerSpace1.layer.borderColor = CGColor(srgbRed: 100/255, green: 100/255, blue: 100/255, alpha: 1)
@@ -139,13 +136,6 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         answerSpace1.layer.masksToBounds = true
         answerSpace1.font = UIFont(name: "Superfruit", size:20 )
         
-//        equationSignal1.text = "+"
-//        equationSignal1.textColor = .black
-//        equationSignal1.textAlignment = .center
-        //        equationSignal1.layer.cornerRadius = 10
-        //        equationSignal1.layer.masksToBounds = true
-        
-        //            answerSpace2.text = "2"
         answerSpace2.textColor = .black
         answerSpace2.textAlignment = .center
         answerSpace2.layer.borderColor = CGColor(srgbRed: 100/255, green: 100/255, blue: 100/255, alpha: 1)
@@ -154,13 +144,6 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         answerSpace2.layer.masksToBounds = true
         answerSpace2.font = UIFont(name: "Superfruit", size:20 )
         
-//        equationSignal2.text = "-"
-//        equationSignal2.textColor = .black
-//        equationSignal2.textAlignment = .center
-        //        answerSpace1.layer.cornerRadius = 10
-        //        equationSignal2.layer.masksToBounds = true
-        
-        //            answerSpace3.text = "3"
         answerSpace3.textColor = .black
         answerSpace3.textAlignment = .center
         answerSpace3.layer.borderColor = CGColor(srgbRed: 100/255, green: 100/255, blue: 100/255, alpha: 1)
@@ -169,39 +152,44 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         answerSpace3.layer.masksToBounds = true
         answerSpace3.font = UIFont(name: "Superfruit", size:20 )
         
-        //        let equationSignal3 = UILabel(frame: CGRect(x: 30, y: 650, width: 50, height: 50))
-        //        equationSignal3.text = "="
-        //        equationSignal3.textAlignment = .center
-        //        equationSignal3.layer.cornerRadius = 10
-        //        equationSignal3.layer.masksToBounds = true
+        setupSubviews()
+    }
+    
+    func setupScrollView() {
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         
-//        answer.text = "18"
-//        answer.textColor = .black
-//        answer.textAlignment = .center
-//        answer.layer.borderColor = CGColor(srgbRed: 100/255, green: 100/255, blue: 100/255, alpha: 1)
-//        answer.layer.borderWidth = 2
-//        answer.layer.cornerRadius = 10
-//        answer.layer.masksToBounds = true
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
         
-        self.view.addSubview(titleSpace)
-        self.view.addSubview(backgroundCard1)
-        self.view.addSubview(backgroundCard2)
-        self.view.addSubview(backgroundCard3)
-        self.view.addSubview(cardSpace1)
-        self.view.addSubview(cardSpace2)
-        self.view.addSubview(cardSpace3)
-        self.view.addSubview(doneButton)
-        self.view.addSubview(answerSpace1)
-//        self.view.addSubview(equationSignal1)
-        self.view.addSubview(answerSpace2)
-//        self.view.addSubview(equationSignal2)
-        self.view.addSubview(answerSpace3)
-        //        self.view.addSubview(equationSignal3)
-//        self.view.addSubview(answer)
-        self.view.addSubview(popImageview)
-        self.view.addSubview(popLabel)
-        self.view.addSubview(popBtm)
-        self.view.addSubview(restartButton)
+        scrollView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        scrollView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -40).isActive = true
+    }
+    
+    func setupSubviews() {
+        scrollView.addSubview(answerSpace1)
+        scrollView.addSubview(answerSpace2)
+        scrollView.addSubview(answerSpace3)
+        
+        contentView.addSubview(titleSpace)
+        contentView.addSubview(backgroundCard1)
+        contentView.addSubview(backgroundCard2)
+        contentView.addSubview(backgroundCard3)
+        contentView.addSubview(cardSpace1)
+        contentView.addSubview(cardSpace2)
+        contentView.addSubview(cardSpace3)
+        contentView.addSubview(doneButton)
+        contentView.addSubview(popImageview)
+        contentView.addSubview(popLabel)
+        contentView.addSubview(popBtm)
+        contentView.addSubview(restartButton)
         
         titleSpace.translatesAutoresizingMaskIntoConstraints = false
         backgroundCard1.translatesAutoresizingMaskIntoConstraints = false
@@ -215,59 +203,70 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         answerSpace1.translatesAutoresizingMaskIntoConstraints = false
         answerSpace2.translatesAutoresizingMaskIntoConstraints = false
         answerSpace3.translatesAutoresizingMaskIntoConstraints = false
-    
         
-        self.view.addConstraint(NSLayoutConstraint(item: titleSpace, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 10))
-        titleSpace.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+//        contentView.addConstraint(NSLayoutConstraint(item: titleSpace, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 10))
+        titleSpace.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
+        titleSpace.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         titleSpace.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        titleSpace.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
+        titleSpace.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1).isActive = true
         
-        self.view.addConstraint(NSLayoutConstraint(item: backgroundCard1, attribute: .top, relatedBy: .equal, toItem: titleSpace, attribute: .bottom, multiplier: 1.0, constant: 35))
-        backgroundCard1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+//        contentView.addConstraint(NSLayoutConstraint(item: backgroundCard1, attribute: .top, relatedBy: .equal, toItem: titleSpace, attribute: .bottom, multiplier: 1.0, constant: 35))
+        backgroundCard1.topAnchor.constraint(equalTo: titleSpace.bottomAnchor, constant: 35).isActive = true
+        backgroundCard1.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         backgroundCard1.heightAnchor.constraint(equalToConstant: 160).isActive = true
-        backgroundCard1.widthAnchor.constraint(equalToConstant: self.view.frame.width * 0.8).isActive = true
+        backgroundCard1.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8).isActive = true
         
-        self.view.addConstraint(NSLayoutConstraint(item: backgroundCard2, attribute: .top, relatedBy: .equal, toItem: backgroundCard1, attribute: .bottom, multiplier: 1.0, constant: 20))
-        backgroundCard2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+//        contentView.addConstraint(NSLayoutConstraint(item: backgroundCard2, attribute: .top, relatedBy: .equal, toItem: backgroundCard1, attribute: .bottom, multiplier: 1.0, constant: 20))
+        backgroundCard2.topAnchor.constraint(equalTo: backgroundCard1.bottomAnchor, constant: 20).isActive = true
+        backgroundCard2.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         backgroundCard2.heightAnchor.constraint(equalToConstant: 160).isActive = true
-        backgroundCard2.widthAnchor.constraint(equalToConstant: self.view.frame.width * 0.8).isActive = true
+        backgroundCard2.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8).isActive = true
         
-        self.view.addConstraint(NSLayoutConstraint(item: backgroundCard3, attribute: .top, relatedBy: .equal, toItem: backgroundCard2, attribute: .bottom, multiplier: 1.0, constant: 20))
-        backgroundCard3.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+//        contentView.addConstraint(NSLayoutConstraint(item: backgroundCard3, attribute: .top, relatedBy: .equal, toItem: backgroundCard2, attribute: .bottom, multiplier: 1.0, constant: 20))
+        backgroundCard3.topAnchor.constraint(equalTo: backgroundCard2.bottomAnchor, constant: 20).isActive = true
+        backgroundCard3.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         backgroundCard3.heightAnchor.constraint(equalToConstant: 160).isActive = true
-        backgroundCard3.widthAnchor.constraint(equalToConstant: self.view.frame.width * 0.8).isActive = true
+        backgroundCard3.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8).isActive = true
         
-        self.view.addConstraint(NSLayoutConstraint(item: answerSpace1, attribute: .top, relatedBy: .equal, toItem: backgroundCard1, attribute: .top, multiplier: 1.0, constant: 5))
+//        contentView.addConstraint(NSLayoutConstraint(item: answerSpace1, attribute: .top, relatedBy: .equal, toItem: backgroundCard1, attribute: .top, multiplier: 1.0, constant: 5))
+        answerSpace1.topAnchor.constraint(equalTo: backgroundCard1.topAnchor, constant: 5).isActive = true
         answerSpace1.centerXAnchor.constraint(equalTo: backgroundCard1.centerXAnchor).isActive = true
         answerSpace1.heightAnchor.constraint(equalToConstant: 40).isActive = true
         answerSpace1.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
-        self.view.addConstraint(NSLayoutConstraint(item: cardSpace1, attribute: .top, relatedBy: .equal, toItem: answerSpace1, attribute: .bottom, multiplier: 1.0, constant: 10))
+//        contentView.addConstraint(NSLayoutConstraint(item: cardSpace1, attribute: .top, relatedBy: .equal, toItem: answerSpace1, attribute: .bottom, multiplier: 1.0, constant: 10))
+        cardSpace1.topAnchor.constraint(equalTo: answerSpace1.bottomAnchor, constant: 10).isActive = true
         cardSpace1.centerXAnchor.constraint(equalTo: backgroundCard1.centerXAnchor).isActive = true
-        cardSpace1.widthAnchor.constraint(equalToConstant: self.view.frame.width * 0.75).isActive = true
+        cardSpace1.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.75).isActive = true
         
-        self.view.addConstraint(NSLayoutConstraint(item: answerSpace2, attribute: .top, relatedBy: .equal, toItem: backgroundCard2, attribute: .top, multiplier: 1.0, constant: 5))
+//        contentView.addConstraint(NSLayoutConstraint(item: answerSpace2, attribute: .top, relatedBy: .equal, toItem: backgroundCard2, attribute: .top, multiplier: 1.0, constant: 5))
+        answerSpace2.topAnchor.constraint(equalTo: backgroundCard2.topAnchor, constant: 5).isActive = true
         answerSpace2.centerXAnchor.constraint(equalTo: backgroundCard2.centerXAnchor).isActive = true
         answerSpace2.heightAnchor.constraint(equalToConstant: 40).isActive = true
         answerSpace2.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
-        self.view.addConstraint(NSLayoutConstraint(item: cardSpace2, attribute: .top, relatedBy: .equal, toItem: answerSpace2, attribute: .bottom, multiplier: 1.0, constant: 10))
+//        contentView.addConstraint(NSLayoutConstraint(item: cardSpace2, attribute: .top, relatedBy: .equal, toItem: answerSpace2, attribute: .bottom, multiplier: 1.0, constant: 10))
+        cardSpace2.topAnchor.constraint(equalTo: answerSpace2.bottomAnchor, constant: 10).isActive = true
         cardSpace2.centerXAnchor.constraint(equalTo: backgroundCard2.centerXAnchor).isActive = true
-        cardSpace2.widthAnchor.constraint(equalToConstant: self.view.frame.width * 0.75).isActive = true
+        cardSpace2.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.75).isActive = true
         
-        self.view.addConstraint(NSLayoutConstraint(item: answerSpace3, attribute: .top, relatedBy: .equal, toItem: backgroundCard3, attribute: .top, multiplier: 1.0, constant: 5))
+//        contentView.addConstraint(NSLayoutConstraint(item: answerSpace3, attribute: .top, relatedBy: .equal, toItem: backgroundCard3, attribute: .top, multiplier: 1.0, constant: 5))
+        answerSpace3.topAnchor.constraint(equalTo: backgroundCard3.topAnchor, constant: 5).isActive = true
         answerSpace3.centerXAnchor.constraint(equalTo: backgroundCard3.centerXAnchor).isActive = true
         answerSpace3.heightAnchor.constraint(equalToConstant: 40).isActive = true
         answerSpace3.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
-        self.view.addConstraint(NSLayoutConstraint(item: cardSpace3, attribute: .top, relatedBy: .equal, toItem: answerSpace3, attribute: .bottom, multiplier: 1.0, constant: 10))
+//        contentView.addConstraint(NSLayoutConstraint(item: cardSpace3, attribute: .top, relatedBy: .equal, toItem: answerSpace3, attribute: .bottom, multiplier: 1.0, constant: 10))
+        cardSpace3.topAnchor.constraint(equalTo: answerSpace3.bottomAnchor, constant: 10).isActive = true
         cardSpace3.centerXAnchor.constraint(equalTo: backgroundCard3.centerXAnchor).isActive = true
-        cardSpace3.widthAnchor.constraint(equalToConstant: self.view.frame.width * 0.75).isActive = true
+        cardSpace3.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.75).isActive = true
         
-        self.view.addConstraint(NSLayoutConstraint(item: doneButton, attribute: .top, relatedBy: .equal, toItem: backgroundCard3, attribute: .bottom, multiplier: 1.0, constant: 40))
-        doneButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+//        contentView.addConstraint(NSLayoutConstraint(item: doneButton, attribute: .top, relatedBy: .equal, toItem: backgroundCard3, attribute: .bottom, multiplier: 1.0, constant: 40))
+        doneButton.topAnchor.constraint(equalTo: backgroundCard3.bottomAnchor, constant: 40).isActive = true
+        doneButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         doneButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        doneButton.widthAnchor.constraint(equalToConstant: self.view.frame.width * 0.5).isActive = true
+        doneButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5).isActive = true
+        doneButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -377,11 +376,6 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         toolBar1.setItems([button1], animated: true)
         toolBar1.isUserInteractionEnabled = true
         answerSpace1.inputAccessoryView = toolBar1
-        
-        //        if (answerSpace1.text != nil && answerSpace2.text != nil && answerSpace3.text != nil){
-        //            checkAnswer()
-        //        }
-        
     }
     
     func createPickerView2() -> UIPickerView {
@@ -438,19 +432,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         //            checkAnswer()
         //        }
     }
-    
-    //    pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-    //    {
-    //
-    //        [UIView beginAnimations:@"1" context:nil]; // nil = dummy
-    //        [UIPickerView setAnimationDelegate:self];
-    //        [UIPickerView setAnimationDidStopSelector:@selector(animationFinished:finished:context:)];
-    //        [myPickerView selectRow:0 inComponent:0 animated:YES]; // jump with any swipe in picker always to row=0 as dummy to initiate animation
-    //        [UIView commitAnimations];
-    //
-    //        //...whatever comes in addition...
-    //    }
-    //
+
     @objc func action() {
         
         view.endEditing(true)
