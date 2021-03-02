@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221C3D4225ED947600C4FABB /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C3D4125ED947600C4FABB /* InstructionsViewController.swift */; };
 		2836F82024FD3CAB00A75E53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2836F81F24FD3CAB00A75E53 /* AppDelegate.swift */; };
 		2836F82224FD3CAB00A75E53 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 2836F82124FD3CAB00A75E53 /* art.scnassets */; };
 		2836F82724FD3CAB00A75E53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2836F82524FD3CAB00A75E53 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		221C3D4125ED947600C4FABB /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		2836F81C24FD3CAB00A75E53 /* Finx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2836F81F24FD3CAB00A75E53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2836F82124FD3CAB00A75E53 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				2836F82D24FD3CAC00A75E53 /* Info.plist */,
 				86BD6B5D24FD5044000920CF /* InitialViewController.swift */,
 				2880F71925015F0C0041FA88 /* APIHandler.swift */,
+				221C3D4125ED947600C4FABB /* InstructionsViewController.swift */,
 			);
 			path = AppSurdo;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				2836F83624FD42F500A75E53 /* EquationViewController.swift in Sources */,
 				2880F71A25015F0C0041FA88 /* APIHandler.swift in Sources */,
 				2836F82024FD3CAB00A75E53 /* AppDelegate.swift in Sources */,
+				221C3D4225ED947600C4FABB /* InstructionsViewController.swift in Sources */,
 				2836F83824FD436F00A75E53 /* ARViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
