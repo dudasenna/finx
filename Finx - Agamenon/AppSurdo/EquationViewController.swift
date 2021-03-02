@@ -127,6 +127,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         doneButton.layer.cornerRadius = 10
         doneButton.setTitle("Done", for: .normal)
         doneButton.setTitleColor(.black, for: .normal)
+        doneButton.titleLabel?.font = UIFont(name: "Superfruit", size:30)
         
         answerSpace1.textColor = .black
         answerSpace1.textAlignment = .center
