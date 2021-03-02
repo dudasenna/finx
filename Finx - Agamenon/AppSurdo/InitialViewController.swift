@@ -37,6 +37,7 @@ class InitialViewController: UIViewController {
         factOfSeries.numberOfLines = 0
         factOfSeries.textColor = .black
         factOfSeries.textAlignment = .center
+        
         let command = UILabel()
         command.numberOfLines = 0
         command.text = " Procure os cubos na cena para formar uma combinação algébrica que resulte em 18."
