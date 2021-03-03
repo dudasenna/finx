@@ -464,8 +464,8 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     func checkAnswer(){
         
         // Fazer checagem do picker e muda valor de variavel "correct"
-        if (answerSpace1.text == "A" && answerSpace2.text == "B" && answerSpace3.text == "C") {
-            
+        if (answerSpace1.text == numbers[0] && answerSpace2.text == numbers[1] && answerSpace3.text == numbers[2]) {
+            print("resposta certa")
             correct = true
             showPop(correct: true)
             
