@@ -25,6 +25,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var card2: UIButton!
     @IBOutlet weak var card3: UIButton!
     
+    @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var popView: UIView!
     @IBOutlet weak var popLabel: UILabel!
     
@@ -35,6 +36,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        okButton.isHidden = true
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -53,11 +56,19 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         popLabel.numberOfLines = 0
         popLabel.textColor = .black
+        popView.isHidden = false
+        popLabel.text = "Procure os cubos na cena para revelar as frases"
+        okButton.isHidden = false
         // Create a new scene
         //let scene = SCNScene(named: "art.scnassets/mainScene.scn")!
         
         // Set the scene to the view
         //sceneView.scene = scene
+        popView.translatesAutoresizingMaskIntoConstraints = false
+        popView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        popView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        popView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.7).isActive = true
+        popView.heightAnchor.constraint(equalToConstant: 300).isActive = true
         
 
     }

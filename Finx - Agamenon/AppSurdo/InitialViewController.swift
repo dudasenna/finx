@@ -31,7 +31,7 @@ class InitialViewController: UIViewController {
 //        }
         
         let rectangle = UIImageView(image: UIImage(named: "WhiteRectangle"))
-        rectangle.alpha = 0.9
+        rectangle.alpha = 1
         
 //        let factOfSeries = UILabel()
 //        factOfSeries.font = UIFont(name: "Superfruit", size: 25)
@@ -40,19 +40,22 @@ class InitialViewController: UIViewController {
 //        factOfSeries.textColor = .black
 //        factOfSeries.textAlignment = .centerw
         
-        let command = UILabel()
-        command.numberOfLines = 0
-        command.text = "Procure os cubos na cena para revelar as frases."
-        command.textColor = .black
-        command.font = UIFont(name: "Superfruit", size: 40)
-        command.textAlignment = .center
+//        let command = UILabel()
+//        command.numberOfLines = 0
+//        command.text = "Procure os cubos na cena para revelar as frases."
+//        command.textColor = .black
+//        command.font = UIFont(name: "Superfruit", size: 40)
+//        command.textAlignment = .center
+        
+        let title = UIImageView(image: UIImage(named: "Finx"))
+        title.layer.opacity = 1
         
        let imageConfig = UIImage.SymbolConfiguration(pointSize: 60)
         //camButton.setBackgroundImage(UIImage(named: "PinkRectangle"), for: .normal)
         //camButton.tintColor = .black
         
         camButton.layer.borderWidth = 1
-        camButton.layer.borderColor = UIColor.black.cgColor
+        camButton.layer.borderColor = UIColor.white.cgColor
         camButton.layer.shadowColor = UIColor.black.cgColor
         camButton.layer.shadowOpacity = 0.5
         camButton.layer.shadowOffset = .zero
@@ -72,7 +75,7 @@ class InitialViewController: UIViewController {
 ////        instructionsButton.titleLabel?.font = .systemFont(ofSize: 13)
         instructionsButton.layer.cornerRadius = 10
         instructionsButton.layer.borderWidth = 1
-        instructionsButton.layer.borderColor = UIColor.black.cgColor
+        instructionsButton.layer.borderColor = UIColor.white.cgColor
         instructionsButton.layer.shadowColor = UIColor.black.cgColor
         instructionsButton.layer.shadowOpacity = 0.5
         instructionsButton.layer.shadowOffset = .zero
@@ -84,7 +87,8 @@ class InitialViewController: UIViewController {
         instructionsButton.titleLabel?.font = UIFont(name: "Superfruit", size:30)
         instructionsButton.addTarget(self, action: #selector(instructionsButtonAction), for: .touchUpInside)
         
-        rectangle.addSubview(command)
+//        rectangle.addSubview(command)
+        rectangle.addSubview(title)
 //        rectangle.addSubview(factOfSeries)
         //rectangle.addSubview(camButton)
         
@@ -95,7 +99,8 @@ class InitialViewController: UIViewController {
         
         //logo.translatesAutoresizingMaskIntoConstraints = false
 //        factOfSeries.translatesAutoresizingMaskIntoConstraints = false
-        command.translatesAutoresizingMaskIntoConstraints = false
+//        command.translatesAutoresizingMaskIntoConstraints = false
+        title.translatesAutoresizingMaskIntoConstraints = false
         rectangle.translatesAutoresizingMaskIntoConstraints = false
         camButton.translatesAutoresizingMaskIntoConstraints  = false
         instructionsButton.translatesAutoresizingMaskIntoConstraints = false
@@ -118,12 +123,19 @@ class InitialViewController: UIViewController {
 //        factOfSeries.widthAnchor.constraint(equalToConstant: 250).isActive = true
 //        factOfSeries.heightAnchor.constraint(equalToConstant: 100).isActive = true
 
-        command.topAnchor.constraint(equalTo: rectangle.topAnchor, constant: 30).isActive = true
-        command.centerXAnchor.constraint(equalTo: rectangle.centerXAnchor).isActive = true
-        command.widthAnchor.constraint(equalTo: rectangle.widthAnchor, multiplier: 0.9).isActive = true
-        command.heightAnchor.constraint(equalToConstant: 90).isActive = true
+//        command.topAnchor.constraint(equalTo: rectangle.topAnchor, constant: 30).isActive = true
+//        command.centerXAnchor.constraint(equalTo: rectangle.centerXAnchor).isActive = true
+//        command.widthAnchor.constraint(equalTo: rectangle.widthAnchor, multiplier: 0.9).isActive = true
+//        command.heightAnchor.constraint(equalToConstant: 90).isActive = true
         
-        camButton.topAnchor.constraint(equalTo: command.bottomAnchor, constant: 20).isActive = true
+//        camButton.topAnchor.constraint(equalTo: command.bottomAnchor, constant: 20).isActive = true
+        
+        title.topAnchor.constraint(equalTo: rectangle.topAnchor, constant: 30).isActive = true
+       title.centerXAnchor.constraint(equalTo: rectangle.centerXAnchor).isActive = true
+        title.widthAnchor.constraint(equalTo: rectangle.widthAnchor, multiplier: 0.9).isActive = true
+        title.heightAnchor.constraint(equalToConstant: 90).isActive = true
+                
+                camButton.topAnchor.constraint(equalTo:title.bottomAnchor, constant: 20).isActive = true
         camButton.centerXAnchor.constraint(equalTo: rectangle.centerXAnchor).isActive = true
         camButton.widthAnchor.constraint(equalTo: rectangle.widthAnchor, multiplier: 0.8).isActive = true
         camButton.heightAnchor.constraint(equalToConstant: 69).isActive = true

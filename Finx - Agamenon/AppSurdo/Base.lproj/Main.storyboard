@@ -103,14 +103,25 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btd-IU-5qR">
-                                        <rect key="frame" x="99" y="191" width="100" height="38"/>
+                                        <rect key="frame" x="57" y="178" width="185" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Superfruit-Bold" family="Superfruit" pointSize="20"/>
-                                        <state key="normal" title="Collect" backgroundImage="PinkRectangle">
+                                        <state key="normal" title="Coletar" backgroundImage="PinkRectangle">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="tapCollect:" destination="BV1-FR-VrT" eventType="touchUpInside" id="gTU-xX-DTR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqV-ew-dfq">
+                                        <rect key="frame" x="57" y="178" width="185" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Superfruit-Bold" family="Superfruit" pointSize="20"/>
+                                        <state key="normal" title="Ok" backgroundImage="PinkRectangle">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapCollect:" destination="BV1-FR-VrT" eventType="touchUpInside" id="jx1-RZ-TrI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -155,6 +166,7 @@
                         <outlet property="card2" destination="moS-DQ-1IN" id="wEw-Nt-QjO"/>
                         <outlet property="card3" destination="EK8-MR-Ylu" id="NJY-el-LnO"/>
                         <outlet property="nextButton" destination="A2J-43-snF" id="Yq8-Eh-kt4"/>
+                        <outlet property="okButton" destination="LqV-ew-dfq" id="QvS-Oe-OTN"/>
                         <outlet property="popLabel" destination="CaJ-tg-sga" id="GYT-xr-jgC"/>
                         <outlet property="popView" destination="QnH-B7-yh0" id="S4n-gB-O4T"/>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="OoP-OQ-SJX"/>
@@ -257,6 +269,9 @@
         <image name="Card" width="512" height="512"/>
         <image name="PinkRectangle" width="185" height="72"/>
         <image name="RectangleFact" width="412" height="327"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
