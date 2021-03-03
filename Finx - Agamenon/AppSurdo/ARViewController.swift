@@ -27,6 +27,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet weak var popView: UIView!
     @IBOutlet weak var popLabel: UILabel!
+    @IBOutlet weak var popButton: UIButton!
     
     var cubes: [SCNNode]!
     var cardButtons: [UIButton] = []
@@ -35,12 +36,16 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        popView.backgroundColor = .white
+        popView.layer.borderWidth = 1
+        popView.layer.borderColor = UIColor.black.cgColor
+        popView.layer.cornerRadius = 10
         
         // Set the view's delegate
         sceneView.delegate = self
         
         // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
+        sceneView.showsStatistics = false
         sceneView.debugOptions = [.showFeaturePoints]
         
         cardButtons = [card1,card2,card3]
@@ -50,6 +55,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                 cubes.append(i)
             }
         }
+        popView.isHidden = true
         
         popLabel.numberOfLines = 0
         popLabel.textColor = .black
@@ -58,6 +64,24 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the scene to the view
         //sceneView.scene = scene
+        
+        popView.translatesAutoresizingMaskIntoConstraints = false
+        popLabel.translatesAutoresizingMaskIntoConstraints = false
+        popButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        popView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -card2.frame.height).isActive = true
+        popView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        popView.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.4).isActive = true
+        popView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8).isActive = true
+        
+        popButton.centerXAnchor.constraint(equalTo: popView.centerXAnchor).isActive = true
+        popButton.bottomAnchor.constraint(equalTo: popView.bottomAnchor, constant: -30).isActive = true
+        popButton.heightAnchor.constraint(equalTo: popView.heightAnchor, multiplier: 0.2).isActive = true
+        popButton.widthAnchor.constraint(equalTo: popView.widthAnchor, multiplier: 0.4).isActive = true
+        
+        popLabel.centerYAnchor.constraint(equalTo: popView.centerYAnchor, constant: -30).isActive = true
+        popLabel.centerXAnchor.constraint(equalTo: popView.centerXAnchor).isActive = true
+        popLabel.widthAnchor.constraint(equalTo: popView.widthAnchor, multiplier: 0.9).isActive = true
         
 
     }

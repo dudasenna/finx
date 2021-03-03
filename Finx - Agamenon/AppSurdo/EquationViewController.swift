@@ -18,7 +18,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     var colorButton = #colorLiteral(red: 0.5529411765, green: 0.9098039216, blue: 0.8039215686, alpha: 1)
     
     var correct = false
-    var factsOfNumbers: [String] = ["is the number of US gallons in a barrel of oil.", "is the number of compositions of Wolfgang Amadeus Mozart, according to the Köchel Catalogue.", "is the total number of items of mail that went through the Canadian postal system in 1950."]
+    var factsOfNumbers: [String]!
     @IBOutlet weak var popImageview: UIImageView!
     @IBOutlet weak var popLabel: UILabel!
     @IBOutlet weak var popBtm: UIButton!

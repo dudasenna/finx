@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="slH-Ed-jST">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -91,10 +91,6 @@
                             <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QnH-B7-yh0">
                                 <rect key="frame" x="60" y="257" width="295" height="229"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RectangleFact" translatesAutoresizingMaskIntoConstraints="NO" id="Huc-2f-PBS">
-                                        <rect key="frame" x="-19" y="-55" width="337" height="350"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaJ-tg-sga">
                                         <rect key="frame" x="31" y="21" width="235" height="168"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -155,6 +151,7 @@
                         <outlet property="card2" destination="moS-DQ-1IN" id="wEw-Nt-QjO"/>
                         <outlet property="card3" destination="EK8-MR-Ylu" id="NJY-el-LnO"/>
                         <outlet property="nextButton" destination="A2J-43-snF" id="Yq8-Eh-kt4"/>
+                        <outlet property="popButton" destination="btd-IU-5qR" id="CCy-VY-dZd"/>
                         <outlet property="popLabel" destination="CaJ-tg-sga" id="GYT-xr-jgC"/>
                         <outlet property="popView" destination="QnH-B7-yh0" id="S4n-gB-O4T"/>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="OoP-OQ-SJX"/>
@@ -256,7 +253,6 @@
         <image name="Background" width="236" height="512"/>
         <image name="Card" width="512" height="512"/>
         <image name="PinkRectangle" width="185" height="72"/>
-        <image name="RectangleFact" width="412" height="327"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
