@@ -103,7 +103,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btd-IU-5qR">
-                                        <rect key="frame" x="57" y="178" width="185" height="50"/>
+                                        <rect key="frame" x="57" y="185" width="185" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Superfruit-Bold" family="Superfruit" pointSize="20"/>
                                         <state key="normal" title="Coletar" backgroundImage="PinkRectangle">
@@ -114,7 +114,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqV-ew-dfq">
-                                        <rect key="frame" x="57" y="178" width="185" height="50"/>
+                                        <rect key="frame" x="57" y="185" width="185" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Superfruit-Bold" family="Superfruit" pointSize="20"/>
                                         <state key="normal" title="Ok" backgroundImage="PinkRectangle">

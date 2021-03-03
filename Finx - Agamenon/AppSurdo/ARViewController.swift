@@ -37,8 +37,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        okButton.isHidden = true
-        
         // Set the view's delegate
         sceneView.delegate = self
         
@@ -209,6 +207,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
   
         popView.isHidden = true
         popLabel.text = ""
+        okButton.isHidden = true
     }
     
     
