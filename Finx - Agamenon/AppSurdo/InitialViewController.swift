@@ -47,7 +47,7 @@ class InitialViewController: UIViewController {
         command.font = UIFont(name: "Superfruit", size: 40)
         command.textAlignment = .center
         
-       let imageConfig = UIImage.SymbolConfiguration(pointSize: 60)
+       //let imageConfig = UIImage.SymbolConfiguration(pointSize: 60)
         //camButton.setBackgroundImage(UIImage(named: "PinkRectangle"), for: .normal)
         //camButton.tintColor = .black
         
