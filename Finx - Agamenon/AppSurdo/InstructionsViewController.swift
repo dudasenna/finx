@@ -28,7 +28,7 @@ class InstructionsViewController: UIViewController {
         
         let instructionsLabel = UILabel(frame: CGRect(x: 15, y: 10, width: 300, height: 500))
         instructionsLabel.font = UIFont(name: "Superfruit", size: 25)
-        instructionsLabel.text = "No Finx você tem uma experiência em realidade virtual com um mapa super divertido! Para carregar esse mapa, inicie o jogo e aponte seu celular para uma superfície, até que se formem vários pontos, então dê um toque na tela. Ao terminar o carregamento, estarão escondidos três cubos que você deve procurar, mexendo seu celular para explorar o cenário do jogo, e então clique para captura-los. Os cubos que você acabou de achar representam um valor numérico surpresa! Na próxima fase, estarão escritos alguns fatos aleatórios, e cada um precisa de um número para ser completado. Relacione os números encontrados aos fatos, utilizando seus conhecimentos aleatórios e sua sorte!"
+        instructionsLabel.text = "Para carregar esse mapa, inicie o jogo e aponte seu celular para uma superfície, até que se formem vários pontos, então dê um toque na tela. Ao terminar o carregamento, estarão escondidos três cubos que você deve procurar no cenário do jogo e clicar para captura-los. Os cubos que você acabou de achar representam um valor numérico surpresa! Na próxima fase, estarão escritos alguns fatos aleatórios, e cada um precisa de um número para ser completado. Relacione os números encontrados aos fatos, utilizando seus conhecimentos aleatórios e sua sorte!"
         instructionsLabel.numberOfLines = 0
         instructionsLabel.textColor = .black
         instructionsLabel.textAlignment = .center
