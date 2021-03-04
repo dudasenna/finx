@@ -194,13 +194,13 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     func setupSubviews() {
+        scrollView.addSubview(answerSpace1)
+        scrollView.addSubview(answerSpace2)
+        scrollView.addSubview(answerSpace3)
         scrollView.addSubview(popImageview)
         scrollView.addSubview(popLabel)
         scrollView.addSubview(popBtm)
         
-        scrollView.addSubview(answerSpace1)
-        scrollView.addSubview(answerSpace2)
-        scrollView.addSubview(answerSpace3)
         scrollView.addSubview(doneButton)
         scrollView.addSubview(restartButton)
         
