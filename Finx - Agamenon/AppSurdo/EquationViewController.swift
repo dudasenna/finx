@@ -600,12 +600,12 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
             } else {
                 popBtm.setTitle("Tentar Novamente", for: .normal)
             }
-            popLabel.text = "Opa! Algo de errado não está certo!🤔\n(\(chances) chances restantes)"
+            popLabel.text = "Opa! Algo de errado não está certo! 🤔\n(\(chances) chances restantes)"
         }
         
-        popLabel.font = UIFont(name: "Superfruit", size: 27)
+        popLabel.font = UIFont(name: "Superfruit", size: 24)
         //popBtm.setImage(UIImage(named: "PinkRectangle"), for: .normal)
-        popBtm.titleLabel?.font = UIFont(name: "Superfruit", size: 15)
+        popBtm.titleLabel?.font = UIFont(name: "Superfruit", size: 19)
         popImageview.isHidden = false
         popBtm.isHidden = false
         popLabel.isHidden = false
