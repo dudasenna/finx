@@ -17,7 +17,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     var colorButton = #colorLiteral(red: 0.5529411765, green: 0.9098039216, blue: 0.8039215686, alpha: 1)
     
     var correct = false
-    var factsOfNumbers: [(String, String)] = [("0","0 acbwo"), ("1","1 bscbwdo 6898 kasgd"), ("2","asjhvkasvc 2 kxaclabc 6u998")]
+    var factsOfNumbers: [(String, String)]!
     @IBOutlet weak var popImageview: UIImageView!
     @IBOutlet weak var popLabel: UILabel!
     @IBOutlet weak var popBtm: UIButton!
@@ -26,7 +26,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     var selectedCard1: String?
     var selectedCard2: String?
     var selectedCard3: String?
-    var pickerNumbers: [String] = ["0","1","2"].shuffled()
+    var pickerNumbers: [String]!
     
     let titleSpace = UILabel()
     let cardSpace1 = UILabel()
