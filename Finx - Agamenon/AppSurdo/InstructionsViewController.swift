@@ -29,7 +29,7 @@ class InstructionsViewController: UIViewController {
         
         let instructionsLabel = UILabel()
         instructionsLabel.font = UIFont(name: "Superfruit", size: 25)
-        instructionsLabel.text = "1- Inicie o jogo e aponte seu celular para uma superfície, até que se formem vários pontos\n\n2- Dê um toque na tela e a cena carregará\n\n3- Procure os três cubos escondidos no cenário e clique neles para captura-los\n\n4- Cada cudo encontrado representa um valor numérico surpresa\n\n5- Na próxima tela, estarão escritos alguns fatos aleatórios, e cada um precisa de um número para ser completado\n\n6- Utilizando seus conhecimentos sobre fatos aleatórios ou a sua sorte, relacione os números encontrados no cenário aos fatos!"
+        instructionsLabel.text = "1- Inicie o jogo e aponte seu celular para uma superfície até que se formem vários pontos\n\n2- Toque na tela para carregar a cena\n\n3- Procure os três cubos escondidos no cenário e clique neles para capturá-los\n\n4- Cada cubo encontrado representa um valor numérico surpresa\n\n5- Na próxima tela, estarão escritos alguns fatos aleatórios, e cada um precisa de um número para se completar\n\n6- Utilizando seus conhecimentos sobre fatos aleatórios ou a sua sorte, relacione os números encontrados no cenário aos fatos!"
         instructionsLabel.numberOfLines = 0
         instructionsLabel.textColor = .black
         instructionsLabel.textAlignment = .center

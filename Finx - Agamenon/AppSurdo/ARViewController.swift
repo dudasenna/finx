@@ -44,7 +44,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         popView.backgroundColor = .white
         popView.alpha = 0.9
         popView.layer.borderWidth = 1
-        popView.layer.borderColor = UIColor.black.cgColor
+        popView.layer.borderColor = UIColor.white.cgColor
         popView.layer.cornerRadius = 10
         //        nextButton.isHidden = false
         // Set the view's delegate
@@ -237,7 +237,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBAction func tapCollect(_ sender: UIButton) {
         popView.isHidden = true
         popLabel.text = ""
-        popButton.setTitle("Collect", for: .normal)
+        popButton.setTitle("Coletar", for: .normal)
     }
     
     

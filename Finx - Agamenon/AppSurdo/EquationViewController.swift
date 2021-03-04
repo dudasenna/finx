@@ -70,14 +70,14 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         restartButton.layer.borderWidth = 1
         restartButton.layer.borderColor = colorButton.cgColor
         restartButton.layer.shadowColor = UIColor.black.cgColor
-        restartButton.layer.shadowOpacity = 0.5
+        restartButton.layer.shadowOpacity = 0.4
         restartButton.layer.shadowOffset = .zero
         restartButton.layer.shadowRadius = 10
         restartButton.backgroundColor = colorButton
         restartButton.layer.cornerRadius = 10
         restartButton.setTitle("Jogar Novamente", for: .normal)
         restartButton.setTitleColor(.black, for: .normal)
-        restartButton.titleLabel?.font = UIFont(name: "Superfruit", size:30)
+        restartButton.titleLabel?.font = UIFont(name: "Superfruit", size:27)
         restartButton.titleLabel?.adjustsFontSizeToFitWidth = true
         restartButton.isHidden = false
         restartButton.isEnabled = true
@@ -134,12 +134,12 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         doneButton.layer.borderWidth = 1
         doneButton.layer.borderColor = colorButton.cgColor
         doneButton.layer.shadowColor = UIColor.black.cgColor
-        doneButton.layer.shadowOpacity = 0.5
+        doneButton.layer.shadowOpacity = 0.4
         doneButton.layer.shadowOffset = .zero
         doneButton.layer.shadowRadius = 10
         doneButton.backgroundColor = colorButton
         doneButton.layer.cornerRadius = 10
-        doneButton.setTitle("Done", for: .normal)
+        doneButton.setTitle("Pronto!", for: .normal)
         doneButton.setTitleColor(.black, for: .normal)
         doneButton.titleLabel?.font = UIFont(name: "Superfruit", size:30)
         doneButton.addTarget(self, action: #selector(finish), for: .touchUpInside)
@@ -290,13 +290,13 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         //        contentView.addConstraint(NSLayoutConstraint(item: doneButton, attribute: .top, relatedBy: .equal, toItem: backgroundCard3, attribute: .bottom, multiplier: 1.0, constant: 40))
         doneButton.topAnchor.constraint(equalTo: backgroundCard3.bottomAnchor, constant: 40).isActive = true
 //        doneButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        doneButton.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
+        doneButton.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
         doneButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         doneButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.4).isActive = true
         doneButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         
         restartButton.topAnchor.constraint(equalTo: doneButton.topAnchor).isActive = true
-        restartButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10).isActive = true
+        restartButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20).isActive = true
         restartButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         restartButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.4).isActive = true
         restartButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
