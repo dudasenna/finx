@@ -38,6 +38,43 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     var cardButtons: [UIButton] = []
     var currentCard = 0
     
+    //*****used after parsing to create variables with language information
+    struct TranslatorLanguageDetails: Codable {
+        var code = String()
+        var name = String()
+        var nativeName = String()
+        var dir = String()
+    }
+    
+    //Recebe values do json decoded
+    struct AzureLanguageDetails: Codable {
+        var name: String
+        var nativeName: String
+        var dir: String
+    }
+    
+    //*****used in the parsing of request Json
+    struct AllLanguages: Codable {
+        var translation: [String: AzureLanguageDetails]
+    }
+    
+    struct encodeText: Codable {
+        var text = String()
+    }
+    
+    //*****Format JSON for body of translation request
+    struct TranslatedString: Codable {
+        var text: String
+        var to: String
+    }
+    
+    struct TranslatedData: Codable {
+        var translations: [TranslatedString]
+    }
+    
+    var portugueseBrLanguage = TranslatorLanguageDetails(code: " ", name: " ", nativeName: " ", dir: " ")
+    var englishLanguage = TranslatorLanguageDetails(code: " ", name: " ", nativeName: " ", dir: " ")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         popView.isHidden = false
@@ -99,7 +136,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         nextButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.2).isActive = true
         nextButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
         
-        
+        getLanguages()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -247,27 +284,125 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         let urlStrin = "http://numbersapi.com/random?min=10&max=99/trivia?json"
         let url = URL(string: urlStrin)
         var request = URLRequest(url: url!)
+        var portuguesePhrase = ""
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             //let decoder = JSONDecoder()
             let jsonData = String(data: data!, encoding: .utf8) as String?
             //self.fact = jsonData
-            print(jsonData!)
-            let encoded = self.hideNumbers(fact: jsonData!)
+//            print(jsonData!)
             let numberString = self.takeNumber(fact: jsonData!)
             //            let numberInt = Int(numberString) ?? 0
             if self.numbers.contains(numberString) {
                 self.loadFactWithNumber()
             } else {
                 self.numbers.append(numberString)
-                self.facts.append((numberString, jsonData!))
-                //print (numberString)
-                DispatchQueue.main.async {
-                    self.popLabel.text = encoded
-                }
+                self.getTranslation(textToTranslate: jsonData!, numberString: numberString)
             }
         }
         task.resume()
+    }
+    
+    func getLanguages() {
+        
+        let sampleLangAddress = "https://dev.microsofttranslator.com/languages?api-version=3.0&scope=translation"
+        
+        let url1 = URL(string: sampleLangAddress)
+        let jsonLangData = try! Data(contentsOf: url1!)
+        
+        //*****
+        var languages: AllLanguages?
+        languages = try! JSONDecoder().decode(AllLanguages.self, from: jsonLangData)
+        
+        for language in languages!.translation {
+            if language.key == "en" {
+                englishLanguage.code = language.key
+                englishLanguage.name = language.value.name
+                englishLanguage.nativeName = language.value.nativeName
+                englishLanguage.dir = language.value.dir
+            } else if language.key == "pt"{
+                portugueseBrLanguage.code = language.key
+                portugueseBrLanguage.name = language.value.name
+                portugueseBrLanguage.nativeName = language.value.nativeName
+                portugueseBrLanguage.dir = language.value.dir
+            }
+        }
+    }
+    
+    func getTranslation(textToTranslate: String, numberString: String) {
+        //key genereted from azure (microsoft)
+        let azureKey = "COLOCAR KEY"
+        
+        let contentType = "application/json"
+        let traceID = "A14C9DB9-0DED-48D7-8BBE-C517A1A8DBB0"
+        let host = "dev.microsofttranslator.com"
+        let apiURL = "https://dev.microsofttranslator.com/translate?api-version=3.0&from=en&to=pt"
+        
+        //let text2Translate = textToTranslate
+        var encodeTextToTranslate = encodeText()
+        var toTranslate = [encodeText]()
+        
+        encodeTextToTranslate.text = textToTranslate
+        toTranslate.append(encodeTextToTranslate)
+//        print(toTranslate)
+        let jsonToTranslate = try? JSONEncoder().encode(toTranslate)
+//        print(jsonToTranslate)
+        let url = URL(string: apiURL)
+        var request = URLRequest(url: url!)
+
+        request.httpMethod = "POST"
+        request.addValue(azureKey, forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
+        request.addValue(contentType, forHTTPHeaderField: "Content-Type")
+        request.addValue(traceID, forHTTPHeaderField: "X-ClientTraceID")
+        request.addValue(host, forHTTPHeaderField: "Host")
+        request.addValue(String(describing: 1), forHTTPHeaderField: "Content-Length")
+        request.httpBody = jsonToTranslate
+        
+        let config = URLSessionConfiguration.default
+        let session =  URLSession(configuration: config)
+        var phraseTranslated: String = ""
+        
+        let task = session.dataTask(with: request) { (responseData, response, responseError) in
+            
+            if responseError != nil {
+                print("this is the error ", responseError!)
+                
+                let alert = UIAlertController(title: "Could not connect to service", message: "Please check your network connection and try again", preferredStyle: .actionSheet)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                
+                self.present(alert, animated: true)
+                
+            }
+            
+            self.parseJson(jsonData: responseData!, numberString: numberString)
+        }
+        task.resume()
+//        print(phraseTranslated)
+//        return phraseTranslated
+    }
+    
+    func parseJson(jsonData: Data, numberString: String) {
+//        print(jsonData)
+        //*****TRANSLATION RETURNED DATA*****
+        
+        //let jsonDecoder = JSONDecoder()
+        let dataTranslation = try? JSONDecoder().decode(Array<TranslatedData>.self, from: jsonData)
+        let numberOfTranslations = dataTranslation!.count - 1
+        
+//        var phraseTranslated = ""
+        let encoded = self.hideNumbers(fact: dataTranslation![0].translations[numberOfTranslations].text)
+        self.facts.append((numberString, dataTranslation![0].translations[numberOfTranslations].text))
+        DispatchQueue.main.sync {
+//            print(encoded)
+            DispatchQueue.main.async {
+                self.popLabel.text = encoded
+//                print(self.popLabel.text)
+            }
+        }
+//        print(phraseTranslated)
+//
+//        return phraseTranslated
     }
     
     override func prepare (for segue: UIStoryboardSegue, sender:Any?) {

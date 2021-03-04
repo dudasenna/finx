@@ -18,6 +18,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     
     var correct = false
     var factsOfNumbers: [(String, String)]!
+    // = [("42","42 is the number of spots (or pips, circular patches or pits) on a pair of standard six-sided dice."),("50", "50 is the gold or `golden` wedding anniversary in years of marriage."),("58", "58 is the number of usable cells on a Hexxagon game board.")]
     @IBOutlet weak var popImageview: UIImageView!
     @IBOutlet weak var popLabel: UILabel!
     @IBOutlet weak var popBtm: UIButton!
@@ -27,6 +28,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     var selectedCard2: String?
     var selectedCard3: String?
     var pickerNumbers: [String]!
+//        = ["42","50","58"].shuffled()
     
     let titleSpace = UILabel()
     let cardSpace1 = UILabel()
