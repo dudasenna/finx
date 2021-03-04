@@ -13,10 +13,12 @@ import ARKit
 
 //@property (nonatomic, assign) BOOL isSomethingEnabled;
 //#import "EquationViewController.swift"
-var facts: [String]! = []
-var numbers: [String] = []
+
+
 
 class ARViewController: UIViewController, ARSCNViewDelegate {
+    var facts: [(String, String)]! = []
+    var numbers: [String]! = []
     
     @IBOutlet var sceneView: ARSCNView!
     var baseLoaded:Bool = false
@@ -25,22 +27,26 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var card2: UIButton!
     @IBOutlet weak var card3: UIButton!
     
+    //    @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var popView: UIView!
     @IBOutlet weak var popLabel: UILabel!
     @IBOutlet weak var popButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    
     
     var cubes: [SCNNode]!
     var cardButtons: [UIButton] = []
     var currentCard = 0
-    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        popView.isHidden = false
         popView.backgroundColor = .white
+        popView.alpha = 0.9
         popView.layer.borderWidth = 1
         popView.layer.borderColor = UIColor.black.cgColor
         popView.layer.cornerRadius = 10
-        
+        //        nextButton.isHidden = false
         // Set the view's delegate
         sceneView.delegate = self
         
@@ -55,10 +61,14 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                 cubes.append(i)
             }
         }
-        popView.isHidden = true
         
         popLabel.numberOfLines = 0
         popLabel.textColor = .black
+        popLabel.text = "Procure os cubos na cena para revelar as frases"
+        popLabel.isHidden = false
+        
+        popButton.setTitle("OK", for: .normal)
+        popButton.isHidden = false
         // Create a new scene
         //let scene = SCNScene(named: "art.scnassets/mainScene.scn")!
         
@@ -68,8 +78,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         popView.translatesAutoresizingMaskIntoConstraints = false
         popLabel.translatesAutoresizingMaskIntoConstraints = false
         popButton.translatesAutoresizingMaskIntoConstraints = false
+        nextButton.translatesAutoresizingMaskIntoConstraints = false
         
-        popView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -card2.frame.height).isActive = true
+        popView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -30).isActive = true
         popView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         popView.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.4).isActive = true
         popView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8).isActive = true
@@ -83,7 +94,12 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         popLabel.centerXAnchor.constraint(equalTo: popView.centerXAnchor).isActive = true
         popLabel.widthAnchor.constraint(equalTo: popView.widthAnchor, multiplier: 0.9).isActive = true
         
-
+        nextButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        nextButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        nextButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.2).isActive = true
+        nextButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
+        
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -94,7 +110,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             
             //Checking if cube was found
             let touch = touches.first!
-
+            
             if(touch.view == self.sceneView){
                 print("touch working")
                 let viewTouchLocation:CGPoint = touch.location(in: sceneView)
@@ -112,7 +128,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                         nextButton.isHidden = false
                     }
                 }
-                print(numbers)
+                //print(numbers)
             }
         }
         
@@ -148,50 +164,50 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         print("adding node...")
     }
     
-   /* func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        
-        print("new plane")
-        // Cast ARAnchor as ARPlaneAnchor
-        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
-        
-        // Create SCNGeometry from ARPlaneAnchor details
-        let width = CGFloat(planeAnchor.extent.x)
-        let height = CGFloat(planeAnchor.extent.z)
-        let planeGeometry = SCNPlane(width: width, height: height)
-        
-        // Add material to geometry
-        let material = SCNMaterial()
-        material.diffuse.contents = UIColor.blue.withAlphaComponent(0.8)
-        planeGeometry.materials = [material]
-        
-        // Create a SCNNode from geometry
-        let planeNode = SCNNode(geometry: planeGeometry)
-        planeNode.position = SCNVector3(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
-        planeNode.eulerAngles.x = -.pi / 2
-        
-        // Add the newly created plane node as a child of the node created for the ARAnchor
-        
-        node.addChildNode(planeNode)
-        
-        
-    }
-    
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        print("update plane")
-        guard let planeAnchor = anchor as? ARPlaneAnchor, let planeNode = node.childNodes.first,
-            let planeGeometry = planeNode.geometry as? SCNPlane else { return }
-        
-        // Update the dimensions of the plane geometry based on the plane anchor.
-        planeGeometry.width = CGFloat(planeAnchor.extent.x)
-        planeGeometry.height = CGFloat(planeAnchor.extent.z)
-        
-        // Update the position of the plane node based on the plane anchor.
-        planeNode.position = SCNVector3(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
-    }
-    
-    func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
-        print("removed")
-    }*/
+    /* func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+     
+     print("new plane")
+     // Cast ARAnchor as ARPlaneAnchor
+     guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+     
+     // Create SCNGeometry from ARPlaneAnchor details
+     let width = CGFloat(planeAnchor.extent.x)
+     let height = CGFloat(planeAnchor.extent.z)
+     let planeGeometry = SCNPlane(width: width, height: height)
+     
+     // Add material to geometry
+     let material = SCNMaterial()
+     material.diffuse.contents = UIColor.blue.withAlphaComponent(0.8)
+     planeGeometry.materials = [material]
+     
+     // Create a SCNNode from geometry
+     let planeNode = SCNNode(geometry: planeGeometry)
+     planeNode.position = SCNVector3(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
+     planeNode.eulerAngles.x = -.pi / 2
+     
+     // Add the newly created plane node as a child of the node created for the ARAnchor
+     
+     node.addChildNode(planeNode)
+     
+     
+     }
+     
+     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+     print("update plane")
+     guard let planeAnchor = anchor as? ARPlaneAnchor, let planeNode = node.childNodes.first,
+     let planeGeometry = planeNode.geometry as? SCNPlane else { return }
+     
+     // Update the dimensions of the plane geometry based on the plane anchor.
+     planeGeometry.width = CGFloat(planeAnchor.extent.x)
+     planeGeometry.height = CGFloat(planeAnchor.extent.z)
+     
+     // Update the position of the plane node based on the plane anchor.
+     planeNode.position = SCNVector3(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
+     }
+     
+     func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
+     print("removed")
+     }*/
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -216,63 +232,71 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
-   
-            
+    
+    
     @IBAction func tapCollect(_ sender: UIButton) {
-  
         popView.isHidden = true
         popLabel.text = ""
+        popButton.setTitle("Collect", for: .normal)
     }
     
     
     func loadFactWithNumber() {
-//        como tava antes
-//        let urlStrin = "http://numbersapi.com/" + String(number)
-        let urlStrin = "http://numbersapi.com/random?min=1&max=50/trivia"
+        //        como tava antes
+        //        let urlStrin = "http://numbersapi.com/" + String(number)
+        let urlStrin = "http://numbersapi.com/random?min=10&max=99/trivia?json"
         let url = URL(string: urlStrin)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in do {
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             //let decoder = JSONDecoder()
             let jsonData = String(data: data!, encoding: .utf8) as String?
             //self.fact = jsonData
             print(jsonData!)
-            facts.append(jsonData!)
             let encoded = self.hideNumbers(fact: jsonData!)
             let numberString = self.takeNumber(fact: jsonData!)
-//            let numberInt = Int(numberString) ?? 0
-            numbers.append(numberString)
-            print (numberString)
-            DispatchQueue.main.async {
-                self.popLabel.text = encoded
-            }
-        } catch {
-            print("Deu ruim")
+            //            let numberInt = Int(numberString) ?? 0
+            if self.numbers.contains(numberString) {
+                self.loadFactWithNumber()
+            } else {
+                self.numbers.append(numberString)
+                self.facts.append((numberString, jsonData!))
+                //print (numberString)
+                DispatchQueue.main.async {
+                    self.popLabel.text = encoded
+                }
             }
         }
-      
         task.resume()
     }
-   
+    
     override func prepare (for segue: UIStoryboardSegue, sender:Any?) {
         if segue.identifier == "EquationSegue" {
             let vcEquation = segue.destination as? EquationViewController
-            vcEquation?.factsOfNumbers = [facts[0], facts[1], facts[2]]
+            vcEquation?.factsOfNumbers = facts
+            vcEquation?.pickerNumbers = numbers.shuffled()
         }
     }
     
     func hideNumbers(fact:String)->String{
-        
         let hidedString = Array(fact)
         var newString = String()
-        for index in hidedString.indices{
-            
-            if hidedString[index].isNumber{
-                newString.append("?")
-            }else{
-                newString.append(hidedString[index])
+        var lastNumber = -1
+        for indice in hidedString.indices{
+            if hidedString[indice].isNumber {
+                newString.append("X")
+                lastNumber = indice
+            } else {
+                if lastNumber >= 0 {
+                    let index = fact.index(fact.startIndex, offsetBy: lastNumber+1)
+                    let substring = fact.suffix(from: index)
+                    newString.append(contentsOf: substring)
+                    break
+                } else {
+                    newString.append(hidedString[indice])
+                }
             }
-        
+            
         }
         return newString
     }
@@ -287,7 +311,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             } else {
                 return newString
             }
-        
+            
         }
         return newString
     }
