@@ -14,7 +14,7 @@ import ARKit
 //@property (nonatomic, assign) BOOL isSomethingEnabled;
 //#import "EquationViewController.swift"
 
-
+//colocar key na linha 334
 
 class ARViewController: UIViewController, ARSCNViewDelegate {
     var facts: [(String, String)]! = []
@@ -136,7 +136,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         nextButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.2).isActive = true
         nextButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
         
-        getLanguages()
+//        getLanguages()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -303,35 +303,35 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         task.resume()
     }
     
-    func getLanguages() {
-        
-        let sampleLangAddress = "https://dev.microsofttranslator.com/languages?api-version=3.0&scope=translation"
-        
-        let url1 = URL(string: sampleLangAddress)
-        let jsonLangData = try! Data(contentsOf: url1!)
-        
-        //*****
-        var languages: AllLanguages?
-        languages = try! JSONDecoder().decode(AllLanguages.self, from: jsonLangData)
-        
-        for language in languages!.translation {
-            if language.key == "en" {
-                englishLanguage.code = language.key
-                englishLanguage.name = language.value.name
-                englishLanguage.nativeName = language.value.nativeName
-                englishLanguage.dir = language.value.dir
-            } else if language.key == "pt"{
-                portugueseBrLanguage.code = language.key
-                portugueseBrLanguage.name = language.value.name
-                portugueseBrLanguage.nativeName = language.value.nativeName
-                portugueseBrLanguage.dir = language.value.dir
-            }
-        }
-    }
+//    func getLanguages() {
+//
+//        let sampleLangAddress = "https://dev.microsofttranslator.com/languages?api-version=3.0&scope=translation"
+//
+//        let url1 = URL(string: sampleLangAddress)
+//        let jsonLangData = try! Data(contentsOf: url1!)
+//
+//        //*****
+//        var languages: AllLanguages?
+//        languages = try! JSONDecoder().decode(AllLanguages.self, from: jsonLangData)
+//
+//        for language in languages!.translation {
+//            if language.key == "en" {
+//                englishLanguage.code = language.key
+//                englishLanguage.name = language.value.name
+//                englishLanguage.nativeName = language.value.nativeName
+//                englishLanguage.dir = language.value.dir
+//            } else if language.key == "pt"{
+//                portugueseBrLanguage.code = language.key
+//                portugueseBrLanguage.name = language.value.name
+//                portugueseBrLanguage.nativeName = language.value.nativeName
+//                portugueseBrLanguage.dir = language.value.dir
+//            }
+//        }
+//    }
     
     func getTranslation(textToTranslate: String, numberString: String) {
         //key genereted from azure (microsoft)
-        let azureKey = "COLOCAR KEY"
+        let azureKey = "COLOCAR KEY AQUI"
         
         let contentType = "application/json"
         let traceID = "A14C9DB9-0DED-48D7-8BBE-C517A1A8DBB0"
