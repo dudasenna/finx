@@ -17,8 +17,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     var colorButton = #colorLiteral(red: 0.5529411765, green: 0.9098039216, blue: 0.8039215686, alpha: 1)
     
     var correct = false
-    var factsOfNumbers: [(String, String)]!
-    // = [("42","42 is the number of spots (or pips, circular patches or pits) on a pair of standard six-sided dice."),("50", "50 is the gold or `golden` wedding anniversary in years of marriage."),("58", "58 is the number of usable cells on a Hexxagon game board.")]
+    var factsOfNumbers: [(String, String)]! = [("42","42 é o resultado dado pelos mecanismos de busca da web Google, Wolfram Alpha e Bing quando a consulta 'a resposta à vida do universo e tudo' é inserida como uma pesquisa."),("50", "50 é o limite de velocidade, em quilômetros por hora, de estradas australianas com limites não especificados."),("58", "58 é o número de condados na Califórnia.")]
     @IBOutlet weak var popImageview: UIImageView!
     @IBOutlet weak var popLabel: UILabel!
     @IBOutlet weak var popBtm: UIButton!
@@ -27,8 +26,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     var selectedCard1: String?
     var selectedCard2: String?
     var selectedCard3: String?
-    var pickerNumbers: [String]!
-//        = ["42","50","58"].shuffled()
+    var pickerNumbers: [String]! = ["42","50","58"].shuffled()
     
     let titleSpace = UILabel()
     let cardSpace1 = UILabel()
@@ -117,6 +115,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         cardSpace1.layer.masksToBounds = true
         cardSpace1.numberOfLines = 0
         cardSpace1.font = UIFont(name: "Superfruit", size:23)
+        cardSpace1.adjustsFontSizeToFitWidth = true
         
         cardSpace2.text = hideNumbers(fact: factsOfNumbers[1].1)
         cardSpace2.textColor = .black
@@ -124,7 +123,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         cardSpace2.layer.masksToBounds = true
         cardSpace2.numberOfLines = 0
         cardSpace2.font = UIFont(name: "Superfruit", size:23)
-        
+        cardSpace2.adjustsFontSizeToFitWidth = true
         
         cardSpace3.text = hideNumbers(fact: factsOfNumbers[2].1)
         cardSpace3.textColor = .black
@@ -132,6 +131,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         cardSpace3.layer.masksToBounds = true
         cardSpace3.numberOfLines = 0
         cardSpace3.font = UIFont(name: "Superfruit", size:23)
+        cardSpace3.adjustsFontSizeToFitWidth = true
         
         doneButton.layer.borderWidth = 1
         doneButton.layer.borderColor = colorButton.cgColor
@@ -266,6 +266,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         cardSpace1.topAnchor.constraint(equalTo: answerSpace1.bottomAnchor, constant: 10).isActive = true
         cardSpace1.centerXAnchor.constraint(equalTo: backgroundCard1.centerXAnchor).isActive = true
         cardSpace1.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.75).isActive = true
+        cardSpace1.bottomAnchor.constraint(equalTo: backgroundCard1.bottomAnchor, constant: -5).isActive = true
         
         //        contentView.addConstraint(NSLayoutConstraint(item: answerSpace2, attribute: .top, relatedBy: .equal, toItem: backgroundCard2, attribute: .top, multiplier: 1.0, constant: 5))
         answerSpace2.topAnchor.constraint(equalTo: backgroundCard2.topAnchor, constant: 5).isActive = true
@@ -277,6 +278,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         cardSpace2.topAnchor.constraint(equalTo: answerSpace2.bottomAnchor, constant: 10).isActive = true
         cardSpace2.centerXAnchor.constraint(equalTo: backgroundCard2.centerXAnchor).isActive = true
         cardSpace2.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.75).isActive = true
+        cardSpace2.bottomAnchor.constraint(equalTo: backgroundCard2.bottomAnchor, constant: -5).isActive = true
         
         //        contentView.addConstraint(NSLayoutConstraint(item: answerSpace3, attribute: .top, relatedBy: .equal, toItem: backgroundCard3, attribute: .top, multiplier: 1.0, constant: 5))
         answerSpace3.topAnchor.constraint(equalTo: backgroundCard3.topAnchor, constant: 5).isActive = true
@@ -288,6 +290,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         cardSpace3.topAnchor.constraint(equalTo: answerSpace3.bottomAnchor, constant: 10).isActive = true
         cardSpace3.centerXAnchor.constraint(equalTo: backgroundCard3.centerXAnchor).isActive = true
         cardSpace3.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.75).isActive = true
+        cardSpace3.bottomAnchor.constraint(equalTo: backgroundCard3.bottomAnchor, constant: -5).isActive = true
         
         //        contentView.addConstraint(NSLayoutConstraint(item: doneButton, attribute: .top, relatedBy: .equal, toItem: backgroundCard3, attribute: .bottom, multiplier: 1.0, constant: 40))
         doneButton.topAnchor.constraint(equalTo: backgroundCard3.bottomAnchor, constant: 40).isActive = true
