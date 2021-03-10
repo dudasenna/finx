@@ -17,7 +17,8 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     var colorButton = #colorLiteral(red: 0.5529411765, green: 0.9098039216, blue: 0.8039215686, alpha: 1)
     
     var correct = false
-    var factsOfNumbers: [(String, String)]! = [("42","42 é o resultado dado pelos mecanismos de busca da web Google, Wolfram Alpha e Bing quando a consulta 'a resposta à vida do universo e tudo' é inserida como uma pesquisa."),("50", "50 é o limite de velocidade, em quilômetros por hora, de estradas australianas com limites não especificados."),("58", "58 é o número de condados na Califórnia.")]
+    var factsOfNumbers: [(String, String)]!
+//        = [("42","42 é o resultado dado pelos mecanismos de busca da web Google, Wolfram Alpha e Bing quando a consulta 'a resposta à vida do universo e tudo' é inserida como uma pesquisa."),("50", "50 é o limite de velocidade, em quilômetros por hora, de estradas australianas com limites não especificados."),("58", "58 é o número de condados na Califórnia.")]
     @IBOutlet weak var popImageview: UIImageView!
     @IBOutlet weak var popLabel: UILabel!
     @IBOutlet weak var popBtm: UIButton!
@@ -26,7 +27,8 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     var selectedCard1: String?
     var selectedCard2: String?
     var selectedCard3: String?
-    var pickerNumbers: [String]! = ["42","50","58"].shuffled()
+    var pickerNumbers: [String]!
+//        = ["42","50","58"].shuffled()
     
     let titleSpace = UILabel()
     let cardSpace1 = UILabel()
