@@ -8,11 +8,12 @@
 
 import Foundation
 import UIKit
+import FirebaseAnalytics
 
 class InitialViewController: UIViewController {
     var colorButton = #colorLiteral(red: 0.9067924023, green: 0.6966804862, blue: 0.7795810103, alpha: 1)
 
-    @IBOutlet weak var camButton: UIButton!
+    @IBOutlet weak var startButton: UIButton!
     var cores: [UIColor] = []
     let test:APIHandler = APIHandler()
     
@@ -54,17 +55,18 @@ class InitialViewController: UIViewController {
         //camButton.setBackgroundImage(UIImage(named: "PinkRectangle"), for: .normal)
         //camButton.tintColor = .black
         
-        camButton.layer.borderWidth = 1
-        camButton.layer.borderColor = UIColor.white.cgColor
-        camButton.layer.shadowColor = UIColor.black.cgColor
-        camButton.layer.shadowOpacity = 0.5
-        camButton.layer.shadowOffset = .zero
-        camButton.layer.shadowRadius = 2
-        camButton.backgroundColor = colorButton
-        camButton.layer.cornerRadius = 30
-        camButton.setTitle("Começar", for: .normal)
-        camButton.setTitleColor(.black, for: .normal)
-        camButton.titleLabel?.font = UIFont(name: "Superfruit", size:30)
+        startButton.layer.borderWidth = 1
+        startButton.layer.borderColor = UIColor.white.cgColor
+        startButton.layer.shadowColor = UIColor.black.cgColor
+        startButton.layer.shadowOpacity = 0.5
+        startButton.layer.shadowOffset = .zero
+        startButton.layer.shadowRadius = 2
+        startButton.backgroundColor = colorButton
+        startButton.layer.cornerRadius = 30
+        startButton.setTitle("Começar", for: .normal)
+        startButton.setTitleColor(.black, for: .normal)
+        startButton.titleLabel?.font = UIFont(name: "Superfruit", size:30)
+        startButton.addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
         
         let instructionsButton = UIButton()
 //        instructionsButton.backgroundColor = .clear
@@ -94,7 +96,7 @@ class InitialViewController: UIViewController {
         
         
         self.view.addSubview(rectangle)
-        self.view.addSubview(camButton)
+        self.view.addSubview(startButton)
         self.view.addSubview(instructionsButton)
         
         //logo.translatesAutoresizingMaskIntoConstraints = false
@@ -102,7 +104,7 @@ class InitialViewController: UIViewController {
 //        command.translatesAutoresizingMaskIntoConstraints = false
         title.translatesAutoresizingMaskIntoConstraints = false
         rectangle.translatesAutoresizingMaskIntoConstraints = false
-        camButton.translatesAutoresizingMaskIntoConstraints  = false
+        startButton.translatesAutoresizingMaskIntoConstraints  = false
         instructionsButton.translatesAutoresizingMaskIntoConstraints = false
         
         
@@ -135,20 +137,23 @@ class InitialViewController: UIViewController {
         title.widthAnchor.constraint(equalTo: rectangle.widthAnchor, multiplier: 0.85).isActive = true
         title.heightAnchor.constraint(equalToConstant: 90).isActive = true
                 
-        camButton.topAnchor.constraint(equalTo:title.bottomAnchor, constant: 30).isActive = true
-        camButton.centerXAnchor.constraint(equalTo: rectangle.centerXAnchor).isActive = true
-        camButton.widthAnchor.constraint(equalTo: rectangle.widthAnchor, multiplier: 0.8).isActive = true
-        camButton.heightAnchor.constraint(equalToConstant: 69).isActive = true
+        startButton.topAnchor.constraint(equalTo:title.bottomAnchor, constant: 30).isActive = true
+        startButton.centerXAnchor.constraint(equalTo: rectangle.centerXAnchor).isActive = true
+        startButton.widthAnchor.constraint(equalTo: rectangle.widthAnchor, multiplier: 0.8).isActive = true
+        startButton.heightAnchor.constraint(equalToConstant: 69).isActive = true
         
-        instructionsButton.topAnchor.constraint(equalTo: camButton.bottomAnchor, constant: 30).isActive = true
+        instructionsButton.topAnchor.constraint(equalTo: startButton.bottomAnchor, constant: 30).isActive = true
         instructionsButton.centerXAnchor.constraint(equalTo: rectangle.centerXAnchor).isActive = true
         instructionsButton.widthAnchor.constraint(equalTo: rectangle.widthAnchor, multiplier: 0.8).isActive = true
         instructionsButton.heightAnchor.constraint(equalToConstant: 69).isActive = true
         
     }
+    @IBAction func startButtonAction(sender: UIButton!) {
+        Analytics.logEvent("pressed_play", parameters: nil)
+    }
     
-    @objc func instructionsButtonAction(sender: UIButton!) {
-        
+    @IBAction func instructionsButtonAction(sender: UIButton!) {
+        Analytics.logEvent("pressed_help", parameters: nil)
         print("Button tapped")
         performSegue(withIdentifier: "instructionsSegue", sender: self)
 

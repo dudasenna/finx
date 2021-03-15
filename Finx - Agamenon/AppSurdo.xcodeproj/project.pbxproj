@@ -19,9 +19,12 @@
 		2880F71A25015F0C0041FA88 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2880F71925015F0C0041FA88 /* APIHandler.swift */; };
 		86176AE125019EF6006C58FA /* SuperfruitBold-MlBY.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86176AE025019EF6006C58FA /* SuperfruitBold-MlBY.ttf */; };
 		86BD6B5E24FD5044000920CF /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD6B5D24FD5044000920CF /* InitialViewController.swift */; };
+		B4AB2C7925FFD61B00D789F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */; };
+		DBD1C9B66B65A4C2945B9207 /* Pods_AppSurdo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9EE0C93236698B30D2FB6A /* Pods_AppSurdo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C9EE0C93236698B30D2FB6A /* Pods_AppSurdo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppSurdo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221C3D4125ED947600C4FABB /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		2836F81C24FD3CAB00A75E53 /* Finx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2836F81F24FD3CAB00A75E53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,8 +37,11 @@
 		2836F83724FD436F00A75E53 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		2880F71725015E450041FA88 /* RandomFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomFact.swift; sourceTree = SOURCE_ROOT; };
 		2880F71925015F0C0041FA88 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		58A191FB3F3F6954134A1BFE /* Pods-AppSurdo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppSurdo.debug.xcconfig"; path = "Target Support Files/Pods-AppSurdo/Pods-AppSurdo.debug.xcconfig"; sourceTree = "<group>"; };
 		86176AE025019EF6006C58FA /* SuperfruitBold-MlBY.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SuperfruitBold-MlBY.ttf"; sourceTree = "<group>"; };
 		86BD6B5D24FD5044000920CF /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		981AC6C8ECC854635D5513A7 /* Pods-AppSurdo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppSurdo.release.xcconfig"; path = "Target Support Files/Pods-AppSurdo/Pods-AppSurdo.release.xcconfig"; sourceTree = "<group>"; };
+		B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBD1C9B66B65A4C2945B9207 /* Pods_AppSurdo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +61,8 @@
 			children = (
 				2836F81E24FD3CAB00A75E53 /* AppSurdo */,
 				2836F81D24FD3CAB00A75E53 /* Products */,
+				6F8161BAC4E24A9CD357FF5D /* Pods */,
+				C7DA04D3F2278FA3F8700190 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,11 +87,30 @@
 				2836F82824FD3CAC00A75E53 /* Assets.xcassets */,
 				2836F82A24FD3CAC00A75E53 /* LaunchScreen.storyboard */,
 				2836F82D24FD3CAC00A75E53 /* Info.plist */,
+				B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */,
 				86BD6B5D24FD5044000920CF /* InitialViewController.swift */,
 				2880F71925015F0C0041FA88 /* APIHandler.swift */,
 				221C3D4125ED947600C4FABB /* InstructionsViewController.swift */,
 			);
 			path = AppSurdo;
+			sourceTree = "<group>";
+		};
+		6F8161BAC4E24A9CD357FF5D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58A191FB3F3F6954134A1BFE /* Pods-AppSurdo.debug.xcconfig */,
+				981AC6C8ECC854635D5513A7 /* Pods-AppSurdo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C7DA04D3F2278FA3F8700190 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C9EE0C93236698B30D2FB6A /* Pods_AppSurdo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,10 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2836F83024FD3CAC00A75E53 /* Build configuration list for PBXNativeTarget "AppSurdo" */;
 			buildPhases = (
+				A2B6358306E4766363C70574 /* [CP] Check Pods Manifest.lock */,
 				2836F81824FD3CAB00A75E53 /* Sources */,
 				2836F81924FD3CAB00A75E53 /* Frameworks */,
 				2836F81A24FD3CAB00A75E53 /* Resources */,
 				86176ADB25009859006C58FA /* ShellScript */,
+				1919DC3EF1479EEEAD7D22AB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,12 +179,30 @@
 				86176AE125019EF6006C58FA /* SuperfruitBold-MlBY.ttf in Resources */,
 				2836F82924FD3CAC00A75E53 /* Assets.xcassets in Resources */,
 				2836F82724FD3CAB00A75E53 /* Main.storyboard in Resources */,
+				B4AB2C7925FFD61B00D789F6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1919DC3EF1479EEEAD7D22AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppSurdo/Pods-AppSurdo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppSurdo/Pods-AppSurdo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppSurdo/Pods-AppSurdo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		86176ADB25009859006C58FA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -171,6 +219,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nxattr -cr ~/Library/Developer/Xcode/DerivedData || echo Clear\n";
+		};
+		A2B6358306E4766363C70574 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppSurdo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -327,6 +397,7 @@
 		};
 		2836F83124FD3CAC00A75E53 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58A191FB3F3F6954134A1BFE /* Pods-AppSurdo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -347,6 +418,7 @@
 		};
 		2836F83224FD3CAC00A75E53 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 981AC6C8ECC854635D5513A7 /* Pods-AppSurdo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

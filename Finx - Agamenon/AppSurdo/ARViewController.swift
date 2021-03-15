@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SceneKit
 import ARKit
+import FirebaseAnalytics
 
 //@property (nonatomic, assign) BOOL isSomethingEnabled;
 //#import "EquationViewController.swift"
@@ -180,7 +181,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             let rootNode = scene.rootNode.childNode(withName: "BaseReference", recursively: false)
             rootNode?.position = newPosition
             sceneView.scene = scene
-            print("Load scenario")
+            Analytics.logEvent("loaded_scenario", parameters: nil)
+            //print("Load scenario")
             baseLoaded = true
         }
     }
@@ -331,7 +333,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     func getTranslation(textToTranslate: String, numberString: String) {
         //key genereted from azure (microsoft)
-        let azureKey = "COLOCAR KEY AQUI"
+        let azureKey = "a2415d26b70e4b12b5a519ffa9558aa5"
         
         let contentType = "application/json"
         let traceID = "A14C9DB9-0DED-48D7-8BBE-C517A1A8DBB0"
