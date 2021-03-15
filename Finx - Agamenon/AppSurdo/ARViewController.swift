@@ -23,6 +23,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var sceneView: ARSCNView!
     var baseLoaded:Bool = false
     
+    @IBOutlet weak var PopUp: UIImageView!
     @IBOutlet weak var card1: UIButton!
     @IBOutlet weak var card2: UIButton!
     @IBOutlet weak var card3: UIButton!
@@ -78,11 +79,11 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         popView.isHidden = false
-        popView.backgroundColor = .white
-        popView.alpha = 0.9
-        popView.layer.borderWidth = 1
-        popView.layer.borderColor = UIColor.white.cgColor
-        popView.layer.cornerRadius = 10
+        //        popView.backgroundColor = .white
+        //        popView.alpha = 0.9
+        //        popView.layer.borderWidth = 1
+        //        popView.layer.borderColor = UIColor.white.cgColor
+        //        popView.layer.cornerRadius = 10
         //        nextButton.isHidden = false
         // Set the view's delegate
         sceneView.delegate = self
@@ -100,11 +101,11 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         }
         
         popLabel.numberOfLines = 0
-        popLabel.textColor = .black
+        popLabel.textColor = .white
         popLabel.text = "Procure os cubos na cena para revelar as frases"
         popLabel.isHidden = false
         
-        popButton.setTitle("OK", for: .normal)
+        popButton.setTitle("ok", for: .normal)
         popButton.isHidden = false
         // Create a new scene
         //let scene = SCNScene(named: "art.scnassets/mainScene.scn")!
@@ -116,15 +117,23 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         popLabel.translatesAutoresizingMaskIntoConstraints = false
         popButton.translatesAutoresizingMaskIntoConstraints = false
         nextButton.translatesAutoresizingMaskIntoConstraints = false
+        PopUp.translatesAutoresizingMaskIntoConstraints = false
         
-        popView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -30).isActive = true
-        popView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         popView.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.4).isActive = true
-        popView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8).isActive = true
+        popView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.75).isActive = true
+        popView.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+        popView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        
+        PopUp.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.4).isActive = true
+        PopUp.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.75).isActive = true
+        PopUp.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+        PopUp.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        
+        
         
         popButton.centerXAnchor.constraint(equalTo: popView.centerXAnchor).isActive = true
-        popButton.bottomAnchor.constraint(equalTo: popView.bottomAnchor, constant: -30).isActive = true
-        popButton.heightAnchor.constraint(equalTo: popView.heightAnchor, multiplier: 0.2).isActive = true
+        popButton.bottomAnchor.constraint(equalTo: popView.bottomAnchor, constant: -50).isActive = true
+        popButton.heightAnchor.constraint(equalTo: popView.heightAnchor, multiplier: 0.1).isActive = true
         popButton.widthAnchor.constraint(equalTo: popView.widthAnchor, multiplier: 0.4).isActive = true
         
         popLabel.centerYAnchor.constraint(equalTo: popView.centerYAnchor, constant: -30).isActive = true
@@ -136,7 +145,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         nextButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.2).isActive = true
         nextButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
         
-//        getLanguages()
+        //        getLanguages()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -290,7 +299,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             //let decoder = JSONDecoder()
             let jsonData = String(data: data!, encoding: .utf8) as String?
             //self.fact = jsonData
-//            print(jsonData!)
+            //            print(jsonData!)
             let numberString = self.takeNumber(fact: jsonData!)
             //            let numberInt = Int(numberString) ?? 0
             if self.numbers.contains(numberString) {
@@ -303,35 +312,35 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         task.resume()
     }
     
-//    func getLanguages() {
-//
-//        let sampleLangAddress = "https://dev.microsofttranslator.com/languages?api-version=3.0&scope=translation"
-//
-//        let url1 = URL(string: sampleLangAddress)
-//        let jsonLangData = try! Data(contentsOf: url1!)
-//
-//        //*****
-//        var languages: AllLanguages?
-//        languages = try! JSONDecoder().decode(AllLanguages.self, from: jsonLangData)
-//
-//        for language in languages!.translation {
-//            if language.key == "en" {
-//                englishLanguage.code = language.key
-//                englishLanguage.name = language.value.name
-//                englishLanguage.nativeName = language.value.nativeName
-//                englishLanguage.dir = language.value.dir
-//            } else if language.key == "pt"{
-//                portugueseBrLanguage.code = language.key
-//                portugueseBrLanguage.name = language.value.name
-//                portugueseBrLanguage.nativeName = language.value.nativeName
-//                portugueseBrLanguage.dir = language.value.dir
-//            }
-//        }
-//    }
+    //    func getLanguages() {
+    //
+    //        let sampleLangAddress = "https://dev.microsofttranslator.com/languages?api-version=3.0&scope=translation"
+    //
+    //        let url1 = URL(string: sampleLangAddress)
+    //        let jsonLangData = try! Data(contentsOf: url1!)
+    //
+    //        //*****
+    //        var languages: AllLanguages?
+    //        languages = try! JSONDecoder().decode(AllLanguages.self, from: jsonLangData)
+    //
+    //        for language in languages!.translation {
+    //            if language.key == "en" {
+    //                englishLanguage.code = language.key
+    //                englishLanguage.name = language.value.name
+    //                englishLanguage.nativeName = language.value.nativeName
+    //                englishLanguage.dir = language.value.dir
+    //            } else if language.key == "pt"{
+    //                portugueseBrLanguage.code = language.key
+    //                portugueseBrLanguage.name = language.value.name
+    //                portugueseBrLanguage.nativeName = language.value.nativeName
+    //                portugueseBrLanguage.dir = language.value.dir
+    //            }
+    //        }
+    //    }
     
     func getTranslation(textToTranslate: String, numberString: String) {
         //key genereted from azure (microsoft)
-        let azureKey = "COLOCAR KEY AQUI"
+        let azureKey = "a2415d26b70e4b12b5a519ffa9558aa5"
         
         let contentType = "application/json"
         let traceID = "A14C9DB9-0DED-48D7-8BBE-C517A1A8DBB0"
@@ -344,12 +353,12 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         encodeTextToTranslate.text = textToTranslate
         toTranslate.append(encodeTextToTranslate)
-//        print(toTranslate)
+        //        print(toTranslate)
         let jsonToTranslate = try? JSONEncoder().encode(toTranslate)
-//        print(jsonToTranslate)
+        //        print(jsonToTranslate)
         let url = URL(string: apiURL)
         var request = URLRequest(url: url!)
-
+        
         request.httpMethod = "POST"
         request.addValue(azureKey, forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
         request.addValue(contentType, forHTTPHeaderField: "Content-Type")
@@ -378,31 +387,31 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             self.parseJson(jsonData: responseData!, numberString: numberString)
         }
         task.resume()
-//        print(phraseTranslated)
-//        return phraseTranslated
+        //        print(phraseTranslated)
+        //        return phraseTranslated
     }
     
     func parseJson(jsonData: Data, numberString: String) {
-//        print(jsonData)
+        //        print(jsonData)
         //*****TRANSLATION RETURNED DATA*****
         
         //let jsonDecoder = JSONDecoder()
         let dataTranslation = try? JSONDecoder().decode(Array<TranslatedData>.self, from: jsonData)
         let numberOfTranslations = dataTranslation!.count - 1
         
-//        var phraseTranslated = ""
+        //        var phraseTranslated = ""
         let encoded = self.hideNumbers(fact: dataTranslation![0].translations[numberOfTranslations].text)
         self.facts.append((numberString, dataTranslation![0].translations[numberOfTranslations].text))
         DispatchQueue.main.sync {
-//            print(encoded)
+            //            print(encoded)
             DispatchQueue.main.async {
                 self.popLabel.text = encoded
-//                print(self.popLabel.text)
+                //                print(self.popLabel.text)
             }
         }
-//        print(phraseTranslated)
-//
-//        return phraseTranslated
+        //        print(phraseTranslated)
+        //
+        //        return phraseTranslated
     }
     
     override func prepare (for segue: UIStoryboardSegue, sender:Any?) {
