@@ -38,6 +38,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     var cubes: [SCNNode]!
     var cardButtons: [UIButton] = []
     var currentCard = 0
+    var numberOfTouches = 0
     
     //*****used after parsing to create variables with language information
     struct TranslatorLanguageDetails: Codable {
@@ -141,15 +142,17 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        numberOfTouches = numberOfTouches + 1
         if baseLoaded == false{
             addScenario(location: (touches.first?.location(in: sceneView))!)
         }else{
-            print("Scenario loaded")
+            //print("Scenario loaded")
             
             //Checking if cube was found
             let touch = touches.first!
             
             if(touch.view == self.sceneView){
+                
                 print("touch working")
                 let viewTouchLocation:CGPoint = touch.location(in: sceneView)
                 guard let result = sceneView.hitTest(viewTouchLocation, options: nil).first else {
@@ -182,6 +185,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             rootNode?.position = newPosition
             sceneView.scene = scene
             Analytics.logEvent("loaded_scenario", parameters: nil)
+            Analytics.logEvent("touched_to_load", parameters: ["numberOfTouches":numberOfTouches])
             //print("Load scenario")
             baseLoaded = true
         }
