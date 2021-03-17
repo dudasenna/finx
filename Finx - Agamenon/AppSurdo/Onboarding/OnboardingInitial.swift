@@ -39,14 +39,14 @@ class OnboardingInitial: UIViewController {
         labelFinx.text = "Finx"
         labelFinx.textColor = .white
         labelFinx.textAlignment = .center
-        labelFinx.font = UIFont(name: "RalewayDots-Regular", size: 96)
+        labelFinx.font = UIFont(name: "RalewayDots-Regular", size: 105)
         labelFinx.adjustsFontSizeToFitWidth = true
         
         //define label do texto de introdução
         labelIntroText.text = "Vamos olhar algumas instruções para melhor aproveitamento do jogo"
         labelIntroText.textColor = .white
         labelIntroText.textAlignment = .center
-        labelIntroText.font = UIFont(name: "Raleway-SemiBold", size: 18)
+        labelIntroText.font = UIFont(name: "Raleway-SemiBold", size: 20)
         labelIntroText.adjustsFontSizeToFitWidth = true
         labelIntroText.numberOfLines = 0
         
