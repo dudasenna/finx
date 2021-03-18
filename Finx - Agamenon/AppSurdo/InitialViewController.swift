@@ -96,6 +96,7 @@ class InitialViewController: UIViewController {
         
         
 //        self.view.addSubview(rectangle)
+//        HelpButton.addTarget(self, action: #selector(helpButtonAction), for: .touchUpInside)
         self.view.addSubview(HelpButton)
         self.view.addSubview(camButton)
 //        self.view.addSubview(instructionsButton)
@@ -170,10 +171,7 @@ class InitialViewController: UIViewController {
         
     }
     
-//    @objc func instructionsButtonAction(sender: UIButton!) {
-//
-//        print("Button tapped")
-//        performSegue(withIdentifier: "instructionsSegue", sender: self)
-//
+//    @objc func helpButtonAction(sender: UIButton!) {
+//        show(OnboardingScreens(), sender: self)
 //    }
 }

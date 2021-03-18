@@ -11,11 +11,9 @@ import UIKit
 
 class OnboardingScreens: UIViewController, UIScrollViewDelegate {
     
-//    let currentPage = 0
+    @IBOutlet weak var jumpButtonSB: UIButton!
+    //    let currentPage = 0
     let textsArray = ["Inicie o jogo e aponte seu celular para uma superfície até que se formem vários pontos", "Toque na tela para carregar a cena", "Procure os três cubos escondidos no cenário e clique neles para capturá-los", "Cada cubo encontrado representa um valor numérico surpresa", "Utilizando seus conhecimentos ou sua sorte, relacione o fato aleatório a um número", "Ao acertar o número correto, pode voltar à cena e procurar outro cubo!"]
-//    let iconsArray: [UIImage] = []
-//    ["Group 21", "Group 24", "Group 25", "Group 23", "Frase1", "Frase2"]
-//    let backgroundsArray = ["Rectangle1", "Rectangle2", "Rectangle3", "Rectangle4", "Rectangle5", "Rectangle6"]
     
     private var scrollView = UIScrollView(frame: .zero)
     private var stackView = UIStackView(frame: .zero)
@@ -24,16 +22,27 @@ class OnboardingScreens: UIViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
-                
-//        let background = UIImage(named: backgroundsArray[1])
-//        var bgImageView : UIImageView!
-//        let labelText = UILabel()
-//        let buttonBegin = UIButton()
         
+        setup()
     }
     
     private func setup() {
+        
+//        let jumpButton = UIButton()
+        
+        jumpButtonSB.backgroundColor = .white
+//        let sizeConfig = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold, scale: .large)
+//        let sizeArrow = UIImage(systemName: "arrow.forward", withConfiguration: sizeConfig)
+//        jumpButton.setImage(sizeArrow, for: .normal)
+//        jumpButton.tintColor = UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0)
+        jumpButtonSB.backgroundColor = .init(white: 1.0, alpha: 0.8)
+        jumpButtonSB.setTitle("Pular", for: .normal)
+        jumpButtonSB.titleLabel?.font = UIFont(name: "Raleway-SemiBold", size: 18)
+        jumpButtonSB.titleLabel?.adjustsFontSizeToFitWidth = true
+        jumpButtonSB.setTitleColor(UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0) , for: .normal)
+        jumpButtonSB.layer.cornerRadius = 10
+//        jumpButtonSB.addTarget(self, action: #selector(jumpButtonAction), for: .touchUpInside)
+        
         // *** SETUP SCROLLVIEW *** //
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .white
@@ -46,9 +55,10 @@ class OnboardingScreens: UIViewController, UIScrollViewDelegate {
 //        stackView.spacing = 20
         
         scrollView.addSubview(stackView)
-
+        
         // *** SETUP STACKVIEW AND ADD SUBVIEWS *** //
         self.view.addSubview(scrollView)
+        self.view.addSubview(jumpButtonSB)
         NSLayoutConstraint.activate([
           scrollView.topAnchor.constraint(equalTo: self.view.topAnchor),
           scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
@@ -62,6 +72,14 @@ class OnboardingScreens: UIViewController, UIScrollViewDelegate {
           stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
           stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor)
         ])
+        
+        jumpButtonSB.translatesAutoresizingMaskIntoConstraints = false
+        
+        jumpButtonSB.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        jumpButtonSB.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+//        jumpButton.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        jumpButtonSB.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.2).isActive = true
+        jumpButtonSB.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.05).isActive = true
 
         // Initializing the views we'll put in the scrollView and adding them to an array for convenience
         let pageView1 = PageView(textLabelText: textsArray[0], backgroundImageName: UIImage(named: "Rectangle1")!, iconImageName: UIImage(named: "Group 21")!)
@@ -85,12 +103,17 @@ class OnboardingScreens: UIViewController, UIScrollViewDelegate {
         }
 
         // *** ADD PAGECONTROLL *** //
+        pageControl.numberOfPages = views.count
+//        pageControl.colo = UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0)
+        pageControl.addTarget(self, action: #selector(pageControlTapped(sender:)), for: .valueChanged)
+        pageControl.pageIndicatorTintColor = UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 0.5)
+        pageControl.currentPageIndicatorTintColor = UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0)
+        
         self.view.addSubview(pageControl)
+        
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        pageControl.bottomAnchor.constraint(equalToSystemSpacingBelow: scrollView.bottomAnchor, multiplier: 0.1).isActive = true
-        pageControl.numberOfPages = views.count
-        pageControl.addTarget(self, action: #selector(pageControlTapped(sender:)), for: .valueChanged)
+        pageControl.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
         
     }
     
@@ -113,6 +136,12 @@ class OnboardingScreens: UIViewController, UIScrollViewDelegate {
 
       pageControl.currentPage = Int((round(pageFraction)))
     }
+    
+//    @objc func jumpButtonAction(sender: UIButton!) {
+//        print("Button tapped")
+//        show(InitialViewController(), sender: self)
+////        navigationController?.pushViewController(InitialViewController(), animated: true)
+//    }
 
 
     /*

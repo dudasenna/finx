@@ -44,7 +44,6 @@ class PageView: UIView {
         super.init(frame: .zero)
         self.backgroundColor = .white
         setup()
-
     }
 
     override init(frame: CGRect) {
@@ -58,7 +57,16 @@ class PageView: UIView {
 
     func setup() {
         
-        let buttonBegin = UIButton()
+        if UserDefaults.standard.bool(forKey: "isOnboardingDone") == true {
+             //Skip onboarding
+        } else {
+             //Show onboarding screens
+             UserDefaults.standard.set(true, forKey: "isOnboardingDone")
+        }
+
+        
+//        let buttonBegin = UIButton()
+//        let jumpButton = UIButton()
         
         // Basic text and view setup
         
@@ -80,38 +88,58 @@ class PageView: UIView {
         
         //define botão de começar
 //        buttonBegin.backgroundColor = .white
-        let sizeConfig = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold, scale: .large)
-        let sizeArrow = UIImage(systemName: "arrow.forward", withConfiguration: sizeConfig)
-        buttonBegin.setImage(sizeArrow, for: .normal)
-        buttonBegin.tintColor = UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0)
-//        buttonBegin.setTitle("Começar", for: .normal)
-        buttonBegin.titleLabel?.font = UIFont(name: "Raleway-SemiBold", size: 24)
-        buttonBegin.titleLabel?.adjustsFontSizeToFitWidth = true
-        buttonBegin.setTitleColor(UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0) , for: .normal)
-        buttonBegin.layer.cornerRadius = 10
-        buttonBegin.addTarget(self, action: #selector(buttonBeginAction), for: .touchUpInside)
+//        let sizeConfig = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold, scale: .large)
+//        let sizeArrow = UIImage(systemName: "arrow.forward", withConfiguration: sizeConfig)
+//        buttonBegin.setImage(sizeArrow, for: .normal)
+//        buttonBegin.tintColor = UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0)
+////        buttonBegin.setTitle("Começar", for: .normal)
+//        buttonBegin.titleLabel?.font = UIFont(name: "Raleway-SemiBold", size: 24)
+//        buttonBegin.titleLabel?.adjustsFontSizeToFitWidth = true
+//        buttonBegin.setTitleColor(UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0) , for: .normal)
+//        buttonBegin.layer.cornerRadius = 10
+//        buttonBegin.addTarget(self, action: #selector(buttonBeginAction), for: .touchUpInside)
+        
+//        jumpButton.backgroundColor = .white
+////        let sizeConfig = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold, scale: .large)
+////        let sizeArrow = UIImage(systemName: "arrow.forward", withConfiguration: sizeConfig)
+////        jumpButton.setImage(sizeArrow, for: .normal)
+////        jumpButton.tintColor = UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0)
+//        jumpButton.backgroundColor = .init(white: 1.0, alpha: 0.8)
+//        jumpButton.setTitle("Pular", for: .normal)
+//        jumpButton.titleLabel?.font = UIFont(name: "Raleway-SemiBold", size: 18)
+//        jumpButton.titleLabel?.adjustsFontSizeToFitWidth = true
+//        jumpButton.setTitleColor(UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0) , for: .normal)
+//        jumpButton.layer.cornerRadius = 10
+//        jumpButton.addTarget(self, action: #selector(jumpButtonAction), for: .touchUpInside)
         
         //adiciona subviews
         self.addSubview(backgroundImage)
         self.addSubview(textLabel)
         self.addSubview(iconImage)
-        self.addSubview(buttonBegin)
+//        self.addSubview(jumpButton)
         
         //define constraints
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
         iconImage.translatesAutoresizingMaskIntoConstraints = false
-        buttonBegin.translatesAutoresizingMaskIntoConstraints = false
+//        jumpButton.translatesAutoresizingMaskIntoConstraints = false
+//        buttonBegin.translatesAutoresizingMaskIntoConstraints = false
         
-        backgroundImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
+        backgroundImage.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         backgroundImage.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         backgroundImage.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1).isActive = true
-        backgroundImage.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5).isActive = true
+        backgroundImage.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.6).isActive = true
         
-        textLabel.topAnchor.constraint(equalToSystemSpacingBelow: backgroundImage.bottomAnchor, multiplier: 1).isActive = true
+        textLabel.topAnchor.constraint(equalToSystemSpacingBelow: backgroundImage.bottomAnchor, multiplier: 0.5).isActive = true
         textLabel.centerXAnchor.constraint(equalTo: backgroundImage.centerXAnchor).isActive = true
         textLabel.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.7).isActive = true
         textLabel.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
+        
+//        jumpButton.topAnchor.constraint(equalToSystemSpacingBelow: self.safeAreaLayoutGuide.topAnchor, multiplier: 0.3).isActive = true
+//        jumpButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+////        jumpButton.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor).isActive = true
+//        jumpButton.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.2).isActive = true
+//        jumpButton.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 0.05).isActive = true
         
 //        iconImage.topAnchor.constraint(equalTo: backgroundImage.topAnchor, constant: 50).isActive = true
         iconImage.centerXAnchor.constraint(equalTo: backgroundImage.centerXAnchor).isActive = true
@@ -119,12 +147,12 @@ class PageView: UIView {
 //        iconImage.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.7).isActive = true
 //        iconImage.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
         
-        buttonBegin.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -70).isActive = true
-        buttonBegin.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -30).isActive = true
-//        buttonBegin.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor, constant: 30).isActive = true
-//        labelWelcome.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-        buttonBegin.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.1).isActive = true
-        buttonBegin.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 0.1).isActive = true
+//        buttonBegin.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -70).isActive = true
+//        buttonBegin.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -30).isActive = true
+////        buttonBegin.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor, constant: 30).isActive = true
+////        labelWelcome.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+//        buttonBegin.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.1).isActive = true
+//        buttonBegin.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 0.1).isActive = true
         
     }
     

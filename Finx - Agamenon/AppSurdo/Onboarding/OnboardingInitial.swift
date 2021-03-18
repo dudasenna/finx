@@ -10,7 +10,10 @@ import Foundation
 import UIKit
 
 class OnboardingInitial: UIViewController {
-
+    
+    let notFirstLaunch = UserDefaults.standard.bool(forKey: "onboardingDone")
+    
+    @IBOutlet weak var buttonInvisible: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,7 +22,7 @@ class OnboardingInitial: UIViewController {
         let labelWelcome = UILabel()
         let labelFinx = UILabel()
         let labelIntroText = UILabel()
-        let buttonBegin = UIButton()
+//        let buttonBegin = UIButton()
         
         //define background
         imageView = UIImageView(frame: view.bounds)
@@ -51,26 +54,26 @@ class OnboardingInitial: UIViewController {
         labelIntroText.numberOfLines = 0
         
         //define botão de começar
-        buttonBegin.backgroundColor = .white
-        buttonBegin.setTitle("Começar", for: .normal)
-        buttonBegin.titleLabel?.font = UIFont(name: "Raleway-SemiBold", size: 24)
-        buttonBegin.titleLabel?.adjustsFontSizeToFitWidth = true
-        buttonBegin.setTitleColor(UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0) , for: .normal)
-        buttonBegin.layer.cornerRadius = 10
-        buttonBegin.addTarget(self, action: #selector(buttonBeginAction), for: .touchUpInside)
+        buttonInvisible.backgroundColor = .white
+        buttonInvisible.setTitle("Começar", for: .normal)
+        buttonInvisible.titleLabel?.font = UIFont(name: "Raleway-SemiBold", size: 24)
+        buttonInvisible.titleLabel?.adjustsFontSizeToFitWidth = true
+        buttonInvisible.setTitleColor(UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0) , for: .normal)
+        buttonInvisible.layer.cornerRadius = 10
+        buttonInvisible.addTarget(self, action: #selector(buttonBeginAction), for: .touchUpInside)
 
         //adiciona subviews
         view.addSubview(imageView)
         self.view.addSubview(labelWelcome)
         self.view.addSubview(labelFinx)
         self.view.addSubview(labelIntroText)
-        self.view.addSubview(buttonBegin)
+        self.view.addSubview(buttonInvisible)
         
         //define constraints
         labelWelcome.translatesAutoresizingMaskIntoConstraints = false
         labelFinx.translatesAutoresizingMaskIntoConstraints = false
         labelIntroText.translatesAutoresizingMaskIntoConstraints = false
-        buttonBegin.translatesAutoresizingMaskIntoConstraints = false
+        buttonInvisible.translatesAutoresizingMaskIntoConstraints = false
         
         labelWelcome.topAnchor.constraint(equalToSystemSpacingBelow: self.view.safeAreaLayoutGuide.topAnchor, multiplier: 0.5).isActive = true
         labelWelcome.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
@@ -83,13 +86,13 @@ class OnboardingInitial: UIViewController {
         labelFinx.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.7).isActive = true
         labelFinx.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
         
-        buttonBegin.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -70).isActive = true
-        buttonBegin.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        buttonInvisible.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -70).isActive = true
+        buttonInvisible.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
 //        labelWelcome.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-        buttonBegin.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.5).isActive = true
-        buttonBegin.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.07).isActive = true
+        buttonInvisible.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.5).isActive = true
+        buttonInvisible.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.07).isActive = true
         
-        labelIntroText.bottomAnchor.constraint(equalToSystemSpacingBelow: buttonBegin.topAnchor, multiplier: 2).isActive = true
+        labelIntroText.bottomAnchor.constraint(equalToSystemSpacingBelow: buttonInvisible.topAnchor, multiplier: 2).isActive = true
         labelIntroText.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         labelIntroText.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.7).isActive = true
         labelIntroText.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
@@ -98,7 +101,8 @@ class OnboardingInitial: UIViewController {
     }
     
     @objc func buttonBeginAction(sender: UIButton!) {
-      print("Button tapped")
+//        show(OnboardingScreens(), sender: self)
+        navigationController?.pushViewController(OnboardingScreens(), animated: true)
     }
 
     /*
