@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		221C3D4225ED947600C4FABB /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C3D4125ED947600C4FABB /* InstructionsViewController.swift */; };
+		22E15F6326029647001C43C3 /* OnboardingScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E15F6226029647001C43C3 /* OnboardingScreens.swift */; };
+		22E15F672602BC4B001C43C3 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E15F662602BC4B001C43C3 /* PageView.swift */; };
 		22F3F4A926014459008DA3E3 /* OnboardingInitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3F4A826014459008DA3E3 /* OnboardingInitial.swift */; };
 		2836F82024FD3CAB00A75E53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2836F81F24FD3CAB00A75E53 /* AppDelegate.swift */; };
 		2836F82224FD3CAB00A75E53 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 2836F82124FD3CAB00A75E53 /* art.scnassets */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		221C3D4125ED947600C4FABB /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		22E15F6226029647001C43C3 /* OnboardingScreens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreens.swift; sourceTree = "<group>"; };
+		22E15F662602BC4B001C43C3 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		22F3F4A826014459008DA3E3 /* OnboardingInitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInitial.swift; sourceTree = "<group>"; };
 		2836F81C24FD3CAB00A75E53 /* Finx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2836F81F24FD3CAB00A75E53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				22F3F4A826014459008DA3E3 /* OnboardingInitial.swift */,
+				22E15F6226029647001C43C3 /* OnboardingScreens.swift */,
+				22E15F662602BC4B001C43C3 /* PageView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -207,9 +213,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				22F3F4A926014459008DA3E3 /* OnboardingInitial.swift in Sources */,
+				22E15F6326029647001C43C3 /* OnboardingScreens.swift in Sources */,
 				2880F71825015E450041FA88 /* RandomFact.swift in Sources */,
 				86BD6B5E24FD5044000920CF /* InitialViewController.swift in Sources */,
 				2836F83624FD42F500A75E53 /* EquationViewController.swift in Sources */,
+				22E15F672602BC4B001C43C3 /* PageView.swift in Sources */,
 				2880F71A25015F0C0041FA88 /* APIHandler.swift in Sources */,
 				2836F82024FD3CAB00A75E53 /* AppDelegate.swift in Sources */,
 				221C3D4225ED947600C4FABB /* InstructionsViewController.swift in Sources */,

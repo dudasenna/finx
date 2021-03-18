@@ -13,7 +13,7 @@ class OnboardingInitial: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "NewBackground.png")!)
+        
         let background = UIImage(named: "NewBackground")
         var imageView : UIImageView!
         let labelWelcome = UILabel()
@@ -36,7 +36,7 @@ class OnboardingInitial: UIViewController {
         labelWelcome.adjustsFontSizeToFitWidth = true
         
         //define label do nome finx
-        labelFinx.text = "Finx"
+        labelFinx.text = "F i n x"
         labelFinx.textColor = .white
         labelFinx.textAlignment = .center
         labelFinx.font = UIFont(name: "RalewayDots-Regular", size: 105)
@@ -78,7 +78,7 @@ class OnboardingInitial: UIViewController {
         labelWelcome.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.7).isActive = true
         labelWelcome.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
         
-        labelFinx.topAnchor.constraint(equalToSystemSpacingBelow: labelWelcome.topAnchor, multiplier: 10).isActive = true
+        labelFinx.topAnchor.constraint(equalToSystemSpacingBelow: labelWelcome.topAnchor, multiplier: 12).isActive = true
         labelFinx.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         labelFinx.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.7).isActive = true
         labelFinx.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
