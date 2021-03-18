@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="slH-Ed-jST">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZCt-Le-Imr">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -7,6 +8,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Raleway-Bold.ttf">
+            <string>Raleway-Bold</string>
+        </array>
+        <array key="RalewayDots-Regular.ttf">
+            <string>RalewayDots-Regular</string>
+        </array>
         <array key="SuperfruitBold-MlBY.ttf">
             <string>Superfruit-Bold</string>
         </array>
@@ -15,22 +22,38 @@
         <!--Initial View Controller-->
         <scene sceneID="JFJ-gr-8UU">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="slH-Ed-jST" customClass="InitialViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InitialViewController" modalPresentationStyle="fullScreen" id="slH-Ed-jST" customClass="InitialViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e5W-ug-wWJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="3ir-zE-Ii8">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="3ir-zE-Ii8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMP-Yp-VLW">
-                                <rect key="frame" x="112" y="410" width="190" height="77"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMP-Yp-VLW">
+                                <rect key="frame" x="127" y="407" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
+                                <state key="normal" image="PlayButton"/>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="presentation" id="zvh-qw-8jW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8C-ka-wcW">
+                                <rect key="frame" x="332" y="88" width="41" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="HelpButton"/>
+                                <connections>
+                                    <segue destination="fUs-kB-cyS" kind="show" id="dpO-tz-3Xf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="F i n x" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCn-aS-TBH">
+                                <rect key="frame" x="28" y="191" width="340" height="148"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="RalewayDots-Regular" family="Raleway Dots " pointSize="130"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jhi-WN-82V"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -43,7 +66,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="DvW-SB-qp1"/>
                     <connections>
-                        <outlet property="startButton" destination="HMP-Yp-VLW" id="WZt-Ww-b66"/>
+                        <outlet property="HelpButton" destination="a8C-ka-wcW" id="uFO-HM-iFb"/>
+                        <outlet property="camButton" destination="HMP-Yp-VLW" id="WZt-Ww-b66"/>
+                        <outlet property="tittle" destination="jCn-aS-TBH" id="9gd-KQ-2vy"/>
                         <segue destination="PIL-6O-GfW" kind="presentation" identifier="instructionsSegue" id="wAT-GC-249"/>
                     </connections>
                 </viewController>
@@ -59,56 +84,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
+                                <rect key="frame" x="0.0" y="-2" width="414" height="808"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clu-cm-a6e">
-                                <rect key="frame" x="20" y="446" width="84" height="84"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clu-cm-a6e">
+                                <rect key="frame" x="60" y="674" width="84" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="84" id="Vf8-Ch-61z"/>
                                     <constraint firstAttribute="height" constant="84" id="WkK-Ol-Z56"/>
                                 </constraints>
                                 <state key="normal" image="Card"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EK8-MR-Ylu">
-                                <rect key="frame" x="496" y="446" width="84" height="84"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EK8-MR-Ylu">
+                                <rect key="frame" x="271" y="674" width="84" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="5ZY-1N-mDm"/>
                                     <constraint firstAttribute="width" constant="84" id="R4r-T7-jHi"/>
                                 </constraints>
                                 <state key="normal" image="Card"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moS-DQ-1IN">
-                                <rect key="frame" x="258" y="446" width="84" height="84"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="84" id="oKA-gO-RaA"/>
-                                    <constraint firstAttribute="width" constant="84" id="wEE-zW-FWc"/>
-                                </constraints>
-                                <state key="normal" image="Card"/>
-                            </button>
                             <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QnH-B7-yh0">
-                                <rect key="frame" x="60" y="257" width="295" height="229"/>
+                                <rect key="frame" x="50.328163553088189" y="288.82845309407412" width="309.00000000000028" height="266.99999999999983"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaJ-tg-sga">
-                                        <rect key="frame" x="31" y="21" width="235" height="168"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="PopupFatos" translatesAutoresizingMaskIntoConstraints="NO" id="kan-m2-eZC">
+                                        <rect key="frame" x="-0.86157409735301371" y="0.99253487061946544" width="308.99999999999972" height="267.00000000000011"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Superfruit-Bold" family="Superfruit" pointSize="27"/>
-                                        <nil key="textColor"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaJ-tg-sga">
+                                        <rect key="frame" x="31" y="17" width="235" height="168"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btd-IU-5qR">
                                         <rect key="frame" x="57" y="185" width="185" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Superfruit-Bold" family="Superfruit" pointSize="20"/>
-                                        <state key="normal" title="Coletar" backgroundImage="PinkRectangle">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="18"/>
+                                        <state key="normal" title="resolver" backgroundImage="PopupButton">
+                                            <color key="titleColor" red="0.73186522720000002" green="0.56667959690000003" blue="0.43526908759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
                                             <action selector="tapCollect:" destination="BV1-FR-VrT" eventType="touchUpInside" id="gTU-xX-DTR"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2J-43-snF">
                                 <rect key="frame" x="278" y="91" width="116" height="74"/>
@@ -119,6 +139,14 @@
                                 <connections>
                                     <segue destination="dkw-ts-Veh" kind="presentation" identifier="EquationSegue" modalPresentationStyle="fullScreen" id="0Mx-uS-ulX"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moS-DQ-1IN">
+                                <rect key="frame" x="165" y="673" width="84" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="oKA-gO-RaA"/>
+                                    <constraint firstAttribute="width" constant="84" id="wEE-zW-FWc"/>
+                                </constraints>
+                                <state key="normal" image="Card"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
@@ -145,6 +173,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="tiZ-i6-T5B"/>
                     <connections>
+                        <outlet property="PopUp" destination="kan-m2-eZC" id="bkf-JX-6EZ"/>
                         <outlet property="card1" destination="Clu-cm-a6e" id="rnu-Za-hF8"/>
                         <outlet property="card2" destination="moS-DQ-1IN" id="wEw-Nt-QjO"/>
                         <outlet property="card3" destination="EK8-MR-Ylu" id="NJY-el-LnO"/>
@@ -167,8 +196,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="gyj-hw-RIB">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="gyj-hw-RIB">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7lq-eq-ej4">
                                 <rect key="frame" x="42" y="610" width="328" height="198"/>
@@ -178,15 +207,15 @@
                                 <rect key="frame" x="63" y="656" width="289" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwE-IE-Vhx">
-                                <rect key="frame" x="115" y="701" width="185" height="72"/>
+                                <rect key="frame" x="125" y="708" width="165" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Superfruit-Bold" family="Superfruit" pointSize="20"/>
-                                <state key="normal" backgroundImage="PinkRectangle">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="PopupButton">
+                                    <color key="titleColor" systemColor="systemOrangeColor"/>
                                 </state>
                                 <connections>
                                     <action selector="revealNumbers:" destination="dkw-ts-Veh" eventType="touchUpInside" id="bKn-IZ-DSH"/>
@@ -233,8 +262,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="BqB-cr-S73">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="BqB-cr-S73">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IrZ-mM-uVW"/>
@@ -251,15 +280,81 @@
             </objects>
             <point key="canvasLocation" x="-665.21739130434787" y="800.89285714285711"/>
         </scene>
+        <!--Onboarding Initial-->
+        <scene sceneID="rOd-1N-Z8l">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingInitial" id="ZCt-Le-Imr" customClass="OnboardingInitial" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="135-CO-bsl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dm5-2J-VpN">
+                                <rect key="frame" x="160" y="416" width="95" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="100" height="100"/>
+                                <connections>
+                                    <segue destination="fUs-kB-cyS" kind="presentation" modalPresentationStyle="fullScreen" id="fUs-Wi-xJM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wqg-29-wAn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonInvisible" destination="Dm5-2J-VpN" id="4iK-Ve-XFN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eTz-iz-mZj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2314.4927536231885" y="137.94642857142856"/>
+        </scene>
+        <!--Onboarding Screens-->
+        <scene sceneID="Y4k-OE-uz7">
+            <objects>
+                <viewController id="fUs-kB-cyS" customClass="OnboardingScreens" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iHz-db-PcL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftv-SG-7Mx">
+                                <rect key="frame" x="192" y="302" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="slH-Ed-jST" kind="presentation" modalPresentationStyle="fullScreen" id="gts-7S-yGi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wLf-ZK-w0C"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0QD-JH-YEY"/>
+                    <connections>
+                        <outlet property="jumpButtonSB" destination="Ftv-SG-7Mx" id="2Uz-Xp-9FD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jf5-DB-bk1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1499" y="138"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fUs-Wi-xJM"/>
+        <segue reference="gts-7S-yGi"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="Arrow2" width="512" height="512"/>
-        <image name="Background" width="236" height="512"/>
-        <image name="Card" width="512" height="512"/>
-        <image name="PinkRectangle" width="185" height="72"/>
+        <image name="Arrow2" width="79" height="59"/>
+        <image name="Card" width="84" height="72"/>
+        <image name="HelpButton" width="41" height="41"/>
+        <image name="Inicial" width="388" height="812"/>
+        <image name="PlayButton" width="160" height="160"/>
+        <image name="PopupButton" width="165" height="59"/>
+        <image name="PopupFatos" width="309" height="267"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

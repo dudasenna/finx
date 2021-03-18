@@ -11,11 +11,12 @@ import FirebaseAnalytics
 
 class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
-    var colorTitle = #colorLiteral(red: 0.9254901961, green: 0.9254901961, blue: 0.9254901961, alpha: 0.75)
-    var colorCard1 = #colorLiteral(red: 0.9960784314, green: 0.831372549, blue: 0.7921568627, alpha: 0.9)
-    var colorCard2 = #colorLiteral(red: 1, green: 0.9803921569, blue: 0.8823529412, alpha: 0.9)
-    var colorCard3 = #colorLiteral(red: 0.8274509804, green: 0.9176470588, blue: 1, alpha: 0.9)
-    var colorButton = #colorLiteral(red: 0.5529411765, green: 0.9098039216, blue: 0.8039215686, alpha: 1)
+    var colorTitle = #colorLiteral(red: 0.9089190364, green: 0.9262141585, blue: 0.9122079015, alpha: 0.3)
+    var colorCard1 = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 0.8)
+    var colorCard2 = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 0.8)
+    var colorCard3 = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 0.8)
+    var colorButton = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 0.8)
+    var colorTextButton = UIColor(red: 237/255, green: 142/255, blue: 92/255, alpha: 1.0)
     
     var correct = false
     var factsOfNumbers: [(String, String)]!
@@ -71,15 +72,15 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
 //        restartButton.tintColor = .black
         restartButton.layer.borderWidth = 1
         restartButton.layer.borderColor = colorButton.cgColor
-        restartButton.layer.shadowColor = UIColor.black.cgColor
+        restartButton.layer.shadowColor = UIColor.white.cgColor
         restartButton.layer.shadowOpacity = 0.4
         restartButton.layer.shadowOffset = .zero
         restartButton.layer.shadowRadius = 10
         restartButton.backgroundColor = colorButton
         restartButton.layer.cornerRadius = 10
         restartButton.setTitle("Jogar Novamente", for: .normal)
-        restartButton.setTitleColor(.black, for: .normal)
-        restartButton.titleLabel?.font = UIFont(name: "Superfruit", size:27)
+        restartButton.setTitleColor(.white, for: .normal)
+        restartButton.titleLabel?.font = UIFont(name: "Raleway-Bold", size:27)
         restartButton.titleLabel?.adjustsFontSizeToFitWidth = true
         restartButton.isHidden = false
         restartButton.isEnabled = true
@@ -93,12 +94,12 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         dismissPickerView3()
         
         titleSpace.text = "Associe os números às frases corretas!"
-        titleSpace.textColor = .black
+        titleSpace.textColor = .white
         titleSpace.textAlignment = .center
         titleSpace.backgroundColor = colorTitle
         titleSpace.layer.masksToBounds = true
         titleSpace.numberOfLines = 0
-        titleSpace.font = UIFont(name: "Superfruit", size:35)
+        titleSpace.font = UIFont(name: "Raleway-Bold", size:30)
         
         backgroundCard1.backgroundColor = colorCard1
         backgroundCard1.layer.cornerRadius = 20
@@ -113,66 +114,66 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         backgroundCard3.layer.masksToBounds = true
         
         cardSpace1.text = hideNumbers(fact: factsOfNumbers[0].1)
-        cardSpace1.textColor = .black
+        cardSpace1.textColor = .white
         cardSpace1.textAlignment = .center
         cardSpace1.layer.masksToBounds = true
         cardSpace1.numberOfLines = 0
-        cardSpace1.font = UIFont(name: "Superfruit", size:23)
+        cardSpace1.font = UIFont(name: "Raleway-Bold", size:23)
         cardSpace1.adjustsFontSizeToFitWidth = true
         
         cardSpace2.text = hideNumbers(fact: factsOfNumbers[1].1)
-        cardSpace2.textColor = .black
+        cardSpace2.textColor = .white
         cardSpace2.textAlignment = .center
         cardSpace2.layer.masksToBounds = true
         cardSpace2.numberOfLines = 0
-        cardSpace2.font = UIFont(name: "Superfruit", size:23)
+        cardSpace2.font = UIFont(name: "Raleway-Bold", size:23)
         cardSpace2.adjustsFontSizeToFitWidth = true
         
         cardSpace3.text = hideNumbers(fact: factsOfNumbers[2].1)
-        cardSpace3.textColor = .black
+        cardSpace3.textColor = .white
         cardSpace3.textAlignment = .center
         cardSpace3.layer.masksToBounds = true
         cardSpace3.numberOfLines = 0
-        cardSpace3.font = UIFont(name: "Superfruit", size:23)
+        cardSpace3.font = UIFont(name: "Raleway-Bold", size:23)
         cardSpace3.adjustsFontSizeToFitWidth = true
         
         doneButton.layer.borderWidth = 1
         doneButton.layer.borderColor = colorButton.cgColor
-        doneButton.layer.shadowColor = UIColor.black.cgColor
+        doneButton.layer.shadowColor = UIColor.white.cgColor
         doneButton.layer.shadowOpacity = 0.4
         doneButton.layer.shadowOffset = .zero
         doneButton.layer.shadowRadius = 10
         doneButton.backgroundColor = colorButton
         doneButton.layer.cornerRadius = 10
         doneButton.setTitle("Pronto!", for: .normal)
-        doneButton.setTitleColor(.black, for: .normal)
-        doneButton.titleLabel?.font = UIFont(name: "Superfruit", size:30)
+        doneButton.setTitleColor(.white, for: .normal)
+        doneButton.titleLabel?.font = UIFont(name: "Raleway-Bold", size:24)
         doneButton.addTarget(self, action: #selector(finish), for: .touchUpInside)
         doneButton.isEnabled = false
         
-        answerSpace1.textColor = .black
+        answerSpace1.textColor = .white
         answerSpace1.textAlignment = .center
-        answerSpace1.layer.borderColor = CGColor(srgbRed: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+        answerSpace1.layer.borderColor = UIColor.white.cgColor
         answerSpace1.layer.borderWidth = 2
         answerSpace1.layer.cornerRadius = 10
         answerSpace1.layer.masksToBounds = true
-        answerSpace1.font = UIFont(name: "Superfruit", size:20 )
+        answerSpace1.font = UIFont(name: "Raleway-Bold", size:20 )
         
-        answerSpace2.textColor = .black
+        answerSpace2.textColor = .white
         answerSpace2.textAlignment = .center
-        answerSpace2.layer.borderColor = CGColor(srgbRed: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+        answerSpace2.layer.borderColor = UIColor.white.cgColor
         answerSpace2.layer.borderWidth = 2
         answerSpace2.layer.cornerRadius = 10
         answerSpace2.layer.masksToBounds = true
-        answerSpace2.font = UIFont(name: "Superfruit", size:20 )
+        answerSpace2.font = UIFont(name: "Raleway-Bold", size:20 )
         
-        answerSpace3.textColor = .black
+        answerSpace3.textColor = .white
         answerSpace3.textAlignment = .center
-        answerSpace3.layer.borderColor = CGColor(srgbRed: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+        answerSpace3.layer.borderColor = UIColor.white.cgColor
         answerSpace3.layer.borderWidth = 2
         answerSpace3.layer.cornerRadius = 10
         answerSpace3.layer.masksToBounds = true
-        answerSpace3.font = UIFont(name: "Superfruit", size:20 )
+        answerSpace3.font = UIFont(name: "Raleway-Bold", size:20 )
         
         popLabel.adjustsFontSizeToFitWidth = true
         popLabel.numberOfLines = 0
@@ -583,6 +584,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         else {
             correct = false
             showPop(correct: false)
+            chances = chances - 1
         }
         
     }
@@ -590,9 +592,9 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     func showPop(correct: Bool){
         
         if (correct) {
-            popImageview.image = UIImage(named: "RectangleCorrect")
-            popLabel.text = "Você acertou!🥳"
-            popLabel.textColor = .black
+            popImageview.image = UIImage(named: "RectangleRight")
+            popLabel.text = "Você acertou! 🥳"
+            popLabel.textColor = .orange
             popBtm.isHidden = false
             popBtm.addTarget(self, action: #selector(revealNumbers), for: .touchUpInside)
             popBtm.setTitle("Revelar números", for: .normal)
@@ -600,20 +602,20 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
             
         } else {
             popImageview.image = UIImage(named: "RectangleWrong")
-            popLabel.textColor = .black
-            chances = chances - 1
+            popLabel.textColor = UIColor.orange
             if chances == 0 {
                 popBtm.setTitle("Revelar números", for: .normal)
 
             } else {
                 popBtm.setTitle("Tentar Novamente", for: .normal)
             }
-            popLabel.text = "Opa! Algo de errado não está certo! 🤔\n(\(chances) chances restantes)"
+            popLabel.text = "Pense mais um pouco! 🤔\n(\(chances) chances restantes)"
         }
         
-        popLabel.font = UIFont(name: "Superfruit", size: 24)
+        popLabel.font = UIFont(name: "Raleway", size: 22)
+        popLabel.textColor = .white
         //popBtm.setImage(UIImage(named: "PinkRectangle"), for: .normal)
-        popBtm.titleLabel?.font = UIFont(name: "Superfruit", size: 19)
+        popBtm.titleLabel?.font = UIFont(name: "Raleway", size: 15)
         popImageview.isHidden = false
         popBtm.isHidden = false
         popLabel.isHidden = false

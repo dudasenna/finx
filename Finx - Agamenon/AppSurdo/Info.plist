@@ -31,6 +31,13 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>O nosso jogo usa Realidade Aumentada, por isso gostaríamos de ter acesso à sua câmera. Nenhum dado será coletado.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Raleway.ttf</string>
+		<string>Raleway-Bold.ttf</string>
+		<string>Raleway-SemiBold.ttf</string>
+		<string>RalewayDots-Regular.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
