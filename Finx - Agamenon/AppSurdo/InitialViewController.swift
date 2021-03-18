@@ -68,7 +68,7 @@ class InitialViewController: UIViewController {
 //        camButton.setTitle("Começar", for: .normal)
 //        camButton.setTitleColor(.black, for: .normal)
 //        camButton.titleLabel?.font = UIFont(name: "Superfruit", size:30)
-          camButton..addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
+          camButton.addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
         
 //        let instructionsButton = UIButton()
 //        instructionsButton.backgroundColor = .clear

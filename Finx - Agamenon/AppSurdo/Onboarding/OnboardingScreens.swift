@@ -8,9 +8,10 @@
 
 import Foundation
 import UIKit
+import FirebaseAnalytics
 
 class OnboardingScreens: UIViewController, UIScrollViewDelegate {
-    
+    var tutorialCompleted = false
     @IBOutlet weak var jumpButtonSB: UIButton!
     let textsArray = ["Inicie o jogo e aponte seu celular para uma superfície até que se formem vários pontos", "Toque na tela para carregar a cena", "Procure os três cubos escondidos no cenário e clique neles para capturá-los", "Cada cubo encontrado representa um valor numérico surpresa", "Utilizando seus conhecimentos ou sua sorte, relacione o fato aleatório a um número", "Ao acertar o número correto, pode voltar à cena e procurar outro cubo!"]
     
@@ -18,7 +19,7 @@ class OnboardingScreens: UIViewController, UIScrollViewDelegate {
     private var stackView = UIStackView(frame: .zero)
     private var views:[UIView] = []
     var pageControl = UIPageControl()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +34,7 @@ class OnboardingScreens: UIViewController, UIScrollViewDelegate {
         jumpButtonSB.titleLabel?.adjustsFontSizeToFitWidth = true
         jumpButtonSB.setTitleColor(UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0) , for: .normal)
         jumpButtonSB.layer.cornerRadius = 10
+        jumpButtonSB.addTarget(self, action: #selector(jumpAction), for: .touchUpInside)
         
         // *** SETUP SCROLLVIEW *** //
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -43,7 +45,7 @@ class OnboardingScreens: UIViewController, UIScrollViewDelegate {
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
-//        stackView.spacing = 20
+        //        stackView.spacing = 20
         
         scrollView.addSubview(stackView)
         
@@ -51,27 +53,27 @@ class OnboardingScreens: UIViewController, UIScrollViewDelegate {
         self.view.addSubview(scrollView)
         self.view.addSubview(jumpButtonSB)
         NSLayoutConstraint.activate([
-          scrollView.topAnchor.constraint(equalTo: self.view.topAnchor),
-          scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-          scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-          scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            scrollView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
-          stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-          stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-          stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-          stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor)
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor)
         ])
         
         jumpButtonSB.translatesAutoresizingMaskIntoConstraints = false
         
         jumpButtonSB.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         jumpButtonSB.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
-//        jumpButton.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        //        jumpButton.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor).isActive = true
         jumpButtonSB.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.2).isActive = true
         jumpButtonSB.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.05).isActive = true
-
+        
         // Initializing the views we'll put in the scrollView and adding them to an array for convenience
         let pageView1 = PageView(textLabelText: textsArray[0], backgroundImageName: UIImage(named: "Rectangle1")!, iconImageName: UIImage(named: "Group 21")!)
         views.append(pageView1)
@@ -92,10 +94,10 @@ class OnboardingScreens: UIViewController, UIScrollViewDelegate {
             view.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
             view.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         }
-
+        
         // *** ADD PAGECONTROLL *** //
         pageControl.numberOfPages = views.count
-//        pageControl.colo = UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0)
+        //        pageControl.colo = UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0)
         pageControl.addTarget(self, action: #selector(pageControlTapped(sender:)), for: .valueChanged)
         pageControl.pageIndicatorTintColor = UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 0.5)
         pageControl.currentPageIndicatorTintColor = UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0)
@@ -111,21 +113,33 @@ class OnboardingScreens: UIViewController, UIScrollViewDelegate {
     @objc func pageControlTapped(sender: UIPageControl) {
         let pageWidth = scrollView.bounds.width
         let offset = sender.currentPage * Int(pageWidth)
+        if sender.currentPage == 5 {
+            tutorialCompleted = true
+        }
         UIView.animate(withDuration: 0.33, animations: { [weak self] in
-          self?.scrollView.contentOffset.x = CGFloat(offset)
+            self?.scrollView.contentOffset.x = CGFloat(offset)
         })
     }
-
+    
+    @IBAction func jumpAction(_ sender: UIButton){
+        print(pageControl.currentPage)
+        if tutorialCompleted {
+            Analytics.logEvent(AnalyticsEventTutorialComplete, parameters: nil)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-      let pageWidth = scrollView.bounds.width
-      let pageFraction = scrollView.contentOffset.x/pageWidth
-
-      pageControl.currentPage = Int((round(pageFraction)))
+        let pageWidth = scrollView.bounds.width
+        let pageFraction = scrollView.contentOffset.x/pageWidth
+        if pageControl.currentPage == 5 {
+            tutorialCompleted = true
+        }
+        pageControl.currentPage = Int((round(pageFraction)))
     }
-
+    
 }

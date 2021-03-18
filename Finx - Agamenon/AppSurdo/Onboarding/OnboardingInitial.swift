@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAnalytics
 
 class OnboardingInitial: UIViewController {
     
@@ -103,6 +104,7 @@ class OnboardingInitial: UIViewController {
     }
     
     @objc func buttonBeginAction(sender: UIButton!) {
+        Analytics.logEvent(AnalyticsEventTutorialBegin, parameters: nil)
         navigationController?.pushViewController(OnboardingScreens(), animated: true)
     }
 }
