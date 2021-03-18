@@ -23,7 +23,7 @@
         <!--Initial View Controller-->
         <scene sceneID="JFJ-gr-8UU">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="slH-Ed-jST" customClass="InitialViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InitialViewController" modalPresentationStyle="fullScreen" id="slH-Ed-jST" customClass="InitialViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e5W-ug-wWJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -284,7 +284,7 @@
         <!--Onboarding Initial-->
         <scene sceneID="rOd-1N-Z8l">
             <objects>
-                <viewController id="ZCt-Le-Imr" customClass="OnboardingInitial" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingInitial" id="ZCt-Le-Imr" customClass="OnboardingInitial" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="135-CO-bsl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,7 +314,7 @@
             <objects>
                 <viewController id="fUs-kB-cyS" customClass="OnboardingScreens" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iHz-db-PcL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftv-SG-7Mx">
@@ -339,7 +339,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dpO-tz-3Xf"/>
+        <segue reference="fUs-Wi-xJM"/>
         <segue reference="gts-7S-yGi"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

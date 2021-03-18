@@ -12,7 +12,6 @@ import UIKit
 class OnboardingScreens: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var jumpButtonSB: UIButton!
-    //    let currentPage = 0
     let textsArray = ["Inicie o jogo e aponte seu celular para uma superfície até que se formem vários pontos", "Toque na tela para carregar a cena", "Procure os três cubos escondidos no cenário e clique neles para capturá-los", "Cada cubo encontrado representa um valor numérico surpresa", "Utilizando seus conhecimentos ou sua sorte, relacione o fato aleatório a um número", "Ao acertar o número correto, pode voltar à cena e procurar outro cubo!"]
     
     private var scrollView = UIScrollView(frame: .zero)
@@ -28,20 +27,12 @@ class OnboardingScreens: UIViewController, UIScrollViewDelegate {
     
     private func setup() {
         
-//        let jumpButton = UIButton()
-        
-        jumpButtonSB.backgroundColor = .white
-//        let sizeConfig = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold, scale: .large)
-//        let sizeArrow = UIImage(systemName: "arrow.forward", withConfiguration: sizeConfig)
-//        jumpButton.setImage(sizeArrow, for: .normal)
-//        jumpButton.tintColor = UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0)
         jumpButtonSB.backgroundColor = .init(white: 1.0, alpha: 0.8)
         jumpButtonSB.setTitle("Pular", for: .normal)
         jumpButtonSB.titleLabel?.font = UIFont(name: "Raleway-SemiBold", size: 18)
         jumpButtonSB.titleLabel?.adjustsFontSizeToFitWidth = true
         jumpButtonSB.setTitleColor(UIColor(red: 237/257, green: 142/256, blue: 92/256, alpha: 1.0) , for: .normal)
         jumpButtonSB.layer.cornerRadius = 10
-//        jumpButtonSB.addTarget(self, action: #selector(jumpButtonAction), for: .touchUpInside)
         
         // *** SETUP SCROLLVIEW *** //
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -136,31 +127,5 @@ class OnboardingScreens: UIViewController, UIScrollViewDelegate {
 
       pageControl.currentPage = Int((round(pageFraction)))
     }
-    
-//    @objc func jumpButtonAction(sender: UIButton!) {
-//        print("Button tapped")
-//        show(InitialViewController(), sender: self)
-////        navigationController?.pushViewController(InitialViewController(), animated: true)
-//    }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
-
-//extension OnboardingScreens: UIScrollViewDelegate {
-//  func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//    let pageWidth = scrollView.bounds.width
-//    let pageFraction = scrollView.contentOffset.x/pageWidth
-//
-//    pageControl.currentPage = Int((round(pageFraction)))
-//  }
-//}
