@@ -177,7 +177,7 @@ class InitialViewController: UIViewController {
     }
     
     @IBAction func instructionsButtonAction(sender: UIButton!) {
-        Analytics.logEvent("pressed_help", parameters: nil)
+        Analytics.logEvent(AnalyticsEventTutorialBegin, parameters: nil)
         print("Button tapped")
     }
 }
