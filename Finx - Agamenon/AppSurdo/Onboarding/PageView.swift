@@ -71,9 +71,10 @@ class PageView: UIView {
         
         textLabel.textColor = .black
         textLabel.textAlignment = .center
-        textLabel.font = UIFont(name: "Raleway-SemiBold", size: 18)
+        textLabel.font = UIFont(name: "Raleway-SemiBold", size: 25)
         textLabel.adjustsFontSizeToFitWidth = true
         textLabel.numberOfLines = 0
+        textLabel.minimumScaleFactor = 0.8
 //        textLabel.sizeToFit()
         
         //define background
@@ -98,7 +99,7 @@ class PageView: UIView {
         textLabel.topAnchor.constraint(equalToSystemSpacingBelow: backgroundImage.bottomAnchor, multiplier: 0.5).isActive = true
         textLabel.centerXAnchor.constraint(equalTo: backgroundImage.centerXAnchor).isActive = true
         textLabel.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.7).isActive = true
-        textLabel.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
+        textLabel.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 0.2).isActive = true
         
         iconImage.centerXAnchor.constraint(equalTo: backgroundImage.centerXAnchor).isActive = true
         iconImage.centerYAnchor.constraint(equalTo: backgroundImage.centerYAnchor).isActive = true
