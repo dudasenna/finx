@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let defaults = UserDefaults.standard
+
+        var rootViewController : UIViewController;
+
+        if (defaults.bool(forKey: "HasBeenLaunched")) {
+            // This gets executed if the app has ALREADY been launched
+            rootViewController = storyboard.instantiateViewController(withIdentifier: "InitialViewController") as UIViewController
+        } else {
+            // This gets executed if the app has NEVER been launched
+            defaults.set(true, forKey: "HasBeenLaunched")
+            defaults.synchronize()
+
+            rootViewController = storyboard.instantiateViewController(withIdentifier: "OnboardingInitial") as UIViewController
+        }
+
+        self.window?.rootViewController = rootViewController;
+        self.window?.makeKeyAndVisible();
 
         return true
     }

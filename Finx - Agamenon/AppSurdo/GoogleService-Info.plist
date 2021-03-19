@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>465833596535-33eo9nc8boc36ae75454jlroo42rvl27.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.465833596535-33eo9nc8boc36ae75454jlroo42rvl27</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCbkclmQeT6GQGuSuqz1PYGO1Ru0_uymrU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>465833596535</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>APPFinx</string>
+	<key>PROJECT_ID</key>
+	<string>finx-game</string>
+	<key>STORAGE_BUCKET</key>
+	<string>finx-game.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<true/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:465833596535:ios:baf7b9376b405577e6d872</string>
+</dict>
+</plist>

@@ -6,7 +6,8 @@
 //
 
 import Foundation
-import  UIKit
+import UIKit
+import FirebaseAnalytics
 
 class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
@@ -51,15 +52,14 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     
     let scrollView = UIScrollView()
     let contentView = UIView()
-    
     //    @IBOutlet weak var restartButton: UIButton!
     
     var pickerView1, pickerView2, pickerView3: UIPickerView!
     
     var chances = 3
+    var equationViewEntries = ViewEntryCounter()
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         scrollView.isScrollEnabled = true
@@ -84,6 +84,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         restartButton.titleLabel?.adjustsFontSizeToFitWidth = true
         restartButton.isHidden = false
         restartButton.isEnabled = true
+        restartButton.addTarget(self, action: #selector(restartButtonTapped), for: .touchUpInside)
         
         pickerView1 = createPickerView1()
         dismissPickerView1()
@@ -637,4 +638,8 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         }
     }
     
+    @IBAction func restartButtonTapped(_ sender: UIButton!) {
+        equationViewEntries.entryNumber = equationViewEntries.entryNumber + 1
+        Analytics.logEvent("pressed_restart", parameters: ["number_of_times": equationViewEntries.entryNumber])
+    }
 }

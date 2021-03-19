@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAnalytics
 
 class InitialViewController: UIViewController {
 //    var colorButton = #colorLiteral(red: 0.9067924023, green: 0.6966804862, blue: 0.7795810103, alpha: 1)
@@ -67,6 +68,7 @@ class InitialViewController: UIViewController {
 //        camButton.setTitle("Começar", for: .normal)
 //        camButton.setTitleColor(.black, for: .normal)
 //        camButton.titleLabel?.font = UIFont(name: "Superfruit", size:30)
+          camButton.addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
         
 //        let instructionsButton = UIButton()
 //        instructionsButton.backgroundColor = .clear
@@ -87,7 +89,7 @@ class InitialViewController: UIViewController {
 //        instructionsButton.setTitle("Instruções", for: .normal)
 //        instructionsButton.setTitleColor(.black, for: .normal)
 //        instructionsButton.titleLabel?.font = UIFont(name: "Superfruit", size:30)
-//        instructionsButton.addTarget(self, action: #selector(instructionsButtonAction), for: .touchUpInside)
+          HelpButton.addTarget(self, action: #selector(instructionsButtonAction), for: .touchUpInside)
         
 //        rectangle.addSubview(command)
 //        rectangle.addSubview(title)
@@ -96,6 +98,7 @@ class InitialViewController: UIViewController {
         
         
 //        self.view.addSubview(rectangle)
+//        HelpButton.addTarget(self, action: #selector(helpButtonAction), for: .touchUpInside)
         self.view.addSubview(HelpButton)
         self.view.addSubview(camButton)
 //        self.view.addSubview(instructionsButton)
@@ -169,11 +172,12 @@ class InitialViewController: UIViewController {
 //        instructionsButton.heightAnchor.constraint(equalToConstant: 69).isActive = true
         
     }
+    @IBAction func startButtonAction(sender: UIButton!) {
+        Analytics.logEvent("pressed_play", parameters: nil)
+    }
     
-//    @objc func instructionsButtonAction(sender: UIButton!) {
-//
-//        print("Button tapped")
-//        performSegue(withIdentifier: "instructionsSegue", sender: self)
-//
-//    }
+    @IBAction func instructionsButtonAction(sender: UIButton!) {
+        Analytics.logEvent(AnalyticsEventTutorialBegin, parameters: nil)
+        print("Button tapped")
+    }
 }

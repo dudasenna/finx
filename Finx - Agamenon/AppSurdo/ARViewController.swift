@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SceneKit
 import ARKit
+import FirebaseAnalytics
 
 //@property (nonatomic, assign) BOOL isSomethingEnabled;
 //#import "EquationViewController.swift"
@@ -38,6 +39,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     var cubes: [SCNNode]!
     var cardButtons: [UIButton] = []
     var currentCard = 0
+    var numberOfTouches = 0
     
     //*****used after parsing to create variables with language information
     struct TranslatorLanguageDetails: Codable {
@@ -149,16 +151,18 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        numberOfTouches = numberOfTouches + 1
         if baseLoaded == false{
             addScenario(location: (touches.first?.location(in: sceneView))!)
         }else{
-            print("Scenario loaded")
+            //print("Scenario loaded")
             
             //Checking if cube was found
             let touch = touches.first!
             
             if(touch.view == self.sceneView){
-                print("touch working")
+                
+                //print("touch working")
                 let viewTouchLocation:CGPoint = touch.location(in: sceneView)
                 guard let result = sceneView.hitTest(viewTouchLocation, options: nil).first else {
                     return
@@ -189,7 +193,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             let rootNode = scene.rootNode.childNode(withName: "BaseReference", recursively: false)
             rootNode?.position = newPosition
             sceneView.scene = scene
-            print("Load scenario")
+            Analytics.logEvent("loaded_scenario", parameters: nil)
+            Analytics.logEvent("touches_until_load", parameters: ["number_of_touches":numberOfTouches])
+            //print("Load scenario")
             baseLoaded = true
         }
     }
@@ -256,7 +262,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
      }*/
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        if baseLoaded == false {
+            Analytics.logEvent("did_not_load_ar", parameters: nil)
+        }
         // Pause the view's session
         sceneView.session.pause()
     }
@@ -369,7 +377,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         let config = URLSessionConfiguration.default
         let session =  URLSession(configuration: config)
-        var phraseTranslated: String = ""
+//        var phraseTranslated: String = ""
         
         let task = session.dataTask(with: request) { (responseData, response, responseError) in
             
