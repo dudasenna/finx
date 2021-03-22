@@ -77,7 +77,13 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     var portugueseBrLanguage = TranslatorLanguageDetails(code: " ", name: " ", nativeName: " ", dir: " ")
     var englishLanguage = TranslatorLanguageDetails(code: " ", name: " ", nativeName: " ", dir: " ")
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        popButton.titleLabel?.font = UIFont(name: "Raleway-SemiBold", size: 30)
+        popButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        popButton.titleLabel?.adjustsFontForContentSizeCategory = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         popView.isHidden = false
@@ -135,7 +141,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         popButton.centerXAnchor.constraint(equalTo: popView.centerXAnchor).isActive = true
         popButton.bottomAnchor.constraint(equalTo: popView.bottomAnchor, constant: -50).isActive = true
-        popButton.heightAnchor.constraint(equalTo: popView.heightAnchor, multiplier: 0.1).isActive = true
+        popButton.heightAnchor.constraint(equalTo: popView.heightAnchor, multiplier: 0.15).isActive = true
         popButton.widthAnchor.constraint(equalTo: popView.widthAnchor, multiplier: 0.4).isActive = true
         
         popLabel.centerYAnchor.constraint(equalTo: popView.centerYAnchor, constant: -30).isActive = true
