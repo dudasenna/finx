@@ -105,11 +105,11 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         backgroundCard1.layer.cornerRadius = 20
         backgroundCard1.layer.masksToBounds = true
         
-        backgroundCard2.backgroundColor = colorCard2
+        backgroundCard2.backgroundColor = colorCard3
         backgroundCard2.layer.cornerRadius = 20
         backgroundCard2.layer.masksToBounds = true
         
-        backgroundCard3.backgroundColor = colorCard3
+        backgroundCard3.backgroundColor = colorCard2
         backgroundCard3.layer.cornerRadius = 20
         backgroundCard3.layer.masksToBounds = true
         
