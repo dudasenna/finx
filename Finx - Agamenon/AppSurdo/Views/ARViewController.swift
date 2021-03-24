@@ -24,16 +24,17 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var sceneView: ARSCNView!
     var baseLoaded:Bool = false
     
-    @IBOutlet weak var PopUp: UIImageView!
+    @IBOutlet weak var popUp: UIImageView!
     @IBOutlet weak var card1: UIButton!
     @IBOutlet weak var card2: UIButton!
     @IBOutlet weak var card3: UIButton!
+    @IBOutlet weak var answersButton: UIButton!
     
     //    @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var popView: UIView!
     @IBOutlet weak var popLabel: UILabel!
     @IBOutlet weak var popButton: UIButton!
-    @IBOutlet weak var nextButton: UIButton!
+//    @IBOutlet weak var nextButton: UIButton!
     
     
     var cubes: [SCNNode]!
@@ -54,16 +55,21 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         card1.titleLabel?.font = UIFont(name: "Raleway-SemiBold", size: 20)
         card1.titleLabel?.adjustsFontSizeToFitWidth = true
         card1.titleLabel?.adjustsFontForContentSizeCategory = true
+        card1.setBackgroundImage(UIImage(named: "card"), for: .disabled)
         
         card2.setTitle(numbers[1], for: .normal)
         card2.titleLabel?.font = UIFont(name: "Raleway-SemiBold", size: 20)
         card2.titleLabel?.adjustsFontSizeToFitWidth = true
         card2.titleLabel?.adjustsFontForContentSizeCategory = true
+        card2.setBackgroundImage(UIImage(named: "card"), for: .disabled)
         
         card3.setTitle(numbers[2], for: .normal)
         card3.titleLabel?.font = UIFont(name: "Raleway-SemiBold", size: 20)
         card3.titleLabel?.adjustsFontSizeToFitWidth = true
         card3.titleLabel?.adjustsFontForContentSizeCategory = true
+        card3.setBackgroundImage(UIImage(named: "card"), for: .disabled)
+        
+        answersButton.isHidden = true
     }
     
     override func viewDidLoad() {
@@ -83,14 +89,11 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             }
         }
         
-        card1.addTarget(self, action: #selector(testAnswer), for: .touchUpInside)
-        card2.addTarget(self, action: #selector(testAnswer), for: .touchUpInside)
-        card3.addTarget(self, action: #selector(testAnswer), for: .touchUpInside)
-        
         cardButtons = [card1,card2,card3]
         
         for button in cardButtons {
             button.isEnabled = false
+            button.addTarget(self, action: #selector(testAnswer), for: .touchUpInside)
         }
         
         popLabel.numberOfLines = 0
@@ -109,18 +112,20 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         popView.translatesAutoresizingMaskIntoConstraints = false
         popLabel.translatesAutoresizingMaskIntoConstraints = false
         popButton.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        PopUp.translatesAutoresizingMaskIntoConstraints = false
+//        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        popUp.translatesAutoresizingMaskIntoConstraints = false
+        answersButton.translatesAutoresizingMaskIntoConstraints = false
         
         popView.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.4).isActive = true
         popView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.75).isActive = true
         popView.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor).isActive = true
         popView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         
-        PopUp.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.4).isActive = true
-        PopUp.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.75).isActive = true
-        PopUp.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor).isActive = true
-        PopUp.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        
+        popUp.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.75).isActive = true
+        popUp.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.4).isActive = true
+        popUp.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+        popUp.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         
         
         
@@ -133,10 +138,17 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         popLabel.centerXAnchor.constraint(equalTo: popView.centerXAnchor).isActive = true
         popLabel.widthAnchor.constraint(equalTo: popView.widthAnchor, multiplier: 0.9).isActive = true
         
-        nextButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
-        nextButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        nextButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.2).isActive = true
-        nextButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
+        popUp.heightAnchor.constraint(greaterThanOrEqualTo: popLabel.heightAnchor, multiplier: 1).isActive = true
+        
+//        nextButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+//        nextButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+//        nextButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.2).isActive = true
+//        nextButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
+        
+        answersButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50).isActive = true
+        answersButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        answersButton.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.7).isActive = true
+        answersButton.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.1).isActive = true
         
         //        getLanguages()
     }
@@ -163,7 +175,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                     let encoded = self.hideNumbers(fact: facts[currentCard].1)
                     self.popLabel.text = encoded
                     popView.isHidden = false
-                    popButton.isEnabled = false
+                    popButton.isHidden = true
                     //cardButtons[currentCard].setImage(UIImage(named: "CardActive"), for: .normal)
                     for button in cardButtons {
                         button.isEnabled = true
@@ -245,6 +257,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBAction func tapCollect(_ sender: UIButton) {
         popView.isHidden = true
         popLabel.text = ""
+        popUp.image = UIImage(named: "PopupFatos")
         popButton.setTitle("Coletar", for: .normal)
     }
     
@@ -283,19 +296,40 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         let numberPressed = sender.title(for: .normal)
         let factNumber = facts[currentCard-1].0
         if numberPressed == factNumber {
-            print("Acertou!")
-            popButton.isEnabled = true
-            //label com acertou, muda a action do botão para aparecer a label com a frase quando clicar, tira ele do array de botões, deixa ele enabled e dá disable nos outros
-            //se o array tiver vazio, então a pessoa ganhou
-            //label do botão = voltar para o menu?
-            //c.c
-            //label do botão = explorar? coletar mesmo?
+            popButton.isHidden = false
+            popUp.image = UIImage(named: "RectangleRight")
+            if currentCard == 3 {
+                print("ganhou")
+                popLabel.text = "Você ganhou!!"
+                popButton.setTitle("Jogar Novamente", for: .normal)
+                //ir pra tela de carregamento, já que pra sair da tela AR já é só baixar a modal
+            } else {
+                print("Acertou!")
+                //popLabel.text?.append("\nVocê acertou!!!!")
+            }
+            cardButtons.removeAll(where: {$0 == sender})
+            
+            for button in cardButtons {
+                button.isEnabled = false
+                button.setBackgroundImage(UIImage(named: "Card"), for: .normal)
+            }
+            sender.setBackgroundImage(UIImage(named: "CardCorrect"), for: .normal)
         } else {
             lifes -= 1
             print(lifes)
+            popUp.image = UIImage(named: "RectangleWrong")
             if lifes == 0 {
                 print("Perdeu!")
+                popLabel.text = "Poxa, não foi dessa vez, mas não desiste, na próxima você consegue!!"
+                card1.isHidden = true
+                card2.isHidden = true
+                card3.isHidden = true
+                
+                answersButton.isHidden = false
                 //dá disable em todos os botões e botão da label tem a opção descobir números e jogar novamente? ou voltar para o início?
+                //colocar label final de perdeu
+            } else {
+                popLabel.text?.append("\n\nOps! Tente Novamente!")
             }
         }
     }

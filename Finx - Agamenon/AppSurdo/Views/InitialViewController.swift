@@ -137,7 +137,7 @@ class InitialViewController: UIViewController {
 
     func getTranslation(textToTranslate: String, numberString: String) {
         //key genereted from azure (microsoft)
-        let azureKey = "cff9498d0fe041618d523d95b65ad768"
+        let azureKey = "a877d5a784f341eaab11789221a68916"
 
         let contentType = "application/json"
         let traceID = "A14C9DB9-0DED-48D7-8BBE-C517A1A8DBB0"
@@ -183,7 +183,7 @@ class InitialViewController: UIViewController {
                 let dataTranslation = try? JSONDecoder().decode(Array<TranslatedData>.self, from: responseData!)
                 let numberOfTranslations = dataTranslation!.count - 1
 
-                var phraseTranslated = dataTranslation![0].translations[numberOfTranslations].text
+                let phraseTranslated = dataTranslation![0].translations[numberOfTranslations].text
 
                 self.facts.append((numberString, phraseTranslated))
                 

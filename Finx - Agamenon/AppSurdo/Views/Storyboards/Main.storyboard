@@ -131,16 +131,6 @@
                                     </button>
                                 </subviews>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2J-43-snF">
-                                <rect key="frame" x="278" y="91" width="116" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Arrow2">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="dkw-ts-Veh" kind="presentation" identifier="EquationSegue" modalPresentationStyle="fullScreen" id="0Mx-uS-ulX"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moS-DQ-1IN">
                                 <rect key="frame" x="165" y="673" width="84" height="84"/>
                                 <constraints>
@@ -148,6 +138,17 @@
                                     <constraint firstAttribute="width" constant="84" id="wEE-zW-FWc"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="Card"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zb-L8-3Qa">
+                                <rect key="frame" x="115" y="585" width="185" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="18"/>
+                                <state key="normal" title="Respostas" backgroundImage="PopupButton">
+                                    <color key="titleColor" red="0.73186522720000002" green="0.56667959690000003" blue="0.43526908759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapCollect:" destination="BV1-FR-VrT" eventType="touchUpInside" id="u52-lB-Cws"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
@@ -174,13 +175,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="tiZ-i6-T5B"/>
                     <connections>
-                        <outlet property="PopUp" destination="kan-m2-eZC" id="bkf-JX-6EZ"/>
+                        <outlet property="answersButton" destination="8Zb-L8-3Qa" id="6w4-01-oWm"/>
                         <outlet property="card1" destination="Clu-cm-a6e" id="rnu-Za-hF8"/>
                         <outlet property="card2" destination="moS-DQ-1IN" id="wEw-Nt-QjO"/>
-                        <outlet property="card3" destination="EK8-MR-Ylu" id="NJY-el-LnO"/>
-                        <outlet property="nextButton" destination="A2J-43-snF" id="Yq8-Eh-kt4"/>
+                        <outlet property="card3" destination="EK8-MR-Ylu" id="wSg-Xk-T2o"/>
                         <outlet property="popButton" destination="btd-IU-5qR" id="CCy-VY-dZd"/>
                         <outlet property="popLabel" destination="CaJ-tg-sga" id="GYT-xr-jgC"/>
+                        <outlet property="popUp" destination="kan-m2-eZC" id="bkf-JX-6EZ"/>
                         <outlet property="popView" destination="QnH-B7-yh0" id="S4n-gB-O4T"/>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="OoP-OQ-SJX"/>
                     </connections>
@@ -344,7 +345,6 @@
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="Arrow2" width="79" height="59"/>
         <image name="Card" width="84" height="72"/>
         <image name="HelpButton" width="41" height="41"/>
         <image name="Inicial" width="388" height="812"/>
