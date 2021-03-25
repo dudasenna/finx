@@ -84,7 +84,7 @@ class LoadViewController: UIViewController {
         
         animationLabel.topAnchor.constraint(equalTo: animationView.bottomAnchor, constant: 30).isActive = true
         animationLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        animationLabel.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.7).isActive = true
+        animationLabel.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.55).isActive = true
         
         animationView?.play()
         
