@@ -37,7 +37,7 @@
                                 <gestureRecognizers/>
                                 <state key="normal" image="PlayButton"/>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="presentation" identifier="ARSegue" id="zvh-qw-8jW"/>
+                                    <segue destination="oQE-63-y0q" kind="presentation" id="5ZQ-tk-0UX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8C-ka-wcW">
@@ -77,12 +77,57 @@
             </objects>
             <point key="canvasLocation" x="-665.21739130434787" y="137.94642857142856"/>
         </scene>
+        <!--Load View Controller-->
+        <scene sceneID="Bcp-uy-Cgm">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="css-Ug-baX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="oQE-63-y0q" customClass="LoadViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PUc-A8-Esb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZCp-My-gbJ" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="20" y="357" width="374" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0pn-Id-eBT" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loadAnimation"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loadAnimation"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8h-1m-hg8">
+                                <rect key="frame" x="192" y="515" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="presentation" identifier="ARSegue" id="xHw-ML-eqC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JIp-WH-8jf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="animationView" destination="0pn-Id-eBT" id="y4F-lj-Cj0"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="324.63768115942031" y="137.94642857142856"/>
+        </scene>
         <!--AR View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
                 <viewController modalPresentationStyle="pageSheet" id="BV1-FR-VrT" userLabel="AR View Controller" customClass="ARViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
@@ -150,6 +195,13 @@
                                     <action selector="tapCollect:" destination="BV1-FR-VrT" eventType="touchUpInside" id="u52-lB-Cws"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ty3-qE-Syg">
+                                <rect key="frame" x="356" y="776" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="oQE-63-y0q" kind="presentation" identifier="LoadSegue" id="OTy-3Z-f7t"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -188,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1506" y="138"/>
         </scene>
         <!--Equation View Controller-->
         <scene sceneID="6Ry-Gf-KIt">
@@ -254,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zua-yw-jfc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="931.88405797101461" y="137.94642857142856"/>
+            <point key="canvasLocation" x="2533" y="159"/>
         </scene>
         <!--InstructionsViewController-->
         <scene sceneID="N3a-pN-RoR">
@@ -315,7 +367,7 @@
             <objects>
                 <viewController id="fUs-kB-cyS" customClass="OnboardingScreens" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iHz-db-PcL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftv-SG-7Mx">
@@ -339,8 +391,13 @@
             <point key="canvasLocation" x="-1499" y="138"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="0pn-Id-eBT"/>
+        <designable name="ZCp-My-gbJ"/>
+    </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="dpO-tz-3Xf"/>
+        <segue reference="fUs-Wi-xJM"/>
+        <segue reference="OTy-3Z-f7t"/>
         <segue reference="gts-7S-yGi"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

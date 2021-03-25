@@ -258,16 +258,19 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         popView.isHidden = true
         popLabel.text = ""
         popUp.image = UIImage(named: "PopupFatos")
+        if popButton.title(for: .normal) == "Jogar Novamente" {
+            self.performSegue(withIdentifier: "LoadSegue", sender: nil)
+        }
         popButton.setTitle("Coletar", for: .normal)
     }
     
-    override func prepare (for segue: UIStoryboardSegue, sender:Any?) {
-        if segue.identifier == "EquationSegue" {
-            let vcEquation = segue.destination as? EquationViewController
-            vcEquation?.factsOfNumbers = facts
-            vcEquation?.pickerNumbers = numbers.shuffled()
-        }
-    }
+//    override func prepare (for segue: UIStoryboardSegue, sender:Any?) {
+//        if segue.identifier == "EquationSegue" {
+//            let vcEquation = segue.destination as? EquationViewController
+//            vcEquation?.factsOfNumbers = facts
+//            vcEquation?.pickerNumbers = numbers.shuffled()
+//        }
+//    }
     
     func hideNumbers(fact:String)->String{
         let hidedString = Array(fact)

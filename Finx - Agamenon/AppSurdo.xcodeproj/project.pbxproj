@@ -27,6 +27,9 @@
 		86176AE125019EF6006C58FA /* SuperfruitBold-MlBY.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86176AE025019EF6006C58FA /* SuperfruitBold-MlBY.ttf */; };
 		86BD6B5E24FD5044000920CF /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD6B5D24FD5044000920CF /* InitialViewController.swift */; };
 		B43365282601475E00985BFA /* ViewEntryCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43365272601475E00985BFA /* ViewEntryCounter.swift */; };
+		B446917E260D1BEA005DF003 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B446917D260D1BEA005DF003 /* LoadViewController.swift */; };
+		B446918E260D2967005DF003 /* loadAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B446918D260D2967005DF003 /* loadAnimation.json */; };
+		B4469192260D2DB3005DF003 /* loadAnimation1.json in Resources */ = {isa = PBXBuildFile; fileRef = B4469191260D2DB3005DF003 /* loadAnimation1.json */; };
 		B4AB2C7925FFD61B00D789F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */; };
 		DBD1C9B66B65A4C2945B9207 /* Pods_AppSurdo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9EE0C93236698B30D2FB6A /* Pods_AppSurdo.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +60,9 @@
 		86BD6B5D24FD5044000920CF /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		981AC6C8ECC854635D5513A7 /* Pods-AppSurdo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppSurdo.release.xcconfig"; path = "Target Support Files/Pods-AppSurdo/Pods-AppSurdo.release.xcconfig"; sourceTree = "<group>"; };
 		B43365272601475E00985BFA /* ViewEntryCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEntryCounter.swift; sourceTree = "<group>"; };
+		B446917D260D1BEA005DF003 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
+		B446918D260D2967005DF003 /* loadAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation.json; sourceTree = "<group>"; };
+		B4469191260D2DB3005DF003 /* loadAnimation1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation1.json; sourceTree = "<group>"; };
 		B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +115,8 @@
 				2836F81F24FD3CAB00A75E53 /* AppDelegate.swift */,
 				2836F82124FD3CAB00A75E53 /* art.scnassets */,
 				2836F82824FD3CAC00A75E53 /* Assets.xcassets */,
+				B446918D260D2967005DF003 /* loadAnimation.json */,
+				B4469191260D2DB3005DF003 /* loadAnimation1.json */,
 				2836F82D24FD3CAC00A75E53 /* Info.plist */,
 				B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */,
 			);
@@ -140,6 +148,7 @@
 				B43BB38B260A5D85008F569F /* Storyboards */,
 				22F3F4A726013A0A008DA3E3 /* Onboarding */,
 				86BD6B5D24FD5044000920CF /* InitialViewController.swift */,
+				B446917D260D1BEA005DF003 /* LoadViewController.swift */,
 				2836F83724FD436F00A75E53 /* ARViewController.swift */,
 				2836F83524FD42F500A75E53 /* EquationViewController.swift */,
 				221C3D4125ED947600C4FABB /* InstructionsViewController.swift */,
@@ -240,9 +249,11 @@
 				6683028425FBC03D009826D8 /* Raleway-Bold.ttf in Resources */,
 				6683028525FBC03D009826D8 /* Raleway-SemiBold.ttf in Resources */,
 				6651A61525FFCD8D0041E0F2 /* RalewayDots-Regular.ttf in Resources */,
+				B446918E260D2967005DF003 /* loadAnimation.json in Resources */,
 				2836F82224FD3CAB00A75E53 /* art.scnassets in Resources */,
 				6683027F25FBBE37009826D8 /*  Raleway.ttf in Resources */,
 				2836F82C24FD3CAC00A75E53 /* LaunchScreen.storyboard in Resources */,
+				B4469192260D2DB3005DF003 /* loadAnimation1.json in Resources */,
 				228102382603DED300B0A933 /* Main.storyboard in Resources */,
 				86176AE125019EF6006C58FA /* SuperfruitBold-MlBY.ttf in Resources */,
 				2836F82924FD3CAC00A75E53 /* Assets.xcassets in Resources */,
@@ -316,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B446917E260D1BEA005DF003 /* LoadViewController.swift in Sources */,
 				22F3F4A926014459008DA3E3 /* OnboardingInitial.swift in Sources */,
 				22E15F6326029647001C43C3 /* OnboardingScreens.swift in Sources */,
 				2880F71825015E450041FA88 /* RandomFact.swift in Sources */,
