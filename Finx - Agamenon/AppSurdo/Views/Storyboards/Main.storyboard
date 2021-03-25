@@ -86,6 +86,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="Zze-2m-uHG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZCp-My-gbJ" customClass="AnimationView" customModule="Lottie">
                                 <rect key="frame" x="20" y="357" width="374" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -111,11 +115,19 @@
                                     <segue destination="BV1-FR-VrT" kind="presentation" identifier="ARSegue" id="xHw-ML-eqC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSW-94-zib">
+                                <rect key="frame" x="70" y="493" width="279" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JIp-WH-8jf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="animationLabel" destination="BSW-94-zib" id="Deh-zr-xIQ"/>
                         <outlet property="animationView" destination="0pn-Id-eBT" id="y4F-lj-Cj0"/>
                     </connections>
                 </viewController>
@@ -127,7 +139,7 @@
             <objects>
                 <viewController modalPresentationStyle="pageSheet" id="BV1-FR-VrT" userLabel="AR View Controller" customClass="ARViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
@@ -367,7 +379,7 @@
             <objects>
                 <viewController id="fUs-kB-cyS" customClass="OnboardingScreens" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iHz-db-PcL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftv-SG-7Mx">
@@ -396,8 +408,8 @@
         <designable name="ZCp-My-gbJ"/>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="fUs-Wi-xJM"/>
-        <segue reference="OTy-3Z-f7t"/>
+        <segue reference="dpO-tz-3Xf"/>
+        <segue reference="5ZQ-tk-0UX"/>
         <segue reference="gts-7S-yGi"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

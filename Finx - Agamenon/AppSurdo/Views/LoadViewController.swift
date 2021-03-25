@@ -14,6 +14,7 @@ class LoadViewController: UIViewController {
     /*structs e vars para o translator*/
     //*****used after parsing to create variables with language information
     @IBOutlet weak var animationView: AnimationView!
+    @IBOutlet weak var animationLabel: UILabel!
     
     var facts: [(String, String)]! = []
     var numbers: [String]! = []
@@ -54,16 +55,36 @@ class LoadViewController: UIViewController {
     var portugueseBrLanguage = TranslatorLanguageDetails(code: " ", name: " ", nativeName: " ", dir: " ")
     var englishLanguage = TranslatorLanguageDetails(code: " ", name: " ", nativeName: " ", dir: " ")
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        animationLabel.font = UIFont(name: "Raleway-SemiBold", size: 30)
+        animationLabel.adjustsFontSizeToFitWidth = true
+        animationLabel.adjustsFontForContentSizeCategory = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 //        animationView = .init(name: "loadAnimation")
         animationView?.frame = self.view.bounds
         animationView?.contentMode = .scaleAspectFit
         animationView?.loopMode = .loop
         animationView?.animationSpeed = 1.0
         
+        animationLabel.text = "Explorando Numerolândia..."
+        
         self.view.addSubview(animationView!)
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        animationView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        animationView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        animationView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor).isActive = true
+        animationView.heightAnchor.constraint(equalTo: animationView.widthAnchor).isActive = true
+        
+        animationLabel.topAnchor.constraint(equalTo: animationView.bottomAnchor, constant: 30).isActive = true
+        animationLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        animationLabel.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.7).isActive = true
         
         animationView?.play()
         
