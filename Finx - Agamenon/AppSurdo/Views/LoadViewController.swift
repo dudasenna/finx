@@ -71,7 +71,7 @@ class LoadViewController: UIViewController {
         animationView?.loopMode = .loop
         animationView?.animationSpeed = 1.0
         
-        animationLabel.text = "Explorando Numerolândia..."
+        animationLabel.text = "Escondendo frases..."
         
         self.view.addSubview(animationView!)
         animationView.translatesAutoresizingMaskIntoConstraints = false
