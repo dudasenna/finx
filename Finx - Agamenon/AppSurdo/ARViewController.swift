@@ -83,6 +83,11 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         popButton.titleLabel?.font = UIFont(name: "Raleway-SemiBold", size: 30)
         popButton.titleLabel?.adjustsFontSizeToFitWidth = true
         popButton.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        popLabel.font = UIFont(name: "Raleway-SemiBold", size: 20)
+        popLabel.numberOfLines = 0
+        popLabel.adjustsFontForContentSizeCategory = true
+        popLabel.adjustsFontSizeToFitWidth = true
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,7 +149,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         popButton.heightAnchor.constraint(equalTo: popView.heightAnchor, multiplier: 0.15).isActive = true
         popButton.widthAnchor.constraint(equalTo: popView.widthAnchor, multiplier: 0.4).isActive = true
         
-        popLabel.centerYAnchor.constraint(equalTo: popView.centerYAnchor, constant: -30).isActive = true
+        popLabel.topAnchor.constraint(equalTo: popView.topAnchor, constant: 10).isActive = true
+        popLabel.bottomAnchor.constraint(equalTo: popButton.topAnchor, constant: -10).isActive = true
         popLabel.centerXAnchor.constraint(equalTo: popView.centerXAnchor).isActive = true
         popLabel.widthAnchor.constraint(equalTo: popView.widthAnchor, multiplier: 0.9).isActive = true
         
@@ -354,7 +360,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     func getTranslation(textToTranslate: String, numberString: String) {
         //key genereted from azure (microsoft)
-        let azureKey = "a2415d26b70e4b12b5a519ffa9558aa5"
+        let azureKey = "a877d5a784f341eaab11789221a68916"
         
         let contentType = "application/json"
         let traceID = "A14C9DB9-0DED-48D7-8BBE-C517A1A8DBB0"
@@ -442,7 +448,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         var lastNumber = -1
         for indice in hidedString.indices{
             if hidedString[indice].isNumber {
-                newString.append("X")
+                newString.append("_")
                 lastNumber = indice
             } else {
                 if lastNumber >= 0 {

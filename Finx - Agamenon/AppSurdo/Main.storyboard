@@ -174,13 +174,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="tiZ-i6-T5B"/>
                     <connections>
-                        <outlet property="PopUp" destination="kan-m2-eZC" id="bkf-JX-6EZ"/>
                         <outlet property="card1" destination="Clu-cm-a6e" id="rnu-Za-hF8"/>
                         <outlet property="card2" destination="moS-DQ-1IN" id="wEw-Nt-QjO"/>
                         <outlet property="card3" destination="EK8-MR-Ylu" id="NJY-el-LnO"/>
                         <outlet property="nextButton" destination="A2J-43-snF" id="Yq8-Eh-kt4"/>
                         <outlet property="popButton" destination="btd-IU-5qR" id="CCy-VY-dZd"/>
                         <outlet property="popLabel" destination="CaJ-tg-sga" id="GYT-xr-jgC"/>
+                        <outlet property="popUp" destination="kan-m2-eZC" id="bkf-JX-6EZ"/>
                         <outlet property="popView" destination="QnH-B7-yh0" id="S4n-gB-O4T"/>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="OoP-OQ-SJX"/>
                     </connections>

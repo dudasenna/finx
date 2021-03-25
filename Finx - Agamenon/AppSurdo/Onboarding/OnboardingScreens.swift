@@ -115,6 +115,9 @@ class OnboardingScreens: UIViewController, UIScrollViewDelegate {
         let offset = sender.currentPage * Int(pageWidth)
         if sender.currentPage == 5 {
             tutorialCompleted = true
+            jumpButtonSB.setTitle("Sair", for: .normal)
+        } else {
+            jumpButtonSB.setTitle("Pular", for: .normal)
         }
         UIView.animate(withDuration: 0.33, animations: { [weak self] in
             self?.scrollView.contentOffset.x = CGFloat(offset)
@@ -138,6 +141,9 @@ class OnboardingScreens: UIViewController, UIScrollViewDelegate {
         let pageFraction = scrollView.contentOffset.x/pageWidth
         if pageControl.currentPage == 5 {
             tutorialCompleted = true
+            jumpButtonSB.setTitle("Sair", for: .normal)
+        } else {
+            jumpButtonSB.setTitle("Pular", for: .normal)
         }
         pageControl.currentPage = Int((round(pageFraction)))
     }
