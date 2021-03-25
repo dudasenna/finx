@@ -82,6 +82,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = false
         sceneView.debugOptions = [.showFeaturePoints]
         
+        let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(touched(_:)))
+        popView.addGestureRecognizer(gestureRecognizer)
+        
         cubes = []
         for i in sceneView.scene.rootNode.childNodes{
             if i.name == "cube"{
@@ -128,7 +131,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         popUp.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         
         
-        
         popButton.centerXAnchor.constraint(equalTo: popView.centerXAnchor).isActive = true
         popButton.bottomAnchor.constraint(equalTo: popView.bottomAnchor, constant: -50).isActive = true
         popButton.heightAnchor.constraint(equalTo: popView.heightAnchor, multiplier: 0.15).isActive = true
@@ -151,6 +153,15 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         answersButton.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.1).isActive = true
         
         //        getLanguages()
+    }
+    
+    @objc private func touched(_ gestureRecognizer: UIGestureRecognizer) {
+        if let touchedView = gestureRecognizer.view {
+            if gestureRecognizer.state == .changed {
+                let locationInView = gestureRecognizer.location(in: touchedView)
+                touchedView.frame.origin = CGPoint(x: touchedView.frame.origin.x + locationInView.x, y: touchedView.frame.origin.y + locationInView.y)
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
