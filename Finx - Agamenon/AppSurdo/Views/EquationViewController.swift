@@ -58,7 +58,9 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     
     var chances = 3
     var equationViewEntries = ViewEntryCounter()
-    
+    override func viewDidLayoutSubviews() {
+        popBtm.titleLabel?.adjustsFontSizeToFitWidth = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -555,7 +557,7 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         for indice in hidedString.indices {
             
             if hidedString[indice].isNumber {
-                newString.append("X")
+                newString.append("_")
                 lastNumber = indice
             } else {
                 if lastNumber >= 0 {
