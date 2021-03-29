@@ -57,20 +57,20 @@ class LoadViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        animationLabel.font = UIFont(name: "Raleway-SemiBold", size: 30)
+        
+        animationLabel.font = UIFont(name: "Raleway-Bold", size: 30)
         animationLabel.adjustsFontSizeToFitWidth = true
         animationLabel.adjustsFontForContentSizeCategory = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        animationView = .init(name: "loadAnimation")
-        //animationView?.frame = self.view.bounds
-
-        animationView?.contentMode = .scaleAspectFill
-        animationView.backgroundColor = .clear
+        animationView = .init(name: "loadAnimation3")
+        animationView?.frame = self.view.bounds
+        animationView?.contentMode = .scaleAspectFit
         animationView?.loopMode = .loop
         animationView?.animationSpeed = 3.0
+        animationView?.backgroundColor = .clear
         
         animationLabel.text = "Escondendo frases..."
         animationLabel.textColor = .white
