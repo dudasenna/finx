@@ -64,15 +64,16 @@ class LoadViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        animationView = .init(name: "loadAnimation")
+        animationView = .init(name: "loadAnimation")
         //animationView?.frame = self.view.bounds
 
         animationView?.contentMode = .scaleAspectFill
         animationView.backgroundColor = .clear
         animationView?.loopMode = .loop
-        animationView?.animationSpeed = 1.0
+        animationView?.animationSpeed = 3.0
         
         animationLabel.text = "Escondendo frases..."
+        animationLabel.textColor = .white
         
         self.view.addSubview(animationView!)
         animationView.translatesAutoresizingMaskIntoConstraints = false
@@ -80,8 +81,8 @@ class LoadViewController: UIViewController {
         
         animationView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         animationView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        animationView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8).isActive = true
-        animationView.heightAnchor.constraint(equalTo: animationView.widthAnchor).isActive = true
+        animationView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.7).isActive = true
+        animationView.heightAnchor.constraint(equalTo: animationView.widthAnchor, constant: 20).isActive = true
         
         animationLabel.topAnchor.constraint(equalTo: animationView.bottomAnchor, constant: 30).isActive = true
         animationLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true

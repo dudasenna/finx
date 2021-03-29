@@ -288,13 +288,11 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         popButton.setTitle("Coletar", for: .normal)
     }
     
-//    override func prepare (for segue: UIStoryboardSegue, sender:Any?) {
-//        if segue.identifier == "FactsSegue" {
-//            let vcEquation = segue.destination as? FactsViewController
-//            vcEquation?.factsOfNumbers = facts
-////            vcEquation?.pickerNumbers = numbers.shuffled()
-//        }
-//    }
+    override func prepare (for segue: UIStoryboardSegue, sender:Any?) {
+        if segue.identifier == "FactsSegue" {
+            let vcEquation = segue.destination as? FactsViewController
+            vcEquation?.factsOfNumbers = facts        }
+    }
     
     func hideNumbers(fact:String)->String{
         let hidedString = Array(fact)

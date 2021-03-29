@@ -89,24 +89,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZCp-My-gbJ" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="20" y="357" width="374" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0pn-Id-eBT" customClass="AnimationView" customModule="Lottie">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loadAnimation"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loadAnimation"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8h-1m-hg8">
                                 <rect key="frame" x="192" y="515" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -127,7 +109,6 @@
                     </view>
                     <connections>
                         <outlet property="animationLabel" destination="BSW-94-zib" id="Deh-zr-xIQ"/>
-                        <outlet property="animationView" destination="0pn-Id-eBT" id="y4F-lj-Cj0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="css-Ug-baX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -440,10 +421,6 @@
             <point key="canvasLocation" x="-1499" y="138"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="0pn-Id-eBT"/>
-        <designable name="ZCp-My-gbJ"/>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="dpO-tz-3Xf"/>
         <segue reference="5ZQ-tk-0UX"/>

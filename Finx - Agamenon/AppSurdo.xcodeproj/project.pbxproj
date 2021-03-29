@@ -30,8 +30,9 @@
 		B446917E260D1BEA005DF003 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B446917D260D1BEA005DF003 /* LoadViewController.swift */; };
 		B446918E260D2967005DF003 /* loadAnimation2.json in Resources */ = {isa = PBXBuildFile; fileRef = B446918D260D2967005DF003 /* loadAnimation2.json */; };
 		B4AB2C7925FFD61B00D789F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */; };
-		B4C504E6260E7C6700BED109 /* loadAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C504E5260E7C6700BED109 /* loadAnimation.json */; };
 		B4C504EB26124C1A00BED109 /* FactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C504EA26124C1A00BED109 /* FactsViewController.swift */; };
+		B4C504F9261282EC00BED109 /* loadAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C504F8261282EC00BED109 /* loadAnimation.json */; };
+		B4C505042612848B00BED109 /* loadAnimation1.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C505032612848B00BED109 /* loadAnimation1.json */; };
 		DBD1C9B66B65A4C2945B9207 /* Pods_AppSurdo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9EE0C93236698B30D2FB6A /* Pods_AppSurdo.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +65,9 @@
 		B446917D260D1BEA005DF003 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		B446918D260D2967005DF003 /* loadAnimation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation2.json; sourceTree = "<group>"; };
 		B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B4C504E5260E7C6700BED109 /* loadAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation.json; sourceTree = "<group>"; };
 		B4C504EA26124C1A00BED109 /* FactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewController.swift; sourceTree = "<group>"; };
+		B4C504F8261282EC00BED109 /* loadAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation.json; sourceTree = "<group>"; };
+		B4C505032612848B00BED109 /* loadAnimation1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation1.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +120,8 @@
 				2836F82124FD3CAB00A75E53 /* art.scnassets */,
 				2836F82824FD3CAC00A75E53 /* Assets.xcassets */,
 				B446918D260D2967005DF003 /* loadAnimation2.json */,
-				B4C504E5260E7C6700BED109 /* loadAnimation.json */,
+				B4C504F8261282EC00BED109 /* loadAnimation.json */,
+				B4C505032612848B00BED109 /* loadAnimation1.json */,
 				2836F82D24FD3CAC00A75E53 /* Info.plist */,
 				B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */,
 			);
@@ -249,7 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4C504E6260E7C6700BED109 /* loadAnimation.json in Resources */,
+				B4C505042612848B00BED109 /* loadAnimation1.json in Resources */,
 				6683028425FBC03D009826D8 /* Raleway-Bold.ttf in Resources */,
 				6683028525FBC03D009826D8 /* Raleway-SemiBold.ttf in Resources */,
 				6651A61525FFCD8D0041E0F2 /* RalewayDots-Regular.ttf in Resources */,
@@ -260,6 +263,7 @@
 				228102382603DED300B0A933 /* Main.storyboard in Resources */,
 				86176AE125019EF6006C58FA /* SuperfruitBold-MlBY.ttf in Resources */,
 				2836F82924FD3CAC00A75E53 /* Assets.xcassets in Resources */,
+				B4C504F9261282EC00BED109 /* loadAnimation.json in Resources */,
 				B4AB2C7925FFD61B00D789F6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
