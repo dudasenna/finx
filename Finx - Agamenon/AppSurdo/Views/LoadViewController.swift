@@ -13,7 +13,7 @@ import Lottie
 class LoadViewController: UIViewController {
     /*structs e vars para o translator*/
     //*****used after parsing to create variables with language information
-    @IBOutlet weak var animationView: AnimationView!
+    @IBOutlet var animationView: AnimationView!
     @IBOutlet weak var animationLabel: UILabel!
     
     var facts: [(String, String)]! = []
@@ -57,7 +57,6 @@ class LoadViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         animationLabel.font = UIFont(name: "Raleway-SemiBold", size: 30)
         animationLabel.adjustsFontSizeToFitWidth = true
         animationLabel.adjustsFontForContentSizeCategory = true
@@ -66,8 +65,10 @@ class LoadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        animationView = .init(name: "loadAnimation")
-        animationView?.frame = self.view.bounds
-        animationView?.contentMode = .scaleAspectFit
+        //animationView?.frame = self.view.bounds
+
+        animationView?.contentMode = .scaleAspectFill
+        animationView.backgroundColor = .clear
         animationView?.loopMode = .loop
         animationView?.animationSpeed = 1.0
         
@@ -79,7 +80,7 @@ class LoadViewController: UIViewController {
         
         animationView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         animationView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        animationView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor).isActive = true
+        animationView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8).isActive = true
         animationView.heightAnchor.constraint(equalTo: animationView.widthAnchor).isActive = true
         
         animationLabel.topAnchor.constraint(equalTo: animationView.bottomAnchor, constant: 30).isActive = true
@@ -103,17 +104,23 @@ class LoadViewController: UIViewController {
             
             let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
                 //let decoder = JSONDecoder()
-                let jsonData = String(data: data!, encoding: .utf8) as String?
-                //self.fact = jsonData
-                //            print(jsonData!)
-                let numberString = self.takeNumber(fact: jsonData!)
-                //            let numberInt = Int(numberString) ?? 0
-                if self.numbers.contains(numberString) {
-                    self.loadFactWithNumber(numberOfFacts: i)
+                if let jsonData = String(data: data!, encoding: .utf8) as String? {
+                    //self.fact = jsonData
+                    //            print(jsonData!)
+                    let numberString = self.takeNumber(fact: jsonData)
+                    //            let numberInt = Int(numberString) ?? 0
+                    if self.numbers.contains(numberString) {
+                        self.loadFactWithNumber(numberOfFacts: i)
+                    } else {
+                        self.numbers.append(numberString)
+                        DispatchQueue.main.async {
+                            self.getTranslation(textToTranslate: jsonData, numberString: numberString)
+                        }
+                    }
                 } else {
-                    self.numbers.append(numberString)
-                    self.getTranslation(textToTranslate: jsonData!, numberString: numberString)
+                    self.loadFactWithNumber(numberOfFacts: 1)
                 }
+                
             }
             task.resume()
             i+=1
@@ -165,17 +172,26 @@ class LoadViewController: UIViewController {
                 self.present(alert, animated: true)
 
             } else {
-                let dataTranslation = try? JSONDecoder().decode(Array<TranslatedData>.self, from: responseData!)
+                if responseData == nil{
+                    print("Error on trtanslating data")
+                }
                 
-                let numberOfTranslations = dataTranslation!.count - 1
+                if let dataTranslation = try? JSONDecoder().decode(Array<TranslatedData>.self, from: responseData!) {
+                    let numberOfTranslations = dataTranslation.count - 1
 
-                let phraseTranslated = dataTranslation![0].translations[numberOfTranslations].text
-
-                self.facts.append((numberString, phraseTranslated))
-                if self.facts.count == 3 {
-                    DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "ARSegue", sender: nil)
+                    let phraseTranslated = dataTranslation[0].translations[numberOfTranslations].text
+                    if phraseTranslated == "" {
+                        print("Error trying to decode translated data")
                     }
+                    self.facts.append((numberString, phraseTranslated))
+                } else {
+                    self.loadFactWithNumber(numberOfFacts: 1)
+                }
+            }
+            if self.facts.count == 3 {
+                DispatchQueue.main.async {
+                    self.animationView.pause()
+                    self.performSegue(withIdentifier: "ARSegue", sender: self)
                 }
             }
         }
@@ -199,9 +215,10 @@ class LoadViewController: UIViewController {
     
     override func prepare (for segue: UIStoryboardSegue, sender:Any?) {
         if segue.identifier == "ARSegue" {
-            let vcEquation = segue.destination as? ARViewController
-            vcEquation?.facts = facts.shuffled()
-            vcEquation?.numbers = numbers
+            let vcAR = segue.destination as? ARViewController
+            vcAR?.vcLoad = self
+            vcAR?.facts = facts.shuffled()
+            vcAR?.numbers = numbers
             
         }
     }
