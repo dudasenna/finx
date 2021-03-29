@@ -93,7 +93,7 @@
                                 <rect key="frame" x="192" y="515" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="presentation" identifier="ARSegue" id="xHw-ML-eqC"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" identifier="ARSegue" id="xHw-ML-eqC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSW-94-zib">
@@ -142,22 +142,15 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="Card"/>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QnH-B7-yh0">
-                                <rect key="frame" x="50.328163553088189" y="288.82845309407412" width="309.00000000000028" height="266.99999999999983"/>
+                            <view hidden="YES" contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QnH-B7-yh0">
+                                <rect key="frame" x="50" y="147" width="309" height="408"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="PopupFatos" translatesAutoresizingMaskIntoConstraints="NO" id="kan-m2-eZC">
-                                        <rect key="frame" x="-0.86157409735301371" y="0.99253487061946544" width="308.99999999999972" height="267.00000000000011"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="PopupFatos" translatesAutoresizingMaskIntoConstraints="NO" id="kan-m2-eZC">
+                                        <rect key="frame" x="-17" y="-14" width="343" height="438"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaJ-tg-sga">
-                                        <rect key="frame" x="31" y="17" width="235" height="168"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btd-IU-5qR">
-                                        <rect key="frame" x="57" y="185" width="185" height="50"/>
+                                        <rect key="frame" x="62" y="324" width="185" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="18"/>
                                         <state key="normal" title="resolver" backgroundImage="PopupButton">
@@ -167,6 +160,20 @@
                                             <action selector="tapCollect:" destination="BV1-FR-VrT" eventType="touchUpInside" id="gTU-xX-DTR"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaJ-tg-sga">
+                                        <rect key="frame" x="37" y="31" width="235" height="248"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jm6-ZW-PkJ">
+                                        <rect key="frame" x="62" y="295" width="185" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moS-DQ-1IN">
@@ -184,9 +191,6 @@
                                 <state key="normal" title="Respostas" backgroundImage="PopupButton">
                                     <color key="titleColor" red="0.73186522720000002" green="0.56667959690000003" blue="0.43526908759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <connections>
-                                    <action selector="tapCollect:" destination="BV1-FR-VrT" eventType="touchUpInside" id="u52-lB-Cws"/>
-                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ty3-qE-Syg">
                                 <rect key="frame" x="356" y="776" width="30" height="30"/>
@@ -220,11 +224,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="tiZ-i6-T5B"/>
                     <connections>
-                        <outlet property="answersButton" destination="8Zb-L8-3Qa" id="6w4-01-oWm"/>
+                        <outlet property="answersButton" destination="8Zb-L8-3Qa" id="3L0-az-De3"/>
                         <outlet property="card1" destination="Clu-cm-a6e" id="rnu-Za-hF8"/>
                         <outlet property="card2" destination="moS-DQ-1IN" id="wEw-Nt-QjO"/>
                         <outlet property="card3" destination="EK8-MR-Ylu" id="wSg-Xk-T2o"/>
                         <outlet property="popButton" destination="btd-IU-5qR" id="CCy-VY-dZd"/>
+                        <outlet property="popCheckAnswerLabel" destination="jm6-ZW-PkJ" id="iku-60-S52"/>
                         <outlet property="popLabel" destination="CaJ-tg-sga" id="GYT-xr-jgC"/>
                         <outlet property="popUp" destination="kan-m2-eZC" id="bkf-JX-6EZ"/>
                         <outlet property="popView" destination="QnH-B7-yh0" id="S4n-gB-O4T"/>
@@ -233,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1506" y="138"/>
+            <point key="canvasLocation" x="1505.7971014492755" y="137.94642857142856"/>
         </scene>
         <!--Equation View Controller-->
         <scene sceneID="6Ry-Gf-KIt">
@@ -386,7 +391,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dpO-tz-3Xf"/>
-        <segue reference="5ZQ-tk-0UX"/>
+        <segue reference="OTy-3Z-f7t"/>
         <segue reference="gts-7S-yGi"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

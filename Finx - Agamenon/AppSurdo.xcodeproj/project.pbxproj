@@ -30,6 +30,7 @@
 		B43365282601475E00985BFA /* ViewEntryCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43365272601475E00985BFA /* ViewEntryCounter.swift */; };
 		B446917E260D1BEA005DF003 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B446917D260D1BEA005DF003 /* LoadViewController.swift */; };
 		B4AB2C7925FFD61B00D789F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */; };
+		B4C504E6260E7C6700BED109 /* loadAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C504E5260E7C6700BED109 /* loadAnimation.json */; };
 		DBD1C9B66B65A4C2945B9207 /* Pods_AppSurdo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9EE0C93236698B30D2FB6A /* Pods_AppSurdo.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		B43365272601475E00985BFA /* ViewEntryCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEntryCounter.swift; sourceTree = "<group>"; };
 		B446917D260D1BEA005DF003 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B4C504E5260E7C6700BED109 /* loadAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4C504E6260E7C6700BED109 /* loadAnimation.json in Resources */,
 				6683028425FBC03D009826D8 /* Raleway-Bold.ttf in Resources */,
 				6683028525FBC03D009826D8 /* Raleway-SemiBold.ttf in Resources */,
 				6651A61525FFCD8D0041E0F2 /* RalewayDots-Regular.ttf in Resources */,
