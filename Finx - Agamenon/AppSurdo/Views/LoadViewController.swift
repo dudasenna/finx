@@ -65,9 +65,9 @@ class LoadViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        animationView = .init(name: "loadAnimation3")
-        animationView?.frame = self.view.bounds
-        animationView?.contentMode = .scaleAspectFit
+        animationView = .init(name: "loadAnimation4")
+//        animationView?.frame = self.view.bounds
+        animationView?.contentMode = .scaleAspectFill
         animationView?.loopMode = .loop
         animationView?.animationSpeed = 3.0
         animationView?.backgroundColor = .clear
@@ -81,8 +81,8 @@ class LoadViewController: UIViewController {
         
         animationView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         animationView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        animationView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.7).isActive = true
-        animationView.heightAnchor.constraint(equalTo: animationView.widthAnchor, constant: 20).isActive = true
+        animationView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor).isActive = true
+        animationView.heightAnchor.constraint(equalTo: animationView.widthAnchor).isActive = true
         
         animationLabel.topAnchor.constraint(equalTo: animationView.bottomAnchor, constant: 30).isActive = true
         animationLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true

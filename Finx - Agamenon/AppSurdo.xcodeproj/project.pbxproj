@@ -31,8 +31,12 @@
 		B446917E260D1BEA005DF003 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B446917D260D1BEA005DF003 /* LoadViewController.swift */; };
 		B4AB2C7925FFD61B00D789F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */; };
 		B4C504EB26124C1A00BED109 /* FactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C504EA26124C1A00BED109 /* FactsViewController.swift */; };
-		B4C504F9261282EC00BED109 /* loadAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C504F8261282EC00BED109 /* loadAnimation.json */; };
-		B4C505042612848B00BED109 /* loadAnimation1.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C505032612848B00BED109 /* loadAnimation1.json */; };
+		B4C505102612895400BED109 /* loadAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C5050F2612895400BED109 /* loadAnimation.json */; };
+		B4C505132612895A00BED109 /* loadAnimation1.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C505122612895A00BED109 /* loadAnimation1.json */; };
+		B4C505162612896100BED109 /* loadAnimation2.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C505152612896100BED109 /* loadAnimation2.json */; };
+		B4C505192612896D00BED109 /* loadAnimation4.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C505182612896D00BED109 /* loadAnimation4.json */; };
+		B4C5051C2612897600BED109 /* loadAnimation5.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C5051B2612897600BED109 /* loadAnimation5.json */; };
+		B4C5051F2612897E00BED109 /* loadAnimation6.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C5051E2612897E00BED109 /* loadAnimation6.json */; };
 		DBD1C9B66B65A4C2945B9207 /* Pods_AppSurdo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9EE0C93236698B30D2FB6A /* Pods_AppSurdo.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +70,12 @@
 		B446917D260D1BEA005DF003 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B4C504EA26124C1A00BED109 /* FactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewController.swift; sourceTree = "<group>"; };
-		B4C504F8261282EC00BED109 /* loadAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation.json; sourceTree = "<group>"; };
-		B4C505032612848B00BED109 /* loadAnimation1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation1.json; sourceTree = "<group>"; };
+		B4C5050F2612895400BED109 /* loadAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation.json; sourceTree = "<group>"; };
+		B4C505122612895A00BED109 /* loadAnimation1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation1.json; sourceTree = "<group>"; };
+		B4C505152612896100BED109 /* loadAnimation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation2.json; sourceTree = "<group>"; };
+		B4C505182612896D00BED109 /* loadAnimation4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation4.json; sourceTree = "<group>"; };
+		B4C5051B2612897600BED109 /* loadAnimation5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation5.json; sourceTree = "<group>"; };
+		B4C5051E2612897E00BED109 /* loadAnimation6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation6.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +127,13 @@
 				2836F81F24FD3CAB00A75E53 /* AppDelegate.swift */,
 				2836F82124FD3CAB00A75E53 /* art.scnassets */,
 				2836F82824FD3CAC00A75E53 /* Assets.xcassets */,
+				B4C5050F2612895400BED109 /* loadAnimation.json */,
+				B4C505122612895A00BED109 /* loadAnimation1.json */,
+				B4C505152612896100BED109 /* loadAnimation2.json */,
 				6621D90F2612686500415A3F /* loadAnimation3.json */,
+				B4C505182612896D00BED109 /* loadAnimation4.json */,
+				B4C5051B2612897600BED109 /* loadAnimation5.json */,
+				B4C5051E2612897E00BED109 /* loadAnimation6.json */,
 				2836F82D24FD3CAC00A75E53 /* Info.plist */,
 				B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */,
 			);
@@ -250,17 +264,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4C505042612848B00BED109 /* loadAnimation1.json in Resources */,
+				B4C5051C2612897600BED109 /* loadAnimation5.json in Resources */,
 				6683028425FBC03D009826D8 /* Raleway-Bold.ttf in Resources */,
 				6683028525FBC03D009826D8 /* Raleway-SemiBold.ttf in Resources */,
+				B4C505192612896D00BED109 /* loadAnimation4.json in Resources */,
 				6651A61525FFCD8D0041E0F2 /* RalewayDots-Regular.ttf in Resources */,
+				B4C505162612896100BED109 /* loadAnimation2.json in Resources */,
 				2836F82224FD3CAB00A75E53 /* art.scnassets in Resources */,
 				6683027F25FBBE37009826D8 /*  Raleway.ttf in Resources */,
+				B4C5051F2612897E00BED109 /* loadAnimation6.json in Resources */,
 				2836F82C24FD3CAC00A75E53 /* LaunchScreen.storyboard in Resources */,
+				B4C505132612895A00BED109 /* loadAnimation1.json in Resources */,
 				228102382603DED300B0A933 /* Main.storyboard in Resources */,
 				86176AE125019EF6006C58FA /* SuperfruitBold-MlBY.ttf in Resources */,
 				2836F82924FD3CAC00A75E53 /* Assets.xcassets in Resources */,
 				6621D9102612686500415A3F /* loadAnimation3.json in Resources */,
+				B4C505102612895400BED109 /* loadAnimation.json in Resources */,
 				B4AB2C7925FFD61B00D789F6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,13 +501,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TSNQUNMSD5;
+				DEVELOPMENT_TEAM = SZDYT9A2D8;
 				INFOPLIST_FILE = AppSurdo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = APPFinx;
 				PRODUCT_NAME = Finx;
 				SWIFT_VERSION = 5.0;
@@ -503,13 +522,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TSNQUNMSD5;
+				DEVELOPMENT_TEAM = SZDYT9A2D8;
 				INFOPLIST_FILE = AppSurdo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = APPFinx;
 				PRODUCT_NAME = Finx;
 				SWIFT_VERSION = 5.0;
