@@ -113,9 +113,7 @@ class LoadViewController: UIViewController {
                         self.loadFactWithNumber(numberOfFacts: i)
                     } else {
                         self.numbers.append(numberString)
-                        DispatchQueue.main.async {
-                            self.getTranslation(textToTranslate: jsonData, numberString: numberString)
-                        }
+                        self.getTranslation(textToTranslate: jsonData, numberString: numberString)
                     }
                 } else {
                     self.loadFactWithNumber(numberOfFacts: 1)
@@ -172,17 +170,12 @@ class LoadViewController: UIViewController {
                 self.present(alert, animated: true)
 
             } else {
-                if responseData == nil{
-                    print("Error on trtanslating data")
-                }
                 
                 if let dataTranslation = try? JSONDecoder().decode(Array<TranslatedData>.self, from: responseData!) {
                     let numberOfTranslations = dataTranslation.count - 1
 
                     let phraseTranslated = dataTranslation[0].translations[numberOfTranslations].text
-                    if phraseTranslated == "" {
-                        print("Error trying to decode translated data")
-                    }
+
                     self.facts.append((numberString, phraseTranslated))
                 } else {
                     self.loadFactWithNumber(numberOfFacts: 1)
@@ -191,13 +184,17 @@ class LoadViewController: UIViewController {
             if self.facts.count == 3 {
                 DispatchQueue.main.async {
                     self.animationView.pause()
-                    self.performSegue(withIdentifier: "ARSegue", sender: self)
+//                    self.performSegue(withIdentifier: "ARSegue", sender: self)
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    let vcAR = storyBoard.instantiateViewController(withIdentifier: "ARViewController") as! ARViewController
+                    vcAR.facts = self.facts.shuffled()
+                    vcAR.numbers = self.numbers
+                    self.present(vcAR, animated:true, completion:nil)
                 }
             }
         }
         task.resume()
     }
-
     func takeNumber(fact:String)->String{
         let numberString = Array(fact)
         var newString = String()
@@ -213,13 +210,12 @@ class LoadViewController: UIViewController {
         return newString
     }
     
-    override func prepare (for segue: UIStoryboardSegue, sender:Any?) {
-        if segue.identifier == "ARSegue" {
-            let vcAR = segue.destination as? ARViewController
-            vcAR?.vcLoad = self
-            vcAR?.facts = facts.shuffled()
-            vcAR?.numbers = numbers
-            
-        }
-    }
+//    override func prepare (for segue: UIStoryboardSegue, sender:Any?) {
+//        if segue.identifier == "ARSegue" {
+//            let vcAR = segue.destination as? ARViewController
+//            vcAR?.facts = facts.shuffled()
+//            vcAR?.numbers = numbers
+//            
+//        }
+//    }
 }

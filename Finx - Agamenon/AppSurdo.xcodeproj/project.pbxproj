@@ -31,6 +31,7 @@
 		B446918E260D2967005DF003 /* loadAnimation2.json in Resources */ = {isa = PBXBuildFile; fileRef = B446918D260D2967005DF003 /* loadAnimation2.json */; };
 		B4AB2C7925FFD61B00D789F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */; };
 		B4C504E6260E7C6700BED109 /* loadAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C504E5260E7C6700BED109 /* loadAnimation.json */; };
+		B4C504EB26124C1A00BED109 /* FactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C504EA26124C1A00BED109 /* FactsViewController.swift */; };
 		DBD1C9B66B65A4C2945B9207 /* Pods_AppSurdo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9EE0C93236698B30D2FB6A /* Pods_AppSurdo.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		B446918D260D2967005DF003 /* loadAnimation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation2.json; sourceTree = "<group>"; };
 		B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B4C504E5260E7C6700BED109 /* loadAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation.json; sourceTree = "<group>"; };
+		B4C504EA26124C1A00BED109 /* FactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				B446917D260D1BEA005DF003 /* LoadViewController.swift */,
 				2836F83724FD436F00A75E53 /* ARViewController.swift */,
 				2836F83524FD42F500A75E53 /* EquationViewController.swift */,
+				B4C504EA26124C1A00BED109 /* FactsViewController.swift */,
 				221C3D4125ED947600C4FABB /* InstructionsViewController.swift */,
 			);
 			path = Views;
@@ -334,6 +337,7 @@
 				86BD6B5E24FD5044000920CF /* InitialViewController.swift in Sources */,
 				2836F83624FD42F500A75E53 /* EquationViewController.swift in Sources */,
 				22E15F672602BC4B001C43C3 /* PageView.swift in Sources */,
+				B4C504EB26124C1A00BED109 /* FactsViewController.swift in Sources */,
 				2880F71A25015F0C0041FA88 /* APIHandler.swift in Sources */,
 				2836F82024FD3CAB00A75E53 /* AppDelegate.swift in Sources */,
 				221C3D4225ED947600C4FABB /* InstructionsViewController.swift in Sources */,

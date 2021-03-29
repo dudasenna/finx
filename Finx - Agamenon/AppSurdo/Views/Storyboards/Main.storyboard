@@ -80,7 +80,7 @@
         <!--Load View Controller-->
         <scene sceneID="Bcp-uy-Cgm">
             <objects>
-                <viewController id="oQE-63-y0q" customClass="LoadViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoadViewController" id="oQE-63-y0q" customClass="LoadViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PUc-A8-Esb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,7 +111,7 @@
                                 <rect key="frame" x="192" y="515" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" identifier="ARSegue" id="xHw-ML-eqC"/>
+                                    <segue destination="BV1-FR-VrT" kind="presentation" identifier="ARSegue" id="xHw-ML-eqC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSW-94-zib">
@@ -137,7 +137,7 @@
         <!--AR View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController modalPresentationStyle="pageSheet" id="BV1-FR-VrT" userLabel="AR View Controller" customClass="ARViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ARViewController" modalPresentationStyle="pageSheet" id="BV1-FR-VrT" userLabel="AR View Controller" customClass="ARViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -210,6 +210,9 @@
                                 <state key="normal" title="Respostas" backgroundImage="PopupButton">
                                     <color key="titleColor" red="0.73186522720000002" green="0.56667959690000003" blue="0.43526908759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <segue destination="tPs-Gf-YNR" kind="presentation" identifier="FactsSegue" id="xSg-yT-8OG"/>
+                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ty3-qE-Syg">
                                 <rect key="frame" x="356" y="776" width="30" height="30"/>
@@ -259,6 +262,38 @@
             </objects>
             <point key="canvasLocation" x="1505.7971014492755" y="137.94642857142856"/>
         </scene>
+        <!--Facts View Controller-->
+        <scene sceneID="wZX-Yp-cck">
+            <objects>
+                <viewController id="tPs-Gf-YNR" customClass="FactsViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vtP-VX-CPi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="cmg-a1-TKS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9g-ww-t9e">
+                                <rect key="frame" x="115" y="699" width="185" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="18"/>
+                                <state key="normal" title="Ok" backgroundImage="PopupButton">
+                                    <color key="titleColor" red="0.73186522720000002" green="0.56667959690000003" blue="0.43526908759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3oQ-Oq-PTJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="t9g-ww-t9e" id="VAh-V4-DMT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0da-gx-lCa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2518.840579710145" y="137.94642857142856"/>
+        </scene>
         <!--Equation View Controller-->
         <scene sceneID="6Ry-Gf-KIt">
             <objects>
@@ -296,9 +331,6 @@
                                 <rect key="frame" x="192" y="814" width="30" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Superfruit-Bold" family="Superfruit" pointSize="20"/>
-                                <connections>
-                                    <segue destination="slH-Ed-jST" kind="presentation" id="yFM-Lz-a0H"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QBh-Yo-Mck"/>
@@ -323,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zua-yw-jfc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2533" y="159"/>
+            <point key="canvasLocation" x="3565" y="138"/>
         </scene>
         <!--InstructionsViewController-->
         <scene sceneID="N3a-pN-RoR">
@@ -414,8 +446,7 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="dpO-tz-3Xf"/>
-        <segue reference="OTy-3Z-f7t"/>
-        <segue reference="gts-7S-yGi"/>
+        <segue reference="5ZQ-tk-0UX"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>

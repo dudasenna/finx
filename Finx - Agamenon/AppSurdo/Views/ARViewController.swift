@@ -13,14 +13,14 @@ import ARKit
 import FirebaseAnalytics
 
 //@property (nonatomic, assign) BOOL isSomethingEnabled;
-//#import "EquationViewController.swift"
+
 
 //colocar key na linha 334
 
 class ARViewController: UIViewController, ARSCNViewDelegate {
     var facts: [(String, String)]!
     var numbers: [String]!
-    var vcLoad: LoadViewController!
+//    var vcLoad: LoadViewController!
 
     @IBOutlet var sceneView: ARSCNView!
     var baseLoaded:Bool = false
@@ -152,7 +152,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         popButton.centerXAnchor.constraint(equalTo: popView.centerXAnchor).isActive = true
         popButton.bottomAnchor.constraint(equalTo: popView.bottomAnchor, constant: -20).isActive = true
         popButton.heightAnchor.constraint(equalTo: popView.heightAnchor, multiplier: 0.15).isActive = true
-        popButton.widthAnchor.constraint(equalTo: popView.widthAnchor, multiplier: 0.4).isActive = true
+        popButton.widthAnchor.constraint(equalTo: popView.widthAnchor, multiplier: 0.6).isActive = true
         
         popCheckAnswerLabel.centerXAnchor.constraint(equalTo: popView.centerXAnchor).isActive = true
         popCheckAnswerLabel.bottomAnchor.constraint(equalTo: popButton.topAnchor, constant: -20).isActive = true
@@ -178,44 +178,35 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         if baseLoaded == false{
             addScenario(location: (touches.first?.location(in: sceneView))!)
         }else{
-            //print("Scenario loaded")
+//            print("Scenario loaded")
             
             //Checking if cube was found
             let touch = touches.first!
             
             if(touch.view == self.sceneView){
-                
-                //print("touch working")
                 let viewTouchLocation:CGPoint = touch.location(in: sceneView)
                 guard let result = sceneView.hitTest(viewTouchLocation, options: nil).first else {
                     return
                 }
                 if result.node.name == "cube" {
-//                    loadFactWithNumber()
                     let encoded = self.hideNumbers(fact: facts[currentCard].1)
                     self.popLabel.text = encoded
                     popView.isHidden = false
                     popButton.isHidden = true
-                    //cardButtons[currentCard].setImage(UIImage(named: "CardActive"), for: .normal)
                     for button in cardButtons {
                         button.isEnabled = true
                         button.setBackgroundImage(UIImage(named: "CardActive"), for: .normal)
                     }
                     currentCard+=1
                     result.node.removeFromParentNode()
-                    
-//                    if(currentCard==3){
-//                        nextButton.isHidden = false
-//                    }
                 }
-                //print(numbers)
             }
         }
         
     }
     
     func addScenario(location:CGPoint){
-        let hitResult = sceneView.hitTest(location, types: [.existingPlaneUsingExtent])
+        let hitResult = sceneView.hitTest(location, types: [.existingPlane])
         if hitResult.count > 0 {
             let result = hitResult.first!
             let newPosition = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
@@ -225,14 +216,14 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             sceneView.scene = scene
             Analytics.logEvent("loaded_scenario", parameters: nil)
             Analytics.logEvent("touches_until_load", parameters: ["number_of_touches":numberOfTouches])
-            //print("Load scenario")
+            print("Load scenario")
             baseLoaded = true
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+//
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
@@ -248,11 +239,13 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         if baseLoaded == false {
             Analytics.logEvent("did_not_load_ar", parameters: nil)
         }
         // Pause the view's session
         sceneView.session.pause()
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - ARSCNViewDelegate
@@ -296,10 +289,10 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     }
     
 //    override func prepare (for segue: UIStoryboardSegue, sender:Any?) {
-//        if segue.identifier == "EquationSegue" {
-//            let vcEquation = segue.destination as? EquationViewController
+//        if segue.identifier == "FactsSegue" {
+//            let vcEquation = segue.destination as? FactsViewController
 //            vcEquation?.factsOfNumbers = facts
-//            vcEquation?.pickerNumbers = numbers.shuffled()
+////            vcEquation?.pickerNumbers = numbers.shuffled()
 //        }
 //    }
     
@@ -385,10 +378,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     }
     
     @IBAction func showAnswers (_ sender: UIButton) {
-        //adaptar terceira tela pra mostrar as respostas
-        for fact in facts {
-            print(fact.1)
-        }
+        self.performSegue(withIdentifier: "FactsSegue", sender: self)
     }
     /* func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
      

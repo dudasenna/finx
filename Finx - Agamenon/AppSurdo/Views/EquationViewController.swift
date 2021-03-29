@@ -13,8 +13,8 @@ class EquationViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     
     var colorTitle = #colorLiteral(red: 0.9089190364, green: 0.9262141585, blue: 0.9122079015, alpha: 0.3)
     var colorCard1 = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 0.8)
-    var colorCard2 = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 0.8)
-    var colorCard3 = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 0.8)
+    var colorCard2 = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 0.8)
+    var colorCard3 = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 0.8)
     var colorButton = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 0.8)
     var colorTextButton = UIColor(red: 237/255, green: 142/255, blue: 92/255, alpha: 1.0)
     
