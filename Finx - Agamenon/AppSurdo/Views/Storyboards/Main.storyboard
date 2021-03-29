@@ -85,9 +85,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="Zze-2m-uHG">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="Zze-2m-uHG">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8h-1m-hg8">
                                 <rect key="frame" x="192" y="515" width="30" height="30"/>
@@ -106,6 +105,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JIp-WH-8jf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zze-2m-uHG" firstAttribute="trailing" secondItem="JIp-WH-8jf" secondAttribute="trailing" id="2lg-wq-pRZ"/>
+                            <constraint firstItem="Zze-2m-uHG" firstAttribute="leading" secondItem="JIp-WH-8jf" secondAttribute="leading" id="KTK-tb-wRf"/>
+                            <constraint firstItem="Zze-2m-uHG" firstAttribute="top" secondItem="PUc-A8-Esb" secondAttribute="top" id="N0z-Mh-rUZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Zze-2m-uHG" secondAttribute="bottom" id="Q9o-tl-m1J"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="animationLabel" destination="BSW-94-zib" id="Deh-zr-xIQ"/>
