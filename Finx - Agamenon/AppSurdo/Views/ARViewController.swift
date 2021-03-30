@@ -217,7 +217,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     }
     
     func addScenario(location:CGPoint){
-        let hitResult = sceneView.hitTest(location, types: [.existingPlane])
+        let hitResult = sceneView.hitTest(location, types: [.existingPlaneUsingExtent])
         if hitResult.count > 0 {
             let result = hitResult.first!
             let newPosition = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
@@ -393,13 +393,12 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     @objc func closeButtonAction(sender: UIButton!) {
     
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let vcAR = storyBoard.instantiateViewController(withIdentifier: "ARViewController") as! ARViewController
-//        let vcLoad = storyBoard.instantiateViewController(withIdentifier: "LoadViewController") as! LoadViewController
         let vcInit = storyBoard.instantiateViewController(withIdentifier: "InitialViewController") as! InitialViewController
         self.present(vcInit, animated:true, completion:nil)
-//        let segue: UIStoryboardSegue = UIStoryboardSegue(identifier: "ARSegue", source: vcAR, destination: vcLoad)
-//        self.unwind(for: segue, towards: vcInit)
     }
+    
+    
+    
     /* func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
      
      print("new plane")

@@ -28,6 +28,7 @@ class FactsViewController : UIViewController {
     let backgroundCard3 = UILabel()
     
     @IBOutlet weak var doneButton: UIButton!
+    let closeButton = UIButton()
     
     let scrollView = UIScrollView()
     let contentView = UIView()
@@ -89,6 +90,12 @@ class FactsViewController : UIViewController {
         doneButton.titleLabel?.adjustsFontForContentSizeCategory = true
         doneButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         
+        closeButton.backgroundColor = .white
+        closeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+        closeButton.tintColor = .black
+        closeButton.layer.cornerRadius = 10
+        closeButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        
         setupSubviews()
     }
     
@@ -112,6 +119,7 @@ class FactsViewController : UIViewController {
     
     func setupSubviews() {
         scrollView.addSubview(doneButton)
+        scrollView.addSubview(closeButton)
         
         contentView.addSubview(titleSpace)
         contentView.addSubview(backgroundCard1)
@@ -129,8 +137,14 @@ class FactsViewController : UIViewController {
         cardSpace2.translatesAutoresizingMaskIntoConstraints = false
         cardSpace3.translatesAutoresizingMaskIntoConstraints = false
         doneButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
         
-        titleSpace.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
+        closeButton.trailingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        closeButton.topAnchor.constraint(equalTo:scrollView.topAnchor, constant: 20).isActive = true
+        closeButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        closeButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        titleSpace.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 10).isActive = true
         titleSpace.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         titleSpace.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.15).isActive = true
         titleSpace.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1).isActive = true
