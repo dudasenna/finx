@@ -206,7 +206,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     }
     
     func addScenario(location:CGPoint){
-        let hitResult = sceneView.hitTest(location, types: [.existingPlane])
+        let hitResult = sceneView.hitTest(location, types: [.existingPlaneUsingExtent])
         if hitResult.count > 0 {
             let result = hitResult.first!
             let newPosition = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
