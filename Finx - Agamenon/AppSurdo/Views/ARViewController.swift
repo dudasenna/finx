@@ -227,7 +227,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             sceneView.scene = scene
             Analytics.logEvent("loaded_scenario", parameters: nil)
             Analytics.logEvent("touches_until_load", parameters: ["number_of_touches":numberOfTouches])
-            print("Load scenario")
+            popView.isHidden = false
+            popLabel.text = "Cenário carregado!\n\nDivirta-se!!"
+            popButton.setTitle("Explorar", for: .normal)
             baseLoaded = true
         }
     }
@@ -282,7 +284,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         popUp.image = UIImage(named: "PopupFatos")
         popCheckAnswerLabel.isHidden = true
         
-        if popButton.title(for: .normal) == "Coletar" || popLabel.text == "Procure os cubos na cena para revelar as frases" {
+        if popButton.title(for: .normal) == "Coletar" || popButton.title(for: .normal) == "Explorar" || popLabel.text == "Procure os cubos na cena para revelar as frases" {
             popView.isHidden = true
             popLabel.text = ""
         } else {
