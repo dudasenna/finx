@@ -93,6 +93,8 @@ class LoadViewController: UIViewController {
         loadFactWithNumber(numberOfFacts: 3)
     }
     
+    var countFetched = 0
+    var countTranslated = 0
     func loadFactWithNumber(numberOfFacts: Int) {
         var i = 0
 
@@ -104,7 +106,8 @@ class LoadViewController: UIViewController {
             request.httpMethod = "GET"
             
             let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-                //let decoder = JSONDecoder()
+                //let decoder = JSONDecoder
+                
                 if let jsonData = String(data: data!, encoding: .utf8) as String? {
                     //self.fact = jsonData
                     //            print(jsonData!)
@@ -114,11 +117,13 @@ class LoadViewController: UIViewController {
                         self.loadFactWithNumber(numberOfFacts: i)
                     } else {
                         self.numbers.append(numberString)
+                        self.countFetched = self.countFetched + 1
                         self.getTranslation(textToTranslate: jsonData, numberString: numberString)
                     }
                 } else {
                     self.loadFactWithNumber(numberOfFacts: 1)
                 }
+                print(self.countFetched)
                 
             }
             task.resume()
@@ -176,8 +181,9 @@ class LoadViewController: UIViewController {
                     let numberOfTranslations = dataTranslation.count - 1
 
                     let phraseTranslated = dataTranslation[0].translations[numberOfTranslations].text
-
+                    
                     self.facts.append((numberString, phraseTranslated))
+                    self.countTranslated = self.countTranslated + 1
                 } else {
                     self.loadFactWithNumber(numberOfFacts: 1)
                 }
@@ -194,6 +200,7 @@ class LoadViewController: UIViewController {
                 }
             }
         }
+        print(task.resume())
         task.resume()
     }
     func takeNumber(fact:String)->String{

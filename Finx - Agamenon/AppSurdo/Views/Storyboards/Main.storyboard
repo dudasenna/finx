@@ -80,13 +80,13 @@
         <!--Load View Controller-->
         <scene sceneID="Bcp-uy-Cgm">
             <objects>
-                <viewController storyboardIdentifier="LoadViewController" id="oQE-63-y0q" customClass="LoadViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoadViewController" modalPresentationStyle="fullScreen" id="oQE-63-y0q" customClass="LoadViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PUc-A8-Esb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="Zze-2m-uHG">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8h-1m-hg8">
                                 <rect key="frame" x="192" y="515" width="30" height="30"/>
@@ -123,13 +123,13 @@
         <!--AR View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController storyboardIdentifier="ARViewController" modalPresentationStyle="pageSheet" id="BV1-FR-VrT" userLabel="AR View Controller" customClass="ARViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ARViewController" modalPresentationStyle="fullScreen" id="BV1-FR-VrT" userLabel="AR View Controller" customClass="ARViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
-                                <rect key="frame" x="0.0" y="-2" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="-2" width="414" height="898"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clu-cm-a6e">
                                 <rect key="frame" x="60" y="674" width="84" height="84"/>
