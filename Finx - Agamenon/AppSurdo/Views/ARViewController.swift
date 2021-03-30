@@ -37,6 +37,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var popLabel: UILabel!
     @IBOutlet weak var popCheckAnswerLabel: UILabel!
     @IBOutlet weak var popButton: UIButton!
+    let closeButton = UIButton()
 //    @IBOutlet weak var nextButton: UIButton!
     
     
@@ -49,7 +50,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         popButton.titleLabel?.font = UIFont(name: "Raleway-SemiBold", size: 30)
         popButton.titleLabel?.adjustsFontSizeToFitWidth = true
         popButton.titleLabel?.adjustsFontForContentSizeCategory = true
@@ -87,6 +87,13 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        closeButton.backgroundColor = .white
+        closeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+        closeButton.tintColor = .black
+        closeButton.layer.cornerRadius = 10
+        closeButton.addTarget(self, action: #selector(closeButtonAction), for: .touchUpInside)
+        self.view.addSubview(closeButton)
         answersButton.isHidden = true
         answersButton.addTarget(self, action: #selector(showAnswers), for: .touchUpInside)
 //        presentingViewController?.dismiss(animated: false, completion: nil)
@@ -138,6 +145,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         popUp.translatesAutoresizingMaskIntoConstraints = false
         answersButton.translatesAutoresizingMaskIntoConstraints = false
         popCheckAnswerLabel.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
         
         popView.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.5).isActive = true
         popView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.75).isActive = true
@@ -170,7 +178,10 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         answersButton.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.7).isActive = true
         answersButton.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.1).isActive = true
         
-        //        getLanguages()
+        closeButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        closeButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        closeButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        closeButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -206,7 +217,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     }
     
     func addScenario(location:CGPoint){
-        let hitResult = sceneView.hitTest(location, types: [.existingPlane])
+        let hitResult = sceneView.hitTest(location, types: [.existingPlaneUsingExtent])
         if hitResult.count > 0 {
             let result = hitResult.first!
             let newPosition = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
@@ -216,7 +227,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             sceneView.scene = scene
             Analytics.logEvent("loaded_scenario", parameters: nil)
             Analytics.logEvent("touches_until_load", parameters: ["number_of_touches":numberOfTouches])
-            print("Load scenario")
+            popView.isHidden = false
+            popLabel.text = "Cenário carregado!\n\nDivirta-se!!"
+            popButton.setTitle("Explorar", for: .normal)
             baseLoaded = true
         }
     }
@@ -245,7 +258,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         }
         // Pause the view's session
         sceneView.session.pause()
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+//        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - ARSCNViewDelegate
@@ -271,7 +284,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         popUp.image = UIImage(named: "PopupFatos")
         popCheckAnswerLabel.isHidden = true
         
-        if popButton.title(for: .normal) == "Coletar" || popLabel.text == "Procure os cubos na cena para revelar as frases" {
+        if popButton.title(for: .normal) == "Coletar" || popButton.title(for: .normal) == "Explorar" || popLabel.text == "Procure os cubos na cena para revelar as frases" {
             popView.isHidden = true
             popLabel.text = ""
         } else {
@@ -378,6 +391,16 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBAction func showAnswers (_ sender: UIButton) {
         self.performSegue(withIdentifier: "FactsSegue", sender: self)
     }
+    
+    @objc func closeButtonAction(sender: UIButton!) {
+    
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vcInit = storyBoard.instantiateViewController(withIdentifier: "InitialViewController") as! InitialViewController
+        self.present(vcInit, animated:true, completion:nil)
+    }
+    
+    
+    
     /* func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
      
      print("new plane")
