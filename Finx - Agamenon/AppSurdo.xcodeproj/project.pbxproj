@@ -20,6 +20,7 @@
 		2836F83824FD436F00A75E53 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2836F83724FD436F00A75E53 /* ARViewController.swift */; };
 		2880F71825015E450041FA88 /* RandomFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2880F71725015E450041FA88 /* RandomFact.swift */; };
 		2880F71A25015F0C0041FA88 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2880F71925015F0C0041FA88 /* APIHandler.swift */; };
+		6621D9102612686500415A3F /* loadAnimation3.json in Resources */ = {isa = PBXBuildFile; fileRef = 6621D90F2612686500415A3F /* loadAnimation3.json */; };
 		6651A61525FFCD8D0041E0F2 /* RalewayDots-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6651A61425FFCD8D0041E0F2 /* RalewayDots-Regular.ttf */; };
 		6683027F25FBBE37009826D8 /*  Raleway.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6683027E25FBBE2F009826D8 /*  Raleway.ttf */; };
 		6683028425FBC03D009826D8 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6683028225FBC03C009826D8 /* Raleway-Bold.ttf */; };
@@ -27,7 +28,15 @@
 		86176AE125019EF6006C58FA /* SuperfruitBold-MlBY.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86176AE025019EF6006C58FA /* SuperfruitBold-MlBY.ttf */; };
 		86BD6B5E24FD5044000920CF /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD6B5D24FD5044000920CF /* InitialViewController.swift */; };
 		B43365282601475E00985BFA /* ViewEntryCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43365272601475E00985BFA /* ViewEntryCounter.swift */; };
+		B446917E260D1BEA005DF003 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B446917D260D1BEA005DF003 /* LoadViewController.swift */; };
 		B4AB2C7925FFD61B00D789F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */; };
+		B4C504EB26124C1A00BED109 /* FactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C504EA26124C1A00BED109 /* FactsViewController.swift */; };
+		B4C505102612895400BED109 /* loadAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C5050F2612895400BED109 /* loadAnimation.json */; };
+		B4C505132612895A00BED109 /* loadAnimation1.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C505122612895A00BED109 /* loadAnimation1.json */; };
+		B4C505162612896100BED109 /* loadAnimation2.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C505152612896100BED109 /* loadAnimation2.json */; };
+		B4C505192612896D00BED109 /* loadAnimation4.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C505182612896D00BED109 /* loadAnimation4.json */; };
+		B4C5051C2612897600BED109 /* loadAnimation5.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C5051B2612897600BED109 /* loadAnimation5.json */; };
+		B4C5051F2612897E00BED109 /* loadAnimation6.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C5051E2612897E00BED109 /* loadAnimation6.json */; };
 		DBD1C9B66B65A4C2945B9207 /* Pods_AppSurdo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9EE0C93236698B30D2FB6A /* Pods_AppSurdo.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,9 +55,10 @@
 		2836F82D24FD3CAC00A75E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2836F83524FD42F500A75E53 /* EquationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquationViewController.swift; sourceTree = "<group>"; };
 		2836F83724FD436F00A75E53 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
-		2880F71725015E450041FA88 /* RandomFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomFact.swift; sourceTree = SOURCE_ROOT; };
+		2880F71725015E450041FA88 /* RandomFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomFact.swift; path = AppSurdo/Models/RandomFact.swift; sourceTree = SOURCE_ROOT; };
 		2880F71925015F0C0041FA88 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		58A191FB3F3F6954134A1BFE /* Pods-AppSurdo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppSurdo.debug.xcconfig"; path = "Target Support Files/Pods-AppSurdo/Pods-AppSurdo.debug.xcconfig"; sourceTree = "<group>"; };
+		6621D90F2612686500415A3F /* loadAnimation3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation3.json; sourceTree = "<group>"; };
 		6651A61425FFCD8D0041E0F2 /* RalewayDots-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RalewayDots-Regular.ttf"; sourceTree = "<group>"; };
 		6683027E25FBBE2F009826D8 /*  Raleway.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = " Raleway.ttf"; sourceTree = "<group>"; };
 		6683028225FBC03C009826D8 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
@@ -57,7 +67,15 @@
 		86BD6B5D24FD5044000920CF /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		981AC6C8ECC854635D5513A7 /* Pods-AppSurdo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppSurdo.release.xcconfig"; path = "Target Support Files/Pods-AppSurdo/Pods-AppSurdo.release.xcconfig"; sourceTree = "<group>"; };
 		B43365272601475E00985BFA /* ViewEntryCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEntryCounter.swift; sourceTree = "<group>"; };
+		B446917D260D1BEA005DF003 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B4C504EA26124C1A00BED109 /* FactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewController.swift; sourceTree = "<group>"; };
+		B4C5050F2612895400BED109 /* loadAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation.json; sourceTree = "<group>"; };
+		B4C505122612895A00BED109 /* loadAnimation1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation1.json; sourceTree = "<group>"; };
+		B4C505152612896100BED109 /* loadAnimation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation2.json; sourceTree = "<group>"; };
+		B4C505182612896D00BED109 /* loadAnimation4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation4.json; sourceTree = "<group>"; };
+		B4C5051B2612897600BED109 /* loadAnimation5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation5.json; sourceTree = "<group>"; };
+		B4C5051E2612897E00BED109 /* loadAnimation6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation6.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,26 +121,21 @@
 		2836F81E24FD3CAB00A75E53 /* AppSurdo */ = {
 			isa = PBXGroup;
 			children = (
+				B43BB389260A5C58008F569F /* Fonts */,
+				B43BB388260A5C31008F569F /* Views */,
 				B4336526260146E400985BFA /* Models */,
-				22F3F4A726013A0A008DA3E3 /* Onboarding */,
-				6651A61425FFCD8D0041E0F2 /* RalewayDots-Regular.ttf */,
-				86176AE025019EF6006C58FA /* SuperfruitBold-MlBY.ttf */,
-				6683027E25FBBE2F009826D8 /*  Raleway.ttf */,
-				6683028225FBC03C009826D8 /* Raleway-Bold.ttf */,
-				6683028325FBC03D009826D8 /* Raleway-SemiBold.ttf */,
-				2880F71725015E450041FA88 /* RandomFact.swift */,
 				2836F81F24FD3CAB00A75E53 /* AppDelegate.swift */,
-				228102372603DED300B0A933 /* Main.storyboard */,
 				2836F82124FD3CAB00A75E53 /* art.scnassets */,
-				2836F83524FD42F500A75E53 /* EquationViewController.swift */,
-				2836F83724FD436F00A75E53 /* ARViewController.swift */,
 				2836F82824FD3CAC00A75E53 /* Assets.xcassets */,
-				2836F82A24FD3CAC00A75E53 /* LaunchScreen.storyboard */,
+				B4C5050F2612895400BED109 /* loadAnimation.json */,
+				B4C505122612895A00BED109 /* loadAnimation1.json */,
+				B4C505152612896100BED109 /* loadAnimation2.json */,
+				6621D90F2612686500415A3F /* loadAnimation3.json */,
+				B4C505182612896D00BED109 /* loadAnimation4.json */,
+				B4C5051B2612897600BED109 /* loadAnimation5.json */,
+				B4C5051E2612897E00BED109 /* loadAnimation6.json */,
 				2836F82D24FD3CAC00A75E53 /* Info.plist */,
 				B4AB2C7825FFD61B00D789F6 /* GoogleService-Info.plist */,
-				86BD6B5D24FD5044000920CF /* InitialViewController.swift */,
-				2880F71925015F0C0041FA88 /* APIHandler.swift */,
-				221C3D4125ED947600C4FABB /* InstructionsViewController.swift */,
 			);
 			path = AppSurdo;
 			sourceTree = "<group>";
@@ -139,9 +152,47 @@
 		B4336526260146E400985BFA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2880F71925015F0C0041FA88 /* APIHandler.swift */,
 				B43365272601475E00985BFA /* ViewEntryCounter.swift */,
+				2880F71725015E450041FA88 /* RandomFact.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B43BB388260A5C31008F569F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B43BB38B260A5D85008F569F /* Storyboards */,
+				22F3F4A726013A0A008DA3E3 /* Onboarding */,
+				86BD6B5D24FD5044000920CF /* InitialViewController.swift */,
+				B446917D260D1BEA005DF003 /* LoadViewController.swift */,
+				2836F83724FD436F00A75E53 /* ARViewController.swift */,
+				2836F83524FD42F500A75E53 /* EquationViewController.swift */,
+				B4C504EA26124C1A00BED109 /* FactsViewController.swift */,
+				221C3D4125ED947600C4FABB /* InstructionsViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B43BB389260A5C58008F569F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6651A61425FFCD8D0041E0F2 /* RalewayDots-Regular.ttf */,
+				86176AE025019EF6006C58FA /* SuperfruitBold-MlBY.ttf */,
+				6683027E25FBBE2F009826D8 /*  Raleway.ttf */,
+				6683028225FBC03C009826D8 /* Raleway-Bold.ttf */,
+				6683028325FBC03D009826D8 /* Raleway-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B43BB38B260A5D85008F569F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2836F82A24FD3CAC00A75E53 /* LaunchScreen.storyboard */,
+				228102372603DED300B0A933 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		C7DA04D3F2278FA3F8700190 /* Frameworks */ = {
@@ -213,15 +264,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4C5051C2612897600BED109 /* loadAnimation5.json in Resources */,
 				6683028425FBC03D009826D8 /* Raleway-Bold.ttf in Resources */,
 				6683028525FBC03D009826D8 /* Raleway-SemiBold.ttf in Resources */,
+				B4C505192612896D00BED109 /* loadAnimation4.json in Resources */,
 				6651A61525FFCD8D0041E0F2 /* RalewayDots-Regular.ttf in Resources */,
+				B4C505162612896100BED109 /* loadAnimation2.json in Resources */,
 				2836F82224FD3CAB00A75E53 /* art.scnassets in Resources */,
 				6683027F25FBBE37009826D8 /*  Raleway.ttf in Resources */,
+				B4C5051F2612897E00BED109 /* loadAnimation6.json in Resources */,
 				2836F82C24FD3CAC00A75E53 /* LaunchScreen.storyboard in Resources */,
+				B4C505132612895A00BED109 /* loadAnimation1.json in Resources */,
 				228102382603DED300B0A933 /* Main.storyboard in Resources */,
 				86176AE125019EF6006C58FA /* SuperfruitBold-MlBY.ttf in Resources */,
 				2836F82924FD3CAC00A75E53 /* Assets.xcassets in Resources */,
+				6621D9102612686500415A3F /* loadAnimation3.json in Resources */,
+				B4C505102612895400BED109 /* loadAnimation.json in Resources */,
 				B4AB2C7925FFD61B00D789F6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,12 +350,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B446917E260D1BEA005DF003 /* LoadViewController.swift in Sources */,
 				22F3F4A926014459008DA3E3 /* OnboardingInitial.swift in Sources */,
 				22E15F6326029647001C43C3 /* OnboardingScreens.swift in Sources */,
 				2880F71825015E450041FA88 /* RandomFact.swift in Sources */,
 				86BD6B5E24FD5044000920CF /* InitialViewController.swift in Sources */,
 				2836F83624FD42F500A75E53 /* EquationViewController.swift in Sources */,
 				22E15F672602BC4B001C43C3 /* PageView.swift in Sources */,
+				B4C504EB26124C1A00BED109 /* FactsViewController.swift in Sources */,
 				2880F71A25015F0C0041FA88 /* APIHandler.swift in Sources */,
 				2836F82024FD3CAB00A75E53 /* AppDelegate.swift in Sources */,
 				221C3D4225ED947600C4FABB /* InstructionsViewController.swift in Sources */,
@@ -447,7 +507,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = APPFinx;
 				PRODUCT_NAME = Finx;
 				SWIFT_VERSION = 5.0;
@@ -468,7 +528,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = APPFinx;
 				PRODUCT_NAME = Finx;
 				SWIFT_VERSION = 5.0;

@@ -58,6 +58,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (7.3.0):
     - GoogleUtilities/Logger
+  - lottie-ios (3.2.1)
   - nanopb (2.30907.0):
     - nanopb/decode (= 2.30907.0)
     - nanopb/encode (= 2.30907.0)
@@ -67,6 +68,7 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/Analytics
+  - lottie-ios
 
 SPEC REPOS:
   trunk:
@@ -78,6 +80,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
+    - lottie-ios
     - nanopb
     - PromisesObjC
 
@@ -90,9 +93,10 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 50a254ee92c1b94fbe2abea7e3da35e4c6dedce0
   GoogleDataTransport: b006084b73915a42c28a3466961a4edda3065da6
   GoogleUtilities: abda45f519bc4073aa1171d2f8742108def46017
+  lottie-ios: 106e92eaf11fbed0a76590b4cdb9b5ec26123ff7
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: d50ad6589bdeff729df22116d422eeab280778ca
+PODFILE CHECKSUM: 5d925ca3805371db3c194115b42d137274b92bc1
 
 COCOAPODS: 1.10.0
