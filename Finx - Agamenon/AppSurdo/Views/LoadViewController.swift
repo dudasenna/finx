@@ -65,7 +65,7 @@ class LoadViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        animationView = .init(name: "loadAnimation4")
+        animationView = .init(name: "loadAnimation")
 //        animationView?.frame = self.view.bounds
         animationView?.contentMode = .scaleAspectFill
         animationView?.loopMode = .loop
@@ -130,7 +130,7 @@ class LoadViewController: UIViewController {
             i+=1
         }
     }
-
+    
     func getTranslation(textToTranslate: String, numberString: String) {
         //key genereted from azure (microsoft)
         let azureKey = "a877d5a784f341eaab11789221a68916"
@@ -181,7 +181,7 @@ class LoadViewController: UIViewController {
                     let numberOfTranslations = dataTranslation.count - 1
 
                     let phraseTranslated = dataTranslation[0].translations[numberOfTranslations].text
-                    
+        
                     self.facts.append((numberString, phraseTranslated))
                     self.countTranslated = self.countTranslated + 1
                 } else {

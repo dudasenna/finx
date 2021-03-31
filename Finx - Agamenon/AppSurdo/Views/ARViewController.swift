@@ -222,7 +222,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             let result = hitResult.first!
             let newPosition = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
             let scene = SCNScene(named: "art.scnassets/mainScene.scn")!
-            let rootNode = scene.rootNode.childNode(withName: "BaseReference", recursively: false)
+            let rootNode = scene.rootNode.childNode(withName: "box", recursively: true)
             rootNode?.position = newPosition
             sceneView.scene = scene
             Analytics.logEvent("loaded_scenario", parameters: nil)
