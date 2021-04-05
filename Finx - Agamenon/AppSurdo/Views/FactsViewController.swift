@@ -12,10 +12,10 @@ import UIKit
 class FactsViewController : UIViewController {
     var factsOfNumbers: [(String, String)]!
     
-    var colorTitle = #colorLiteral(red: 0.9089190364, green: 0.9262141585, blue: 0.9122079015, alpha: 0.3)
-    var colorCard1 = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 0.8)
-    var colorCard2 = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 0.8)
-    var colorCard3 = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 0.8)
+    var colorTitle = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.2)
+    var colorCard1 = #colorLiteral(red: 1, green: 0.4549019608, blue: 0.4549019608, alpha: 0.8)
+    var colorCard2 = #colorLiteral(red: 1, green: 0.4980392157, blue: 0.3882352941, alpha: 0.8)
+    var colorCard3 = #colorLiteral(red: 1, green: 0.6117647059, blue: 0.3921568627, alpha: 0.8)
     var colorTextButton = UIColor(red: 237/255, green: 142/255, blue: 92/255, alpha: 1.0)
     
     let titleSpace = UILabel()
@@ -51,14 +51,20 @@ class FactsViewController : UIViewController {
         backgroundCard1.backgroundColor = colorCard1
         backgroundCard1.layer.cornerRadius = 20
         backgroundCard1.layer.masksToBounds = true
+        backgroundCard1.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        backgroundCard1.layer.borderWidth = 1.0
         
         backgroundCard2.backgroundColor = colorCard2
         backgroundCard2.layer.cornerRadius = 20
         backgroundCard2.layer.masksToBounds = true
+        backgroundCard2.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        backgroundCard2.layer.borderWidth = 1.0
         
         backgroundCard3.backgroundColor = colorCard3
         backgroundCard3.layer.cornerRadius = 20
         backgroundCard3.layer.masksToBounds = true
+        backgroundCard3.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        backgroundCard3.layer.borderWidth = 1.0
         
         cardSpace1.text = factsOfNumbers[0].1
         cardSpace1.textColor = .white
