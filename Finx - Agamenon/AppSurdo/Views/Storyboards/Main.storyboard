@@ -265,7 +265,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="18"/>
                                 <state key="normal" title="Ok" backgroundImage="PopupButton">
-                                    <color key="titleColor" red="0.73186522720000002" green="0.56667959690000003" blue="0.43526908759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.73333333333333328" green="0.56862745098039214" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
                         </subviews>
@@ -381,11 +381,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8z-gr-vww">
-                                <rect key="frame" x="188" y="637" width="39" height="54"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8z-gr-vww">
+                                <rect key="frame" x="125" y="701" width="165" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="OK">
-                                    <color key="titleColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="18"/>
+                                <state key="normal" title="Ok" backgroundImage="PopupButton">
+                                    <color key="titleColor" red="0.73333333329999995" green="0.56862745100000001" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <segue destination="oQE-63-y0q" kind="presentation" modalPresentationStyle="fullScreen" id="UIY-Tx-hSH"/>
@@ -395,6 +396,9 @@
                         <viewLayoutGuide key="safeArea" id="U1q-Me-lsz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="okLevelButton" destination="x8z-gr-vww" id="i6g-y6-NYq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdZ-I3-QZN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -469,9 +473,6 @@
         <image name="PlayButton" width="160" height="160"/>
         <image name="PopupButton" width="165" height="59"/>
         <image name="PopupFatos" width="309" height="267"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
