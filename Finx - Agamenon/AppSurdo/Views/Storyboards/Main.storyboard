@@ -377,9 +377,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="Lnc-J2-m6R">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="Lnc-J2-m6R">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8z-gr-vww">
                                 <rect key="frame" x="125" y="701" width="165" height="59"/>
@@ -395,6 +394,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U1q-Me-lsz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Lnc-J2-m6R" firstAttribute="leading" secondItem="U1q-Me-lsz" secondAttribute="leading" id="7QW-RA-IfG"/>
+                            <constraint firstItem="Lnc-J2-m6R" firstAttribute="top" secondItem="k6y-ha-nMI" secondAttribute="top" id="8S1-qY-DRw"/>
+                            <constraint firstAttribute="bottom" secondItem="Lnc-J2-m6R" secondAttribute="bottom" id="Khd-jn-b3x"/>
+                            <constraint firstItem="Lnc-J2-m6R" firstAttribute="trailing" secondItem="U1q-Me-lsz" secondAttribute="trailing" id="Xhx-zp-KTi"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="okLevelButton" destination="x8z-gr-vww" id="i6g-y6-NYq"/>
