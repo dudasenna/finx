@@ -220,11 +220,32 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         let hitResult = sceneView.hitTest(location, types: [.existingPlaneUsingExtent])
         if hitResult.count > 0 {
             let result = hitResult.first!
-            let newPosition = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
-            let scene = SCNScene(named: "art.scnassets/mainScene.scn")!
-            let rootNode = scene.rootNode.childNode(withName: "box", recursively: true)
-            rootNode?.position = newPosition
-            sceneView.scene = scene
+//            let newPosition = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
+            let scenario = SCNNode()
+            
+            let newPosition = CamCoords()
+            newPosition.getCamCoords(sceneView: sceneView)
+            scenario.position = SCNVector3(newPosition.x, newPosition.y, newPosition.z)
+            
+            guard let objScene = SCNScene(named: "mainScene.scn", inDirectory: "art.scnassets/scenes") else {
+                return
+            }
+            
+            let wrapperNode = SCNNode()
+            
+            for child in objScene.rootNode.childNodes {
+                child.geometry?.firstMaterial?.lightingModel = .physicallyBased
+                wrapperNode.addChildNode(child)
+            }
+            
+            scenario.addChildNode(wrapperNode)
+            
+            sceneView.scene.rootNode.addChildNode(scenario)
+            
+//            let scene = SCNScene(named: "art.scnassets/mainScene.scn")!
+//            let rootNode = scene.rootNode.childNode(withName: "box", recursively: true)
+//            rootNode?.position = newPosition
+//            sceneView.scene = scene
             Analytics.logEvent("loaded_scenario", parameters: nil)
             Analytics.logEvent("touches_until_load", parameters: ["number_of_touches":numberOfTouches])
             popView.isHidden = false
@@ -244,10 +265,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         sceneView.autoenablesDefaultLighting = true
         // Run the view's session
         sceneView.session.run(configuration)
-    }
-    
-    func addNodeAtLocation(location:CGPoint){
-        print("adding node...")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
