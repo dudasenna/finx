@@ -227,7 +227,11 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             newPosition.getCamCoords(sceneView: sceneView)
             scenario.position = SCNVector3(newPosition.x, newPosition.y, newPosition.z)
             
-            guard let objScene = SCNScene(named: "mainScene.scn", inDirectory: "art.scnassets/scenes") else {
+//            guard let objScene = SCNScene(named: "mainScene.scn", inDirectory: "art.scnassets/scenes") else {
+//                return
+//            }
+            
+            guard let objScene = SCNScene(named: "underwater.scn", inDirectory: "art.scnassets/scenes") else {
                 return
             }
             
