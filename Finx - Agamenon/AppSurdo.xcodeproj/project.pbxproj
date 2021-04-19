@@ -21,6 +21,7 @@
 		2880F71825015E450041FA88 /* RandomFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2880F71725015E450041FA88 /* RandomFact.swift */; };
 		2880F71A25015F0C0041FA88 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2880F71925015F0C0041FA88 /* APIHandler.swift */; };
 		6651A61525FFCD8D0041E0F2 /* RalewayDots-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6651A61425FFCD8D0041E0F2 /* RalewayDots-Regular.ttf */; };
+		666C94C5261CE7E4006C66EB /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666C94C4261CE7E4006C66EB /* LevelsViewController.swift */; };
 		6683027F25FBBE37009826D8 /*  Raleway.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6683027E25FBBE2F009826D8 /*  Raleway.ttf */; };
 		6683028425FBC03D009826D8 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6683028225FBC03C009826D8 /* Raleway-Bold.ttf */; };
 		6683028525FBC03D009826D8 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6683028325FBC03D009826D8 /* Raleway-SemiBold.ttf */; };
@@ -55,6 +56,7 @@
 		2880F71925015F0C0041FA88 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		58A191FB3F3F6954134A1BFE /* Pods-AppSurdo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppSurdo.debug.xcconfig"; path = "Target Support Files/Pods-AppSurdo/Pods-AppSurdo.debug.xcconfig"; sourceTree = "<group>"; };
 		6651A61425FFCD8D0041E0F2 /* RalewayDots-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RalewayDots-Regular.ttf"; sourceTree = "<group>"; };
+		666C94C4261CE7E4006C66EB /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
 		6683027E25FBBE2F009826D8 /*  Raleway.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = " Raleway.ttf"; sourceTree = "<group>"; };
 		6683028225FBC03C009826D8 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		6683028325FBC03D009826D8 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				22F3F4A726013A0A008DA3E3 /* Onboarding */,
 				86BD6B5D24FD5044000920CF /* InitialViewController.swift */,
 				B446917D260D1BEA005DF003 /* LoadViewController.swift */,
+				666C94C4261CE7E4006C66EB /* LevelsViewController.swift */,
 				2836F83724FD436F00A75E53 /* ARViewController.swift */,
 				2836F83524FD42F500A75E53 /* EquationViewController.swift */,
 				B4C504EA26124C1A00BED109 /* FactsViewController.swift */,
@@ -344,6 +347,7 @@
 				2880F71A25015F0C0041FA88 /* APIHandler.swift in Sources */,
 				2836F82024FD3CAB00A75E53 /* AppDelegate.swift in Sources */,
 				221C3D4225ED947600C4FABB /* InstructionsViewController.swift in Sources */,
+				666C94C5261CE7E4006C66EB /* LevelsViewController.swift in Sources */,
 				B43365282601475E00985BFA /* ViewEntryCounter.swift in Sources */,
 				2836F83824FD436F00A75E53 /* ARViewController.swift in Sources */,
 				B421370B2620EAAB00285EC8 /* CamCoords.swift in Sources */,
@@ -421,6 +425,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -474,6 +479,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -485,13 +491,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = SZDYT9A2D8;
+				DEVELOPMENT_TEAM = TSNQUNMSD5;
 				INFOPLIST_FILE = AppSurdo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = APPFinx;
 				PRODUCT_NAME = Finx;
 				SWIFT_VERSION = 5.0;
@@ -506,13 +512,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = SZDYT9A2D8;
+				DEVELOPMENT_TEAM = TSNQUNMSD5;
 				INFOPLIST_FILE = AppSurdo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = APPFinx;
 				PRODUCT_NAME = Finx;
 				SWIFT_VERSION = 5.0;
