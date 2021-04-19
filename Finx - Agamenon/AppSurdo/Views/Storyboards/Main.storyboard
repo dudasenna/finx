@@ -37,7 +37,7 @@
                                 <gestureRecognizers/>
                                 <state key="normal" image="PlayButton"/>
                                 <connections>
-                                    <segue destination="oQE-63-y0q" kind="presentation" id="5ZQ-tk-0UX"/>
+                                    <segue destination="hIu-Ao-KJt" kind="presentation" modalPresentationStyle="fullScreen" id="ASe-bq-y3b"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8C-ka-wcW">
@@ -265,7 +265,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="18"/>
                                 <state key="normal" title="Ok" backgroundImage="PopupButton">
-                                    <color key="titleColor" red="0.73186522720000002" green="0.56667959690000003" blue="0.43526908759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.73333333333333328" green="0.56862745098039214" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
                         </subviews>
@@ -369,6 +369,46 @@
             </objects>
             <point key="canvasLocation" x="-665.21739130434787" y="800.89285714285711"/>
         </scene>
+        <!--Levels View Controller-->
+        <scene sceneID="z0Q-Xf-E3x">
+            <objects>
+                <viewController id="hIu-Ao-KJt" customClass="LevelsViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k6y-ha-nMI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="Lnc-J2-m6R">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8z-gr-vww">
+                                <rect key="frame" x="125" y="701" width="165" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="18"/>
+                                <state key="normal" title="Ok" backgroundImage="PopupButton">
+                                    <color key="titleColor" red="0.73333333329999995" green="0.56862745100000001" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oQE-63-y0q" kind="presentation" modalPresentationStyle="fullScreen" id="UIY-Tx-hSH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="U1q-Me-lsz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Lnc-J2-m6R" firstAttribute="leading" secondItem="U1q-Me-lsz" secondAttribute="leading" id="7QW-RA-IfG"/>
+                            <constraint firstItem="Lnc-J2-m6R" firstAttribute="top" secondItem="k6y-ha-nMI" secondAttribute="top" id="8S1-qY-DRw"/>
+                            <constraint firstAttribute="bottom" secondItem="Lnc-J2-m6R" secondAttribute="bottom" id="Khd-jn-b3x"/>
+                            <constraint firstItem="Lnc-J2-m6R" firstAttribute="trailing" secondItem="U1q-Me-lsz" secondAttribute="trailing" id="Xhx-zp-KTi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="okLevelButton" destination="x8z-gr-vww" id="i6g-y6-NYq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mdZ-I3-QZN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="311.59420289855075" y="804.91071428571422"/>
+        </scene>
         <!--Onboarding Initial-->
         <scene sceneID="rOd-1N-Z8l">
             <objects>
@@ -402,7 +442,7 @@
             <objects>
                 <viewController id="fUs-kB-cyS" customClass="OnboardingScreens" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iHz-db-PcL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftv-SG-7Mx">
@@ -427,8 +467,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fUs-Wi-xJM"/>
-        <segue reference="5ZQ-tk-0UX"/>
+        <segue reference="dpO-tz-3Xf"/>
+        <segue reference="UIY-Tx-hSH"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
