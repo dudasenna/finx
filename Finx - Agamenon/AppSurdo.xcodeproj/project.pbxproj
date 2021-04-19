@@ -27,6 +27,8 @@
 		6683028525FBC03D009826D8 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6683028325FBC03D009826D8 /* Raleway-SemiBold.ttf */; };
 		86176AE125019EF6006C58FA /* SuperfruitBold-MlBY.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86176AE025019EF6006C58FA /* SuperfruitBold-MlBY.ttf */; };
 		86BD6B5E24FD5044000920CF /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD6B5D24FD5044000920CF /* InitialViewController.swift */; };
+		B42086AA262E0A1400068AD1 /* CoachingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42086A9262E0A1400068AD1 /* CoachingOverlay.swift */; };
+		B421370B2620EAAB00285EC8 /* CamCoords.swift in Sources */ = {isa = PBXBuildFile; fileRef = B421370A2620EAAB00285EC8 /* CamCoords.swift */; };
 		B43365282601475E00985BFA /* ViewEntryCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43365272601475E00985BFA /* ViewEntryCounter.swift */; };
 		B446917E260D1BEA005DF003 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B446917D260D1BEA005DF003 /* LoadViewController.swift */; };
 		B49C65D3261432E9003F6DF9 /* loadAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B49C65D2261432E9003F6DF9 /* loadAnimation.json */; };
@@ -61,6 +63,8 @@
 		86176AE025019EF6006C58FA /* SuperfruitBold-MlBY.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SuperfruitBold-MlBY.ttf"; sourceTree = "<group>"; };
 		86BD6B5D24FD5044000920CF /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		981AC6C8ECC854635D5513A7 /* Pods-AppSurdo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppSurdo.release.xcconfig"; path = "Target Support Files/Pods-AppSurdo/Pods-AppSurdo.release.xcconfig"; sourceTree = "<group>"; };
+		B42086A9262E0A1400068AD1 /* CoachingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachingOverlay.swift; sourceTree = "<group>"; };
+		B421370A2620EAAB00285EC8 /* CamCoords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamCoords.swift; sourceTree = "<group>"; };
 		B43365272601475E00985BFA /* ViewEntryCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEntryCounter.swift; sourceTree = "<group>"; };
 		B446917D260D1BEA005DF003 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		B49C65D2261432E9003F6DF9 /* loadAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadAnimation.json; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				2880F71925015F0C0041FA88 /* APIHandler.swift */,
 				B43365272601475E00985BFA /* ViewEntryCounter.swift */,
 				2880F71725015E450041FA88 /* RandomFact.swift */,
+				B421370A2620EAAB00285EC8 /* CamCoords.swift */,
+				B42086A9262E0A1400068AD1 /* CoachingOverlay.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 				22E15F6326029647001C43C3 /* OnboardingScreens.swift in Sources */,
 				2880F71825015E450041FA88 /* RandomFact.swift in Sources */,
 				86BD6B5E24FD5044000920CF /* InitialViewController.swift in Sources */,
+				B42086AA262E0A1400068AD1 /* CoachingOverlay.swift in Sources */,
 				2836F83624FD42F500A75E53 /* EquationViewController.swift in Sources */,
 				22E15F672602BC4B001C43C3 /* PageView.swift in Sources */,
 				B4C504EB26124C1A00BED109 /* FactsViewController.swift in Sources */,
@@ -343,6 +350,7 @@
 				666C94C5261CE7E4006C66EB /* LevelsViewController.swift in Sources */,
 				B43365282601475E00985BFA /* ViewEntryCounter.swift in Sources */,
 				2836F83824FD436F00A75E53 /* ARViewController.swift in Sources */,
+				B421370B2620EAAB00285EC8 /* CamCoords.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
