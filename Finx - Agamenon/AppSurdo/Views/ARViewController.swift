@@ -17,7 +17,7 @@ import FirebaseAnalytics
 
 //colocar key na linha 334
 
-class ARViewController: UIViewController, ARSCNViewDelegate {
+class ARViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     var facts: [(String, String)]!
     var numbers: [String]!
 //    var vcLoad: LoadViewController!
@@ -47,6 +47,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     var numberOfTouches = 0
     
     var lifes = 3
+    
+    let coachingOverlay = ARCoachingOverlayView()
    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -103,7 +105,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = false
-        sceneView.debugOptions = [.showFeaturePoints]
+//        sceneView.debugOptions = [.showFeaturePoints]
         
         cubes = []
         for i in sceneView.scene.rootNode.childNodes{
@@ -189,8 +191,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         if baseLoaded == false{
             addScenario(location: (touches.first?.location(in: sceneView))!)
         }else{
-//            print("Scenario loaded")
-            
             //Checking if cube was found
             let touch = touches.first!
             
@@ -219,18 +219,14 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     func addScenario(location:CGPoint){
         let hitResult = sceneView.hitTest(location, types: [.existingPlaneUsingExtent])
         if hitResult.count > 0 {
-            let result = hitResult.first!
-//            let newPosition = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
+
             let scenario = SCNNode()
             
             let newPosition = CamCoords()
             newPosition.getCamCoords(sceneView: sceneView)
             scenario.position = SCNVector3(newPosition.x, newPosition.y, newPosition.z)
             
-//            guard let objScene = SCNScene(named: "mainScene.scn", inDirectory: "art.scnassets/scenes") else {
-//                return
-//            }
-            
+            //pode colocar o argumento sceneName pra selecionar o cenário
             guard let objScene = SCNScene(named: "underwater.scn", inDirectory: "art.scnassets/scenes") else {
                 return
             }
@@ -246,16 +242,13 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             
             sceneView.scene.rootNode.addChildNode(scenario)
             
-//            let scene = SCNScene(named: "art.scnassets/mainScene.scn")!
-//            let rootNode = scene.rootNode.childNode(withName: "box", recursively: true)
-//            rootNode?.position = newPosition
-//            sceneView.scene = scene
             Analytics.logEvent("loaded_scenario", parameters: nil)
             Analytics.logEvent("touches_until_load", parameters: ["number_of_touches":numberOfTouches])
             popView.isHidden = false
             popLabel.text = "Cenário carregado!\n\nDivirta-se!!"
             popButton.setTitle("Explorar", for: .normal)
             baseLoaded = true
+            coachingOverlay.activatesAutomatically = false
         }
     }
     
@@ -265,10 +258,12 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
+        setCoachingOverlay()
         UIApplication.shared.isIdleTimerDisabled = true
         sceneView.autoenablesDefaultLighting = true
         // Run the view's session
         sceneView.session.run(configuration)
+        sceneView.session.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
