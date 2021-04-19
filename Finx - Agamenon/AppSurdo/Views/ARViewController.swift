@@ -227,7 +227,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             scenario.position = SCNVector3(newPosition.x, newPosition.y, newPosition.z)
             
             //pode colocar o argumento sceneName pra selecionar o cenário
-            guard let objScene = SCNScene(named: "underwater.scn", inDirectory: "art.scnassets/scenes") else {
+            guard let objScene = SCNScene(named: "tabernEasy.scn", inDirectory: "art.scnassets/scenes") else {
                 return
             }
             
