@@ -9,18 +9,16 @@
 import Foundation
 import UIKit
 
-
-var lifes = 3
-var cubes_num = 3
-let buttonEasy = UIButton()
-let buttonMedium = UIButton()
-let buttonHard = UIButton()
-let labelNivel = UILabel()
-
-
 class LevelsViewController: UIViewController {
     
     @IBOutlet weak var okLevelButton: UIButton!
+    
+    var lifes = 3
+    var cubes_num = 3
+    let buttonEasy = UIButton()
+    let buttonMedium = UIButton()
+    let buttonHard = UIButton()
+    let labelNivel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
