@@ -225,9 +225,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             let newPosition = CamCoords()
             newPosition.getCamCoords(sceneView: sceneView)
             scenario.position = SCNVector3(newPosition.x, newPosition.y, newPosition.z)
-            
+            //name = "cena" + "nivel" + ".scn"
             //pode colocar o argumento sceneName pra selecionar o cenário
-            guard let objScene = SCNScene(named: "ufoEasy.scn", inDirectory: "art.scnassets/scenes") else {
+            guard let objScene = SCNScene(named: "kitchenEasy.scn", inDirectory: "art.scnassets/scenes") else {
                 return
             }
             
