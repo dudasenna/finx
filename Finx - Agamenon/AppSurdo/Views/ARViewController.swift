@@ -12,9 +12,6 @@ import SceneKit
 import ARKit
 import FirebaseAnalytics
 
-//@property (nonatomic, assign) BOOL isSomethingEnabled;
-
-
 //colocar key na linha 334
 
 class ARViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
