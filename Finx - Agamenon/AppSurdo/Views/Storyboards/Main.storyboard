@@ -37,7 +37,7 @@
                                 <gestureRecognizers/>
                                 <state key="normal" image="PlayButton"/>
                                 <connections>
-                                    <segue destination="hIu-Ao-KJt" kind="presentation" modalPresentationStyle="fullScreen" id="ASe-bq-y3b"/>
+                                    <segue destination="oQE-63-y0q" kind="presentation" id="yXy-FZ-7fQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8C-ka-wcW">
@@ -407,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdZ-I3-QZN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="311.59420289855075" y="804.91071428571422"/>
+            <point key="canvasLocation" x="87" y="1104"/>
         </scene>
         <!--Onboarding Initial-->
         <scene sceneID="rOd-1N-Z8l">
@@ -468,7 +468,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dpO-tz-3Xf"/>
-        <segue reference="OTy-3Z-f7t"/>
+        <segue reference="yXy-FZ-7fQ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
