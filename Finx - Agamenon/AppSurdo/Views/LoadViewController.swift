@@ -18,6 +18,8 @@ class LoadViewController: UIViewController {
     
     var facts: [(String, String)]! = []
     var numbers: [String]! = []
+    var scene: String! = ""
+    var level: String! = "Easy"
     
     struct TranslatorLanguageDetails: Codable {
         var code = String()
@@ -185,6 +187,7 @@ class LoadViewController: UIViewController {
                     let vcAR = storyBoard.instantiateViewController(withIdentifier: "ARViewController") as! ARViewController
                     vcAR.facts = self.facts.shuffled()
                     vcAR.numbers = self.numbers
+                    vcAR.scene = self.scene
                     self.present(vcAR, animated:true, completion:nil)
                 }
             }

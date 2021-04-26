@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZCt-Le-Imr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZCt-Le-Imr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,7 +37,7 @@
                                 <gestureRecognizers/>
                                 <state key="normal" image="PlayButton"/>
                                 <connections>
-                                    <segue destination="2Ag-Og-NhP" kind="presentation" id="NO9-3w-2Ij"/>
+                                    <segue destination="2Ag-Og-NhP" kind="presentation" id="m1d-fJ-biT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8C-ka-wcW">
@@ -367,18 +367,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spx-lI-IPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-665" y="1004"/>
+            <point key="canvasLocation" x="-1303" y="1004"/>
+        </scene>
+        <!--Page One View Controller-->
+        <scene sceneID="iwn-Da-qR7">
+            <objects>
+                <viewController storyboardIdentifier="PageOneViewController" title="Page One View Controller" id="Yhy-Cs-PMJ" customClass="FirstScenesViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ljs-QQ-rbZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="ATs-Qb-OCM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEZ-PW-zFG">
+                                <rect key="frame" x="62" y="230" width="290" height="186"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="underwaterButton"/>
+                                <connections>
+                                    <segue destination="oQE-63-y0q" kind="presentation" identifier="underwaterSegue" id="Ryk-1d-NyK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fal-lB-uSm">
+                                <rect key="frame" x="62" y="626" width="290" height="186"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="ufoButton"/>
+                                <connections>
+                                    <segue destination="oQE-63-y0q" kind="presentation" identifier="ufoSegue" id="gte-7h-JFo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Giz-IX-NEg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ATs-Qb-OCM" firstAttribute="top" secondItem="Ljs-QQ-rbZ" secondAttribute="top" id="4wd-aR-T4E"/>
+                            <constraint firstItem="ATs-Qb-OCM" firstAttribute="trailing" secondItem="Ljs-QQ-rbZ" secondAttribute="trailing" id="SUf-1w-EWf"/>
+                            <constraint firstItem="ATs-Qb-OCM" firstAttribute="leading" secondItem="Ljs-QQ-rbZ" secondAttribute="leading" id="cJd-1t-6Bm"/>
+                            <constraint firstItem="ATs-Qb-OCM" firstAttribute="bottom" secondItem="Ljs-QQ-rbZ" secondAttribute="bottom" id="xjt-Ud-VdQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ufoButton" destination="Fal-lB-uSm" id="mg7-U0-LcM"/>
+                        <outlet property="underwaterButton" destination="xEZ-PW-zFG" id="kRk-ul-8AW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Foh-Xk-keK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-500.00000000000006" y="1709.5982142857142"/>
         </scene>
         <!--Levels View Controller-->
         <scene sceneID="z0Q-Xf-E3x">
             <objects>
-                <viewController id="hIu-Ao-KJt" customClass="LevelsViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="hIu-Ao-KJt" customClass="LevelsViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k6y-ha-nMI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="Lnc-J2-m6R">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8z-gr-vww">
                                 <rect key="frame" x="125" y="701" width="165" height="59"/>
@@ -407,7 +453,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdZ-I3-QZN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1103" y="937"/>
+            <point key="canvasLocation" x="117" y="138"/>
         </scene>
         <!--Onboarding Initial-->
         <scene sceneID="rOd-1N-Z8l">
@@ -468,48 +514,107 @@
         <!--Page Control Scenes View Controller-->
         <scene sceneID="1pZ-uV-WXm">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="2Ag-Og-NhP" customClass="PageControlScenesViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XH5-OG-mC2">
+                <viewController modalPresentationStyle="fullScreen" id="2Ag-Og-NhP" customClass="PageControlScenesViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kmt-r2-Xdu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-94" y="1004"/>
+        </scene>
+        <!--Page Two View Controller-->
+        <scene sceneID="0R5-yS-GDy">
+            <objects>
+                <viewController storyboardIdentifier="PageTwoViewController" title="Page Two View Controller" id="isD-eu-sgO" customClass="SecondScenesViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bsf-pf-cbr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="JKb-tR-W3N">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="q4t-Nh-eZb">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfM-oG-mhV">
-                                <rect key="frame" x="171" y="433" width="49" height="54"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmw-CT-2jt">
+                                <rect key="frame" x="62" y="239" width="290" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" notEnabled="YES"/>
-                                </accessibility>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Eo-CI-1Gg">
-                                <rect key="frame" x="171" y="464" width="49" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="pirateButton"/>
                                 <connections>
-                                    <segue destination="hIu-Ao-KJt" kind="presentation" id="N0b-CP-YgK"/>
+                                    <segue destination="oQE-63-y0q" kind="presentation" identifier="pirateSegue" id="xuN-Bm-jL4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1x-mi-kS9">
+                                <rect key="frame" x="62" y="571" width="290" height="186"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="forestButton"/>
+                                <connections>
+                                    <segue destination="oQE-63-y0q" kind="presentation" identifier="forestSegue" id="uFf-vw-ZGN"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Qqf-il-n0z"/>
+                        <viewLayoutGuide key="safeArea" id="G47-kl-loN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JKb-tR-W3N" firstAttribute="top" secondItem="XH5-OG-mC2" secondAttribute="top" id="D77-ph-vD6"/>
-                            <constraint firstItem="JKb-tR-W3N" firstAttribute="trailing" secondItem="XH5-OG-mC2" secondAttribute="trailing" id="Tga-Sj-XzB"/>
-                            <constraint firstAttribute="bottom" secondItem="JKb-tR-W3N" secondAttribute="bottom" id="bv0-cO-CmU"/>
-                            <constraint firstItem="JKb-tR-W3N" firstAttribute="leading" secondItem="XH5-OG-mC2" secondAttribute="leading" id="ygI-6a-Bs8"/>
+                            <constraint firstItem="q4t-Nh-eZb" firstAttribute="top" secondItem="bsf-pf-cbr" secondAttribute="top" id="UWL-qj-e5Y"/>
+                            <constraint firstItem="q4t-Nh-eZb" firstAttribute="trailing" secondItem="bsf-pf-cbr" secondAttribute="trailing" id="kEN-4X-naI"/>
+                            <constraint firstItem="q4t-Nh-eZb" firstAttribute="leading" secondItem="bsf-pf-cbr" secondAttribute="leading" id="nee-wf-KhW"/>
+                            <constraint firstAttribute="bottom" secondItem="q4t-Nh-eZb" secondAttribute="bottom" id="woG-Cy-gyC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="forestButton" destination="K1x-mi-kS9" id="78N-RD-STk"/>
+                        <outlet property="pirateButton" destination="Pmw-CT-2jt" id="Llx-4z-T2n"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kmt-r2-Xdu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cf8-yF-t17" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="221.73913043478262" y="936.83035714285711"/>
+            <point key="canvasLocation" x="337.68115942028987" y="1709.5982142857142"/>
+        </scene>
+        <!--Third Scenes View Controller-->
+        <scene sceneID="kgK-GI-6Wn">
+            <objects>
+                <viewController storyboardIdentifier="PageThreeViewController" id="TW0-ZX-Y7S" customClass="ThirdScenesViewController" customModule="Finx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h4l-o2-tIh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="B11-2W-I0t">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxk-fb-yMj">
+                                <rect key="frame" x="62" y="566" width="290" height="186"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="tabernButton"/>
+                                <connections>
+                                    <segue destination="oQE-63-y0q" kind="presentation" identifier="tabernSegue" id="x6F-xX-1Wa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mA5-QU-0v2">
+                                <rect key="frame" x="62" y="243" width="290" height="186"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="kitchenButton"/>
+                                <connections>
+                                    <segue destination="oQE-63-y0q" kind="presentation" identifier="kitchenSegue" id="8NR-eq-sXO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KBY-mE-BoA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B11-2W-I0t" firstAttribute="leading" secondItem="h4l-o2-tIh" secondAttribute="leading" id="B0T-Pe-eg2"/>
+                            <constraint firstItem="B11-2W-I0t" firstAttribute="top" secondItem="h4l-o2-tIh" secondAttribute="top" id="Vnt-RL-UbM"/>
+                            <constraint firstItem="B11-2W-I0t" firstAttribute="trailing" secondItem="h4l-o2-tIh" secondAttribute="trailing" id="q9F-41-wbN"/>
+                            <constraint firstAttribute="bottom" secondItem="B11-2W-I0t" secondAttribute="bottom" id="rxl-Nq-epd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="kitchenButton" destination="mA5-QU-0v2" id="7Ad-xT-M8G"/>
+                        <outlet property="tabernButton" destination="gxk-fb-yMj" id="3mC-J2-hPP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2n0-2k-WCG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1224.6376811594205" y="1709.5982142857142"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gts-7S-yGi"/>
         <segue reference="dpO-tz-3Xf"/>
-        <segue reference="UIY-Tx-hSH"/>
+        <segue reference="x6F-xX-1Wa"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
@@ -519,6 +624,12 @@
         <image name="PlayButton" width="160" height="160"/>
         <image name="PopupButton" width="165" height="59"/>
         <image name="PopupFatos" width="309" height="267"/>
+        <image name="forestButton" width="290" height="186"/>
+        <image name="kitchenButton" width="290" height="186"/>
+        <image name="pirateButton" width="290" height="186"/>
+        <image name="tabernButton" width="290" height="186"/>
+        <image name="ufoButton" width="290" height="186"/>
+        <image name="underwaterButton" width="290" height="186"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

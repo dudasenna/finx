@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "underwaterButton.png",
+      "filename" : "Group 27.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Group 27@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Group 27@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
