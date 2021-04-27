@@ -380,18 +380,18 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="ATs-Qb-OCM">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEZ-PW-zFG">
-                                <rect key="frame" x="62" y="230" width="290" height="186"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEZ-PW-zFG">
+                                <rect key="frame" x="62" y="190" width="290" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="underwaterButton"/>
+                                <state key="normal" image="underwaterButton"/>
                                 <connections>
                                     <segue destination="oQE-63-y0q" kind="presentation" identifier="underwaterSegue" id="Ryk-1d-NyK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fal-lB-uSm">
-                                <rect key="frame" x="62" y="626" width="290" height="186"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fal-lB-uSm">
+                                <rect key="frame" x="62" y="413" width="290" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="ufoButton"/>
+                                <state key="normal" image="ufoButton"/>
                                 <connections>
                                     <segue destination="oQE-63-y0q" kind="presentation" identifier="ufoSegue" id="gte-7h-JFo"/>
                                 </connections>
@@ -530,18 +530,18 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="q4t-Nh-eZb">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmw-CT-2jt">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmw-CT-2jt">
                                 <rect key="frame" x="62" y="239" width="290" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="pirateButton"/>
+                                <state key="normal" image="pirateButton"/>
                                 <connections>
                                     <segue destination="oQE-63-y0q" kind="presentation" identifier="pirateSegue" id="xuN-Bm-jL4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1x-mi-kS9">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1x-mi-kS9">
                                 <rect key="frame" x="62" y="571" width="290" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="forestButton"/>
+                                <state key="normal" image="forestButton"/>
                                 <connections>
                                     <segue destination="oQE-63-y0q" kind="presentation" identifier="forestSegue" id="uFf-vw-ZGN"/>
                                 </connections>
@@ -553,7 +553,7 @@
                             <constraint firstItem="q4t-Nh-eZb" firstAttribute="top" secondItem="bsf-pf-cbr" secondAttribute="top" id="UWL-qj-e5Y"/>
                             <constraint firstItem="q4t-Nh-eZb" firstAttribute="trailing" secondItem="bsf-pf-cbr" secondAttribute="trailing" id="kEN-4X-naI"/>
                             <constraint firstItem="q4t-Nh-eZb" firstAttribute="leading" secondItem="bsf-pf-cbr" secondAttribute="leading" id="nee-wf-KhW"/>
-                            <constraint firstAttribute="bottom" secondItem="q4t-Nh-eZb" secondAttribute="bottom" id="woG-Cy-gyC"/>
+                            <constraint firstItem="q4t-Nh-eZb" firstAttribute="bottom" secondItem="bsf-pf-cbr" secondAttribute="bottom" id="woG-Cy-gyC"/>
                         </constraints>
                     </view>
                     <connections>
@@ -576,18 +576,18 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inicial" translatesAutoresizingMaskIntoConstraints="NO" id="B11-2W-I0t">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxk-fb-yMj">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxk-fb-yMj">
                                 <rect key="frame" x="62" y="566" width="290" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="tabernButton"/>
+                                <state key="normal" image="tabernButton"/>
                                 <connections>
                                     <segue destination="oQE-63-y0q" kind="presentation" identifier="tabernSegue" id="x6F-xX-1Wa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mA5-QU-0v2">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mA5-QU-0v2">
                                 <rect key="frame" x="62" y="243" width="290" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="kitchenButton"/>
+                                <state key="normal" image="kitchenButton"/>
                                 <connections>
                                     <segue destination="oQE-63-y0q" kind="presentation" identifier="kitchenSegue" id="8NR-eq-sXO"/>
                                 </connections>
@@ -599,7 +599,7 @@
                             <constraint firstItem="B11-2W-I0t" firstAttribute="leading" secondItem="h4l-o2-tIh" secondAttribute="leading" id="B0T-Pe-eg2"/>
                             <constraint firstItem="B11-2W-I0t" firstAttribute="top" secondItem="h4l-o2-tIh" secondAttribute="top" id="Vnt-RL-UbM"/>
                             <constraint firstItem="B11-2W-I0t" firstAttribute="trailing" secondItem="h4l-o2-tIh" secondAttribute="trailing" id="q9F-41-wbN"/>
-                            <constraint firstAttribute="bottom" secondItem="B11-2W-I0t" secondAttribute="bottom" id="rxl-Nq-epd"/>
+                            <constraint firstItem="B11-2W-I0t" firstAttribute="bottom" secondItem="h4l-o2-tIh" secondAttribute="bottom" id="rxl-Nq-epd"/>
                         </constraints>
                     </view>
                     <connections>
@@ -614,7 +614,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dpO-tz-3Xf"/>
-        <segue reference="x6F-xX-1Wa"/>
+        <segue reference="xuN-Bm-jL4"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>

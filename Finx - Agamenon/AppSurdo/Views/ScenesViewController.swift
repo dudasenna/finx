@@ -116,8 +116,6 @@ class FirstScenesViewController: UIViewController {
         
         let titleHeight = (self.view.frame.height * 0.1) + 60
         
-        underwaterButton.contentMode = .scaleToFill
-        
         self.view.addSubview(underwaterButton)
         self.view.addSubview(ufoButton)
         
@@ -125,14 +123,15 @@ class FirstScenesViewController: UIViewController {
         ufoButton.translatesAutoresizingMaskIntoConstraints = false
         
         underwaterButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        underwaterButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: (titleHeight+30)).isActive = true
-        underwaterButton.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8).isActive = true
-        underwaterButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3).isActive = true
+        underwaterButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: (titleHeight+85)).isActive = true
+        underwaterButton.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.75).isActive = true
+        underwaterButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25).isActive = true
         
         ufoButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        ufoButton.topAnchor.constraint(equalTo: underwaterButton.bottomAnchor, constant: 20).isActive = true
-        ufoButton.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8).isActive = true
-        ufoButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3).isActive = true
+//        ufoButton.topAnchor.constraint(equalTo: underwaterButton.bottomAnchor, constant: 20).isActive = true
+        ufoButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -85).isActive = true
+        ufoButton.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.75).isActive = true
+        ufoButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25).isActive = true
     }
     
     override func prepare (for segue: UIStoryboardSegue, sender:Any?) {
@@ -161,14 +160,14 @@ class SecondScenesViewController: UIViewController {
         forestButton.translatesAutoresizingMaskIntoConstraints = false
         
         pirateButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        pirateButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: (titleHeight+30)).isActive = true
-        pirateButton.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8).isActive = true
-        pirateButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3).isActive = true
+        pirateButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: (titleHeight+85)).isActive = true
+        pirateButton.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.75).isActive = true
+        pirateButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25).isActive = true
         
         forestButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        forestButton.topAnchor.constraint(equalTo: pirateButton.bottomAnchor, constant: 20).isActive = true
-        forestButton.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8).isActive = true
-        forestButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3).isActive = true
+        forestButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -85).isActive = true
+        forestButton.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.75).isActive = true
+        forestButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25).isActive = true
     }
     
     override func prepare (for segue: UIStoryboardSegue, sender:Any?) {
@@ -197,14 +196,14 @@ class ThirdScenesViewController: UIViewController {
         tabernButton.translatesAutoresizingMaskIntoConstraints = false
         
         kitchenButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        kitchenButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: (titleHeight+30)).isActive = true
-        kitchenButton.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8).isActive = true
-        kitchenButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3).isActive = true
+        kitchenButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: (titleHeight+85)).isActive = true
+        kitchenButton.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.75).isActive = true
+        kitchenButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25).isActive = true
         
         tabernButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        tabernButton.topAnchor.constraint(equalTo: kitchenButton.bottomAnchor, constant: 20).isActive = true
-        tabernButton.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8).isActive = true
-        tabernButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3).isActive = true
+        tabernButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -85).isActive = true
+        tabernButton.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.75).isActive = true
+        tabernButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25).isActive = true
     }
     
     override func prepare (for segue: UIStoryboardSegue, sender:Any?) {
