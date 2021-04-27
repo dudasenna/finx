@@ -75,6 +75,7 @@ class LoadViewController: UIViewController {
         
         animationLabel.text = "Escondendo frases..."
         animationLabel.textColor = .white
+        animationLabel.textAlignment = .center
         
         self.view.addSubview(animationView!)
         animationView.translatesAutoresizingMaskIntoConstraints = false
