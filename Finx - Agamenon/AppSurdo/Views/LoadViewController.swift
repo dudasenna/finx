@@ -18,6 +18,8 @@ class LoadViewController: UIViewController {
     
     var facts: [(String, String)]! = []
     var numbers: [String]! = []
+    var scene: String! = ""
+    var level: String! = "Easy"
     
     struct TranslatorLanguageDetails: Codable {
         var code = String()
@@ -66,7 +68,6 @@ class LoadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         animationView = .init(name: "loadAnimation")
-//        animationView?.frame = self.view.bounds
         animationView?.contentMode = .scaleAspectFill
         animationView?.loopMode = .loop
         animationView?.animationSpeed = 3.0
@@ -74,6 +75,7 @@ class LoadViewController: UIViewController {
         
         animationLabel.text = "Escondendo frases..."
         animationLabel.textColor = .white
+        animationLabel.textAlignment = .center
         
         self.view.addSubview(animationView!)
         animationView.translatesAutoresizingMaskIntoConstraints = false
@@ -106,13 +108,8 @@ class LoadViewController: UIViewController {
             request.httpMethod = "GET"
             
             let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-                //let decoder = JSONDecoder
-                
                 if let jsonData = String(data: data!, encoding: .utf8) as String? {
-                    //self.fact = jsonData
-                    //            print(jsonData!)
                     let numberString = self.takeNumber(fact: jsonData)
-                    //            let numberInt = Int(numberString) ?? 0
                     if self.numbers.contains(numberString) {
                         self.loadFactWithNumber(numberOfFacts: i)
                     } else {
@@ -140,15 +137,12 @@ class LoadViewController: UIViewController {
         let host = "dev.microsofttranslator.com"
         let apiURL = "https://dev.microsofttranslator.com/translate?api-version=3.0&from=en&to=pt"
 
-        //let text2Translate = textToTranslate
         var encodeTextToTranslate = encodeText()
         var toTranslate = [encodeText]()
 
         encodeTextToTranslate.text = textToTranslate
         toTranslate.append(encodeTextToTranslate)
-        //        print(toTranslate)
         let jsonToTranslate = try? JSONEncoder().encode(toTranslate)
-        //        print(jsonToTranslate)
         let url = URL(string: apiURL)
         var request = URLRequest(url: url!)
 
@@ -162,7 +156,6 @@ class LoadViewController: UIViewController {
 
         let config = URLSessionConfiguration.default
         let session =  URLSession(configuration: config)
-//        var phraseTranslated: String = ""
 
         let task = session.dataTask(with: request) { (responseData, response, responseError) in
 
@@ -191,11 +184,11 @@ class LoadViewController: UIViewController {
             if self.facts.count == 3 {
                 DispatchQueue.main.async {
                     self.animationView.pause()
-//                    self.performSegue(withIdentifier: "ARSegue", sender: self)
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                     let vcAR = storyBoard.instantiateViewController(withIdentifier: "ARViewController") as! ARViewController
                     vcAR.facts = self.facts.shuffled()
                     vcAR.numbers = self.numbers
+                    vcAR.scene = self.scene
                     self.present(vcAR, animated:true, completion:nil)
                 }
             }
@@ -217,13 +210,4 @@ class LoadViewController: UIViewController {
         }
         return newString
     }
-    
-//    override func prepare (for segue: UIStoryboardSegue, sender:Any?) {
-//        if segue.identifier == "ARSegue" {
-//            let vcAR = segue.destination as? ARViewController
-//            vcAR?.facts = facts.shuffled()
-//            vcAR?.numbers = numbers
-//            
-//        }
-//    }
 }

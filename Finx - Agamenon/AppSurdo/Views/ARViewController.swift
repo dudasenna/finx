@@ -12,15 +12,13 @@ import SceneKit
 import ARKit
 import FirebaseAnalytics
 
-//@property (nonatomic, assign) BOOL isSomethingEnabled;
-
-
 //colocar key na linha 334
 
 class ARViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     var facts: [(String, String)]!
     var numbers: [String]!
-//    var vcLoad: LoadViewController!
+    var scene: String! = ""
+    var level: String! = ""
 
     @IBOutlet var sceneView: ARSCNView!
     var baseLoaded:Bool = false
@@ -225,9 +223,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             let newPosition = CamCoords()
             newPosition.getCamCoords(sceneView: sceneView)
             scenario.position = SCNVector3(newPosition.x, newPosition.y, newPosition.z)
-            
+            let name = scene + level + ".scn"
             //pode colocar o argumento sceneName pra selecionar o cenário
-            guard let objScene = SCNScene(named: "underwater.scn", inDirectory: "art.scnassets/scenes") else {
+            guard let objScene = SCNScene(named: "kitchenEasy.scn", inDirectory: "art.scnassets/scenes") else {
                 return
             }
             
